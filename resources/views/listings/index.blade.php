@@ -32,10 +32,10 @@
                     <thead>
                         <tr class="text-left text-gray-500 font-semibold border-b">
                             <th class="px-6 py-4">ID</th>
-                            <th class="px-6 py-4">Ảnh đại diện</th>
-                            <th class="px-6 py-4">Tiêu đề</th>
+                            <th class="px-6 py-4 min-w-[150px]">Ảnh đại diện</th>
+                            <th class="px-6 py-4 min-w-[100px]">Tiêu đề</th>
                             <th class="px-6 py-4">Giá</th>
-                            <th class="px-6 py-4">Hành động</th>
+                            <th class="px-6 py-4 min-w-[150px]">Hành động</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y">
@@ -101,7 +101,7 @@
                                     <div class="flex items-center gap-2">
                                         <a href="{{ route('listings.edit', $listing) }}"
                                             class="rounded-xl bg-yellow-400 text-white px-4 py-2 font-semibold hover:bg-yellow-500 transition text-xs md:text-md">Sửa</a>
-                                        <form action="{{ route('listings.destroy', $listing) }}" method="POST"
+                                        <form class="hidden" action="{{ route('listings.destroy', $listing) }}" method="POST"
                                             x-ref="deleteForm{{ $listing->id }}">
                                             @csrf
                                             @method('DELETE')

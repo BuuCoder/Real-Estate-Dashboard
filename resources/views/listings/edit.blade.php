@@ -3,10 +3,10 @@
 @section('title', 'Chỉnh sửa Bài Đăng')
 
 @section('content')
-    <div class="container mx-auto py-8 max-w-full">
+    <div class="container mx-auto p-0 md:px-8 max-w-full">
         <h2 class="text-xl md:text-2xl font-extrabold mb-2">Chỉnh sửa Bài Đăng</h2>
         <form action="{{ route('listings.update', $listing) }}" method="POST"
-            class="bg-white rounded-3xl shadow-panel px-8 py-2 pb-8 space-y-5">
+            class="md:bg-white rounded-3xl md:shadow-panel px-2 md:px-8 py-2 pb-8 space-y-5">
             @csrf @method('PUT')
             <div>
                 <label class="block text-sm font-medium mb-1">Loại BĐS (Property Type)</label>
@@ -126,7 +126,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-sm font-medium mb-1">Vĩ độ (Latitude)</label>
+                    <label class="block text-sm font-medium mb-1">Vĩ độ</label>
                     <input name="lat" value="{{ old('lat', $listing->lat) }}"
                         class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400">
                     @error('lat')
@@ -134,7 +134,7 @@
                     @enderror
                 </div>
                 <div>
-                    <label class="block text-sm font-medium mb-1">Kinh độ (Longitude)</label>
+                    <label class="block text-sm font-medium mb-1">Kinh độ</label>
                     <input name="lng" value="{{ old('lng', $listing->lng) }}"
                         class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400">
                     @error('lng')
@@ -335,7 +335,7 @@
                     document.addEventListener('DOMContentLoaded', handlePriceFormat);
                 </script>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div>
                     <label class="block text-sm font-medium mb-1">Trạng thái</label>
                     <select name="status"
@@ -391,36 +391,36 @@
                     @foreach (old('images', $listing->images) as $i => $img)
                         <div
                             class="flex flex-col md:flex-row items-start md:items-center gap-2 bg-gray-50 rounded-xl p-3 border border-gray-200 relative group">
-                            <div class="flex-1 w-full flex gap-2 items-center">
+                            <div class="flex-1 w-full flex flex-col sm:flex-row gap-2 items-start sm:items-center">
                                 <input name="images[{{ $i }}][url]"
                                     value="{{ is_array($img) ? $img['url'] : $img->url }}"
-                                    class="w-full rounded-xl bg-white border border-gray-300 py-2 px-3 outline-none focus:ring-2 focus:ring-brand-400"
+                                    class="w-full rounded-xl bg-white border border-gray-300 py-2 px-3 outline-none focus:ring-2 focus:ring-brand-400 text-xs md:text-base"
                                     placeholder="Dán URL ảnh vào đây hoặc chọn ảnh"
                                     maxlength="255"
                                     onchange="previewImage(this, 'preview-{{ $i }}')">
                                 <input type="file" accept="image/*" style="display:none"
                                     onchange="uploadAndSetUrl(this, {{ $i }})">
                             </div>
-                            <div class="flex items-center gap-2 mt-2 md:mt-0">
-                                <label class="flex items-center gap-1 cursor-pointer">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 mt-2 md:mt-0">
+                                <label class="flex items-center gap-1 cursor-pointer text-xs md:text-base">
                                     <input type="checkbox" name="images[{{ $i }}][is_cover]" value="1"
                                         @if ((is_array($img) && !empty($img['is_cover'])) || (!is_array($img) && $img->is_cover)) checked @endif class="accent-brand-600">
-                                    <span class="text-xs">Đại diện</span>
+                                    <span class="text-xs md:text-base">Đại diện</span>
                                 </label>
                                 <input name="images[{{ $i }}][sort_order]"
                                     value="{{ is_array($img) ? $img['sort_order'] : $img->sort_order }}"
-                                    class="w-16 rounded-xl bg-white border border-gray-300 py-2 px-2 outline-none focus:ring-2 focus:ring-brand-400 text-center"
+                                    class="w-16 rounded-xl bg-white border border-gray-300 py-2 px-2 outline-none focus:ring-2 focus:ring-brand-400 text-center text-xs md:text-base"
                                     placeholder="Thứ tự">
                                 <button type="button"
-                                    class="bg-red-100 border border-red-200 text-red-500 hover:text-red-700 text-xs font-bold px-2 py-1 rounded transition"
+                                    class="bg-red-100 border border-red-200 text-red-500 hover:text-red-700 text-xs md:text-base font-bold px-2 py-1 rounded transition"
                                     onclick="this.closest('.flex').remove()">
                                     Xóa
                                 </button>
                             </div>
-                            <div class="ml-2">
+                            <div class="ml-0 md:ml-2 mt-2 md:mt-0">
                                 <img id="preview-{{ $i }}"
                                     src="{{ is_array($img) ? $img['url'] : $img->url }}" alt="Preview"
-                                    class="w-16 h-16 object-cover rounded border border-gray-200 shadow-sm @if (!(is_array($img) ? $img['url'] ?? null : $img->url ?? null)) hidden @endif">
+                                    class="w-20 h-20 md:w-16 md:h-16 object-cover rounded border border-gray-200 shadow-sm @if (!(is_array($img) ? $img['url'] ?? null : $img->url ?? null)) hidden @endif">
                             </div>
                         </div>
                         @if ($errors->has("images.$i.url"))
@@ -429,9 +429,9 @@
                     @endforeach
                 </div>
                 <button type="button"
-                    class="rounded-xl bg-brand-600 text-white px-4 py-1 mt-3 text-xs font-semibold hover:bg-brand-700 transition"
+                    class="rounded-xl bg-brand-600 text-white px-4 py-1 mt-3 text-xs md:text-base font-semibold hover:bg-brand-700 transition w-full sm:w-auto"
                     onclick="addImageInput()">+ Thêm ảnh</button>
-                <div class="text-xs text-gray-500 mt-1">Bạn có thể dán URL ảnh, chọn file từ máy, chọn ảnh đại diện, sắp
+                <div class="text-xs md:text-sm text-gray-500 mt-1">Bạn có thể dán URL ảnh, chọn file từ máy, chọn ảnh đại diện, sắp
                     xếp thứ tự. Nhấn "Thêm ảnh" để thêm dòng mới.</div>
             </div>
             <script>

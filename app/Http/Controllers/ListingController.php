@@ -125,7 +125,7 @@ class ListingController extends Controller
                 }
             }
         });
-        return redirect()->route('listings.index')->with('success', 'Listing created.');
+        return redirect()->route('listings.index')->with('success', 'Tạo tin đăng thành công.');
     }
 
     public function edit($id)
@@ -207,7 +207,7 @@ class ListingController extends Controller
             }
         });
 
-        return redirect()->route('listings.index')->with('success', 'Listing updated.');
+        return redirect()->route('listings.index')->with('success', 'Tin Đăng [' . $listing->title . '] đã được cập nhật thành công.');
     }
 
     public function destroy($id)
@@ -216,6 +216,6 @@ class ListingController extends Controller
         $listing->amenities()->detach();
         $listing->images()->delete();
         $listing->delete();
-        return redirect()->route('listings.index')->with('success', 'Listing deleted.');
+        return redirect()->route('listings.index')->with('success', 'Xóa tin đăng thành công.');
     }
 }

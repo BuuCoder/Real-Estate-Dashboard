@@ -3,9 +3,9 @@
 @section('title', 'Thêm Bài Đăng')
 
 @section('content')
-<div class="container mx-auto py-8 max-w-full">
+<div class="container mx-auto p-0 md:px-8 max-w-full">
     <h2 class="text-xl md:text-2xl font-extrabold mb-2">Thêm Bài Đăng</h2>
-    <form action="{{ route('listings.store') }}" method="POST" class="bg-white rounded-3xl shadow-panel px-8 py-2 pb-8 space-y-5">
+    <form action="{{ route('listings.store') }}" method="POST" class=" md:bg-white rounded-3xl md:shadow-panel px-2 md:px-8 py-2 pb-8 space-y-5">
         @csrf
         <div>
             <label class="block text-sm font-medium mb-1">Loại BĐS (Property Type)</label>
@@ -123,7 +123,7 @@
         </div>
         <div class="grid grid-cols-2 gap-4">
             <div>
-                <label class="block text-sm font-medium mb-1">Vĩ độ (Latitude)</label>
+                <label class="block text-sm font-medium mb-1">Vĩ độ</label>
                 <input name="lat" value="{{ old('lat') }}"
                     class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400">
                 @error('lat')
@@ -131,7 +131,7 @@
                 @enderror
             </div>
             <div>
-                <label class="block text-sm font-medium mb-1">Kinh độ (Longitude)</label>
+                <label class="block text-sm font-medium mb-1">Kinh độ</label>
                 <input name="lng" value="{{ old('lng') }}"
                     class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400">
                 @error('lng')
@@ -330,7 +330,7 @@
                 document.addEventListener('DOMContentLoaded', handlePriceFormat);
             </script>
         </div>
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-2 gap-4">
             <div>
                 <label class="block text-sm font-medium mb-1">Trạng thái</label>
                 <select name="status"

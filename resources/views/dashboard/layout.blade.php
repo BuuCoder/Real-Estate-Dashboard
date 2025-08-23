@@ -104,7 +104,7 @@
 
                     <nav class="space-y-6 text-sm">
                         <div>
-                            <p class="px-3 text-gray-400 uppercase tracking-wider mb-2 fw-bold">DASHBOARD</p>
+                            <p class="px-3 text-gray-400 uppercase tracking-wider mb-2 fw-bold">MENU</p>
                             <ul class="space-y-2">
                                 <li>
                                     <a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 @if (request()->is('dashboard')) bg-gray-100 font-semibold @endif"
@@ -114,7 +114,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                                   d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11 0h7v7h-7v-7zm0-11h7v7h-7V3z"/>
                                         </svg>
-                                        Dashboard
+                                        Tổng quan
                                     </a>
                                 </li>
                                 <li>
@@ -125,7 +125,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                                   d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m9-6.13a4 4 0 11-8 0 4 4 0 018 0zm6 10v-2a4 4 0 00-3-3.87M9 20v-2a4 4 0 013-3.87"/>
                                         </svg>
-                                        Users
+                                        Người dùng
                                     </a>
                                 </li>
                                 <li>
@@ -136,7 +136,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                                   d="M3 9.75L12 4l9 5.75M4.5 10.5v7.25A2.25 2.25 0 006.75 20h10.5A2.25 2.25 0 0019.5 17.75V10.5"/>
                                         </svg>
-                                        Listing
+                                        Bài đăng
                                     </a>
                                 </li>
                                 <li>
@@ -149,7 +149,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                                   d="M8.25 9.75h7.5m-7.5 3h7.5m-7.5 3h4.5"/>
                                         </svg>
-                                        Blog
+                                        Bài viết
                                     </a>
                                 </li>
                                 <li>
@@ -160,7 +160,7 @@
                                                   d="M12 21c4.97-4.97 8-8.06 8-11.5A8 8 0 1 0 4 9.5C4 12.94 7.03 16.03 12 21z" />
                                             <circle cx="12" cy="9.5" r="2.5" />
                                         </svg>
-                                        Geo
+                                        Địa lý VN
                                     </a>
                                 </li>
                             </ul>
@@ -216,7 +216,7 @@
                         </div>
                     </div>
 
-                    <div class="p-6">
+                    <div class="p-3 md:p-6">
                         @yield('content')
                     </div>
                 </main>

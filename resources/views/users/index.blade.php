@@ -5,8 +5,8 @@
 @section('content')
 <div class="container mx-auto py-8" x-data="{ deleteForm: null }">
     <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl md:text-2xl font-extrabold">Danh sách User</h2>
-        <a href="{{ route('users.create') }}" class="rounded-xl bg-brand-600 text-white border border-brand-600 px-4 py-2 font-semibold hover:bg-brand-700 transition text-xs md:text-md">Thêm User</a>
+        <h2 class="text-xl md:text-2xl font-extrabold">Danh sách Người dùng</h2>
+        <a href="{{ route('users.create') }}" class="rounded-xl bg-brand-600 text-white border border-brand-600 px-4 py-2 font-semibold hover:bg-brand-700 transition text-xs md:text-md">Thêm Người dùng</a>
     </div>
     @if(session('success'))
         <div class="mb-4 flex items-center rounded-lg bg-green-100 px-4 py-3 text-green-700 text-xs md:text-md font-semibold border border-green-300">
@@ -50,7 +50,7 @@
                     </td>
                     <td class="px-6 py-4 flex gap-2">
                         <a href="{{ route('users.edit', $user->id) }}" class="rounded-xl bg-yellow-400 text-white px-4 py-2 font-semibold hover:bg-yellow-500 transition text-xs md:text-md">Sửa</a>
-                        <form action="{{ route('users.destroy', $user->id) }}" method="POST" x-ref="deleteForm{{ $user->id }}">
+                        <form class="hidden" action="{{ route('users.destroy', $user->id) }}" method="POST" x-ref="deleteForm{{ $user->id }}">
                             @csrf
                             @method('DELETE')
                             <button type="button"
@@ -76,6 +76,6 @@
     });
 </script>
 <x-popup>
-    Bạn chắc chắn muốn xóa user này?
+    Bạn chắc chắn muốn xóa người dùng này?
 </x-popup>
 @endsection
