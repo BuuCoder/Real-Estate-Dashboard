@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $roles = Role::pluck('id', 'code');
-        User::insert([
+        $users = [
             [
                 'full_name' => 'Root Admin',
                 'email' => 'root@admin.com',
@@ -31,6 +31,13 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('password'),
                 'role_id' => $roles['MEMBER'] ?? 3,
             ],
-        ]);
+        ];
+
+        foreach ($users as $user) {
+            User::firstOrCreate(
+                ['email' => $user['email']],
+                $user
+            );
+        }
     }
 }

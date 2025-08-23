@@ -9,7 +9,7 @@ class RoleSeeder extends Seeder
 {
     public function run(): void
     {
-        Role::insert([
+        $roles = [
             [
                 'name' => 'Quản trị hệ thống',
                 'code' => 'ROOT_ADMIN',
@@ -25,6 +25,13 @@ class RoleSeeder extends Seeder
                 'code' => 'MEMBER',
                 'description' => 'Người dùng thông thường',
             ],
-        ]);
+        ];
+
+        foreach ($roles as $role) {
+            Role::firstOrCreate(
+                ['code' => $role['code']],
+                $role
+            );
+        }
     }
 }

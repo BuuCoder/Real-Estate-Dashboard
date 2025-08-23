@@ -7,10 +7,10 @@
         @method('PUT')
         <div>
             <label class="block text-sm font-medium mb-1">Tên</label>
-            <input name="name" value="{{ old('name', $user->name) }}"
+            <input name="full_name" value="{{ old('full_name', $user->full_name) }}"
                 class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400"
                 placeholder="Nhập tên" required>
-            @error('name')<div class="text-red-500 text-sm mt-1">{{ $message }}</div>@enderror
+            @error('full_name')<div class="text-red-500 text-sm mt-1">{{ $message }}</div>@enderror
         </div>
         <div>
             <label class="block text-sm font-medium mb-1">Email</label>

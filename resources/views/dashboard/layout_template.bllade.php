@@ -67,8 +67,8 @@
                 <!-- Sidebar -->
                 <aside id="sidebar"
                     class="fixed inset-y-0 left-0 z-50 w-80 rounded-none md:rounded-3xl bg-white shadow-panel p-6
-                            transform -translate-x-full transition-transform duration-300
-                            md:static md:translate-x-0 md:w-auto md:col-span-4 lg:col-span-3">
+         transform -translate-x-full transition-transform duration-300
+         md:static md:translate-x-0 md:w-auto md:col-span-4 lg:col-span-2">
 
                     <!-- header nhỏ chỉ hiện trên mobile -->
                     <div class="flex items-center justify-between md:hidden mb-4">
@@ -106,67 +106,47 @@
                         <div>
                             <p class="px-3 text-gray-400 uppercase tracking-wider mb-2 fw-bold">DASHBOARD</p>
                             <ul class="space-y-2">
-                                <li>
-                                    <a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 @if (request()->is('dashboard')) bg-gray-100 font-semibold @endif"
-                                       href="{{ url('/dashboard') }}">
+                                <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 @if (request()->is('dashboard')) bg-gray-100 font-semibold @endif"
+                                        href="{{ url('/dashboard') }}">
                                         <!-- heroicon outline: squares-2x2 -->
-                                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                  d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11 0h7v7h-7v-7zm0-11h7v7h-7V3z"/>
+                                                d="M4 6h6v6H4V6zm0 12h6v-6H4v6zm10 0h6v-6h-6v6zm0-12h6v6h-6V6z" />
                                         </svg>
                                         Dashboard
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 @if (request()->is('users')) bg-gray-100 font-semibold @endif"
-                                       href="{{ url('/users') }}">
-                                        <!-- heroicon outline: users -->
-                                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    </a></li>
+                                <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 @if (request()->is('tasks*')) bg-gray-100 font-semibold @endif"
+                                        href="{{ url('/tasks') }}">
+                                        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                  d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m9-6.13a4 4 0 11-8 0 4 4 0 018 0zm6 10v-2a4 4 0 00-3-3.87M9 20v-2a4 4 0 013-3.87"/>
+                                                d="M9 12l2 2 4-4m-9 9h12M5 5h14" />
                                         </svg>
-                                        Users
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 @if (request()->is('listings*')) bg-gray-100 font-semibold @endif"
-                                       href="/listings">
-                                        <!-- heroicon outline: home-modern (listing) -->
-                                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        Tasks
+                                    </a></li>
+                                <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100"
+                                        href="#">
+                                        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                  d="M3 9.75L12 4l9 5.75M4.5 10.5v7.25A2.25 2.25 0 006.75 20h10.5A2.25 2.25 0 0019.5 17.75V10.5"/>
+                                                d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0l-8 5-8-5" />
                                         </svg>
-                                        Listing
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 "
-                                       href="#">
-                                        <!-- heroicon outline: newspaper (blog) -->
-                                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        Explore
+                                    </a></li>
+                                <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100"
+                                        href="#">
+                                        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                  d="M19.5 6.75V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.75M19.5 6.75A2.25 2.25 0 0017.25 4.5H6.75A2.25 2.25 0 004.5 6.75m15 0v12.75a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.75"/>
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                  d="M8.25 9.75h7.5m-7.5 3h7.5m-7.5 3h4.5"/>
+                                                d="M3 7h18M3 12h18M3 17h18" />
                                         </svg>
-                                        Blog
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 @if (request()->is('geo*')) bg-gray-100 font-semibold @endif"
-                                       href="{{ url('/geo') }}">
-                                        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                  d="M12 21c4.97-4.97 8-8.06 8-11.5A8 8 0 1 0 4 9.5C4 12.94 7.03 16.03 12 21z" />
-                                            <circle cx="12" cy="9.5" r="2.5" />
-                                        </svg>
-                                        Geo
-                                    </a>
-                                </li>
+                                        Projects
+                                    </a></li>
                             </ul>
                         </div>
                         <div>
-                            <p class="px-3 text-gray-400 uppercase tracking-wider font-semi mb-2">Profile & Settings</p>
+                            <p class="px-3 text-gray-400 uppercase tracking-wider mb-2">Profile & Settings</p>
                             <ul class="space-y-2">
                                 <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100"
                                         href="#">Charts</a></li>
@@ -182,7 +162,7 @@
                 </aside>
 
                 <!-- Content -->
-                <main class="col-span-12 md:col-span-8 lg:col-span-9 rounded-3xl bg-white shadow-panel">
+                <main class="col-span-12 md:col-span-8 lg:col-span-7 rounded-3xl bg-white shadow-panel">
                     <!-- Topbar -->
                     <div class="flex items-center justify-between gap-4 p-6 border-b flex-wrap">
                         <div class="flex items-center justify-between gap-4">
@@ -220,6 +200,65 @@
                         @yield('content')
                     </div>
                 </main>
+
+                <!-- Right Panel -->
+                <aside class="col-span-12 lg:col-span-3 rounded-3xl bg-[#f7f3ef] shadow-panel p-6">
+                    <div class="flex items-center justify-end gap-2 mb-6">
+                        <button class="p-2 rounded-full bg-white shadow-soft hover:shadow"><svg class="w-5 h-5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8 10h8M8 14h5m-7 7h10a2 2 0 002-2V5a2 2 0 00-2-2H6a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg></button>
+                        <button class="p-2 rounded-full bg-white shadow-soft hover:shadow"><img
+                                class="w-6 h-6 rounded-full" src="https://i.pravatar.cc/100?img=11" /></button>
+                    </div>
+
+                    <div class="mb-5">
+                        <p class="text-xs text-gray-500 mb-2">30 minute call with Client</p>
+                        <h3 class="font-semibold text-slate-900">Project Discovery Call</h3>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-4 shadow-soft mb-6">
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <img class="w-6 h-6 rounded-full ring-2 ring-white"
+                                    src="https://i.pravatar.cc/100?img=1">
+                                <img class="w-6 h-6 rounded-full ring-2 ring-white"
+                                    src="https://i.pravatar.cc/100?img=2">
+                                <img class="w-6 h-6 rounded-full ring-2 ring-white"
+                                    src="https://i.pravatar.cc/100?img=4">
+                                <img class="w-6 h-6 rounded-full ring-2 ring-white"
+                                    src="https://i.pravatar.cc/100?img=5">
+                            </div>
+                            <div class="text-sm font-semibold">28:35</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        @include('partials.stat-card', [
+                            'title' => 'Planned Today',
+                            'value' => 18,
+                            'bg' => 'bg-pink-100',
+                        ])
+                        @include('partials.stat-card', [
+                            'title' => 'Finished Yesterday',
+                            'value' => 12,
+                            'bg' => 'bg-purple-100',
+                        ])
+                        @include('partials.stat-card', [
+                            'title' => 'Due This Week',
+                            'value' => 24,
+                            'bg' => 'bg-emerald-100',
+                        ])
+                        @include('partials.stat-card', [
+                            'title' => 'Overdue',
+                            'value' => 4,
+                            'bg' => 'bg-yellow-100',
+                        ])
+                    </div>
+
+                    @include('partials.calendar')
+                </aside>
             </div>
         </div>
     </div>
