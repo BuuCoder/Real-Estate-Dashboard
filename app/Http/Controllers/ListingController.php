@@ -48,10 +48,34 @@ class ListingController extends Controller
         5 => ['code' => 'dangcapnhat', 'name' => 'Đang cập nhật'],
     ];
 
-    public function index()
+    public function index(Request $request)
     {
-        $listings = Listing::with(['images', 'amenities'])->paginate(10);
-        return view('listings.index', compact('listings'));
+        $query = Listing::with(['images', 'amenities']);
+
+        if ($search = $request->input('search')) {
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', '%' . $search . '%')
+                    ->orWhere('address', 'like', '%' . $search . '%');
+            });
+        }
+
+        // Sort by price or other fields
+        $sort = $request->input('sort', 'created_at');
+        $direction = $request->input('direction', 'desc');
+
+        // Allow only certain fields to sort
+        $allowedSorts = ['price_total', 'created_at', 'area_land'];
+        if (!in_array($sort, $allowedSorts)) {
+            $sort = 'created_at';
+        }
+        if (!in_array(strtolower($direction), ['asc', 'desc'])) {
+            $direction = 'desc';
+        }
+
+        $query->orderBy($sort, $direction);
+
+        $listings = $query->paginate(10)->appends($request->only(['search', 'sort', 'direction']));
+        return view('listings.index', compact('listings', 'sort', 'direction'));
     }
 
     public function create()
@@ -130,7 +154,7 @@ class ListingController extends Controller
 
     public function edit($id)
     {
-        
+
         $listing = Listing::with(['amenities', 'images'])->findOrFail($id);
         $amenities = Amenity::all();
         $provinces = \App\Models\Province::orderBy('name', 'asc')->get();
@@ -182,8 +206,8 @@ class ListingController extends Controller
         if ($validator->fails()) {
             dd($validator->errors());
             return redirect()->back()
-            ->withErrors($validator)
-            ->withInput();
+                ->withErrors($validator)
+                ->withInput();
         }
 
         $data = $validator->validated();

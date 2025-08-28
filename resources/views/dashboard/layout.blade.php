@@ -108,56 +108,126 @@
                             <ul class="space-y-2">
                                 <li>
                                     <a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 @if (request()->is('dashboard')) bg-gray-100 font-semibold @endif"
-                                       href="{{ url('/dashboard') }}">
+                                        href="{{ url('/dashboard') }}">
                                         <!-- heroicon outline: squares-2x2 -->
-                                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                  d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11 0h7v7h-7v-7zm0-11h7v7h-7V3z"/>
+                                                d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11 0h7v7h-7v-7zm0-11h7v7h-7V3z" />
                                         </svg>
                                         Tổng quan
                                     </a>
                                 </li>
                                 <li>
                                     <a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 @if (request()->is('users')) bg-gray-100 font-semibold @endif"
-                                       href="{{ url('/users') }}">
+                                        href="{{ url('/users') }}">
                                         <!-- heroicon outline: users -->
-                                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                  d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m9-6.13a4 4 0 11-8 0 4 4 0 018 0zm6 10v-2a4 4 0 00-3-3.87M9 20v-2a4 4 0 013-3.87"/>
+                                                d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m9-6.13a4 4 0 11-8 0 4 4 0 018 0zm6 10v-2a4 4 0 00-3-3.87M9 20v-2a4 4 0 013-3.87" />
                                         </svg>
                                         Người dùng
                                     </a>
                                 </li>
                                 <li>
                                     <a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 @if (request()->is('listings*')) bg-gray-100 font-semibold @endif"
-                                       href="/listings">
+                                        href="/listings">
                                         <!-- heroicon outline: home-modern (listing) -->
-                                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                  d="M3 9.75L12 4l9 5.75M4.5 10.5v7.25A2.25 2.25 0 006.75 20h10.5A2.25 2.25 0 0019.5 17.75V10.5"/>
+                                                d="M3 9.75L12 4l9 5.75M4.5 10.5v7.25A2.25 2.25 0 006.75 20h10.5A2.25 2.25 0 0019.5 17.75V10.5" />
                                         </svg>
                                         Bài đăng
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 "
-                                       href="#">
+                                    <button type="button"
+                                        class="flex items-center w-full gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 transition
+                                            {{ request()->is('posts*') || request()->is('post-types*') || request()->is('tags*') ? 'bg-gray-100 font-semibold' : '' }}"
+                                        onclick="toggleSubMenu(this)">
                                         <!-- heroicon outline: newspaper (blog) -->
-                                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                  d="M19.5 6.75V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.75M19.5 6.75A2.25 2.25 0 0017.25 4.5H6.75A2.25 2.25 0 004.5 6.75m15 0v12.75a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.75"/>
+                                                d="M19.5 6.75V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.75M19.5 6.75A2.25 2.25 0 0017.25 4.5H6.75A2.25 2.25 0 004.5 6.75m15 0v12.75a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.75" />
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                  d="M8.25 9.75h7.5m-7.5 3h7.5m-7.5 3h4.5"/>
+                                                d="M8.25 9.75h7.5m-7.5 3h7.5m-7.5 3h4.5" />
                                         </svg>
                                         Bài viết
-                                    </a>
+                                        <!-- Chevron icon -->
+                                        <svg class="ml-auto w-4 h-4 text-gray-400 transition-transform submenu-chevron" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                    <ul class="pl-8 mt-1 space-y-1 hidden submenu-list">
+                                        <li>
+                                            <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 {{ request()->is('posts*') ? 'bg-gray-100 font-semibold' : '' }}"
+                                                href="/posts">
+                                                <!-- icon -->
+                                                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                        d="M4 6h16M4 12h16M4 18h16" />
+                                                </svg>
+                                                Danh sách bài viết
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 {{ request()->is('post-types*') ? 'bg-gray-100 font-semibold' : '' }}"
+                                                href="/post-types">
+                                                <!-- icon -->
+                                                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="6" stroke-width="1.5" />
+                                                </svg>
+                                                Loại
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 {{ request()->is('tags*') ? 'bg-gray-100 font-semibold' : '' }}"
+                                                href="/tags">
+                                                <!-- icon -->
+                                                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <rect x="6" y="6" width="12" height="12" rx="2" stroke-width="1.5" />
+                                                </svg>
+                                                Thẻ
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
+                                <script>
+                                    function toggleSubMenu(btn) {
+                                        const submenu = btn.nextElementSibling;
+                                        const chevron = btn.querySelector('.submenu-chevron');
+                                        if (submenu.classList.contains('hidden')) {
+                                            submenu.classList.remove('hidden');
+                                            chevron.classList.add('rotate-90');
+                                        } else {
+                                            submenu.classList.add('hidden');
+                                            chevron.classList.remove('rotate-90');
+                                        }
+                                    }
+                                    // Auto open if current route matches
+                                    document.addEventListener('DOMContentLoaded', function () {
+                                        const btn = document.querySelector('button[onclick^="toggleSubMenu"]');
+                                        if (
+                                            window.location.pathname.startsWith('/posts') ||
+                                            window.location.pathname.startsWith('/post-types') ||
+                                            window.location.pathname.startsWith('/tags')
+                                        ) {
+                                            if (btn) toggleSubMenu(btn);
+                                        }
+                                    });
+                                </script>
                                 <li>
                                     <a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 @if (request()->is('geo*')) bg-gray-100 font-semibold @endif"
-                                       href="{{ url('/geo') }}">
-                                        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        href="{{ url('/geo') }}">
+                                        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                  d="M12 21c4.97-4.97 8-8.06 8-11.5A8 8 0 1 0 4 9.5C4 12.94 7.03 16.03 12 21z" />
+                                                d="M12 21c4.97-4.97 8-8.06 8-11.5A8 8 0 1 0 4 9.5C4 12.94 7.03 16.03 12 21z" />
                                             <circle cx="12" cy="9.5" r="2.5" />
                                         </svg>
                                         Địa lý VN
@@ -166,7 +236,8 @@
                             </ul>
                         </div>
                         <div>
-                            <p class="px-3 text-gray-400 uppercase tracking-wider font-semi mb-2">Profile & Settings</p>
+                            <p class="px-3 text-gray-400 uppercase tracking-wider font-semi mb-2">Profile & Settings
+                            </p>
                             <ul class="space-y-2">
                                 <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100"
                                         href="#">Charts</a></li>
@@ -187,7 +258,8 @@
                     <div class="flex items-center justify-between gap-4 p-6 border-b flex-wrap">
                         <div class="flex items-center justify-between gap-4">
                             <!-- nút mở sidebar - chỉ hiện trên mobile -->
-                            <button id="openSidebar" class="md:hidden mr-2 p-2 rounded-xl bg-gray-100 hover:bg-gray-200">
+                            <button id="openSidebar"
+                                class="md:hidden mr-2 p-2 rounded-xl bg-gray-100 hover:bg-gray-200">
                                 <!-- icon hamburger -->
                                 <svg class="w-6 h-6 text-slate-700" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor">
@@ -216,7 +288,7 @@
                         </div>
                     </div>
 
-                    <div class="p-3 md:p-6">
+                    <div class="min-h-[87vh] p-3 md:p-6">
                         @yield('content')
                     </div>
                 </main>
