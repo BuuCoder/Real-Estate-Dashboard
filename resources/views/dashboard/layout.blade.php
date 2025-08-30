@@ -68,7 +68,8 @@
                 <aside id="sidebar"
                     class="fixed inset-y-0 left-0 z-50 w-80 rounded-none md:rounded-3xl bg-white shadow-panel p-6
                             transform -translate-x-full transition-transform duration-300
-                            md:static md:translate-x-0 md:w-auto md:col-span-4 lg:col-span-3">
+                            md:translate-x-0 md:w-auto md:col-span-4 lg:col-span-3 md:sticky md:top-5 md:self-start"
+                    style="max-height: 100vh; overflow-y: auto;">
 
                     <!-- header nhỏ chỉ hiện trên mobile -->
                     <div class="flex items-center justify-between md:hidden mb-4">
