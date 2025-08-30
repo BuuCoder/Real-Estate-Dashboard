@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="flex justify-center py-2">
-        <form action="{{ route('posts.store') }}" method="POST" class="space-y-6 w-full bg-white rounded-3xl shadow-panel p-8"
+        <form action="{{ route('posts.store') }}" method="POST" class="space-y-6 w-full bg-white rounded-3xl shadow-panel p-4 md:p-8"
             enctype="multipart/form-data">
             @csrf
             <h2 class="text-xl md:text-2xl font-extrabold mb-2">Tạo bài viết mới</h2>

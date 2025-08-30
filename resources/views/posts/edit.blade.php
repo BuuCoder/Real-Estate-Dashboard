@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="flex justify-center py-2">
-    <form action="{{ route('posts.update', $post) }}" method="POST" class="space-y-6 w-full bg-white rounded-3xl shadow-panel p-8" enctype="multipart/form-data">
+    <form action="{{ route('posts.update', $post) }}" method="POST" class="space-y-6 w-full bg-white rounded-3xl shadow-panel p-4 md:p-8" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <h2 class="text-xl md:text-2xl font-extrabold mb-2">Chỉnh sửa bài viết</h2>
