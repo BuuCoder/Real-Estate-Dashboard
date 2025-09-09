@@ -10,4 +10,9 @@ Route::prefix('v1')->group(function () {
         Route::get('/', [App\Http\Controllers\Api\ListingController::class, 'index']);
         Route::get('/{id}', [App\Http\Controllers\Api\ListingController::class, 'show']);
     });
+
+    Route::prefix('posts')->group(function () {
+        Route::get('/', [App\Http\Controllers\Api\PostController::class, 'index']);
+        Route::get('/{slug}', [App\Http\Controllers\Api\PostController::class, 'show']);
+    });
 });
