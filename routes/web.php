@@ -9,7 +9,9 @@ use App\Http\Controllers\PostController;
 
 Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
-
+Route::get('/template', function () {
+    return view('template.index');
+});
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/dashboard', function () {
