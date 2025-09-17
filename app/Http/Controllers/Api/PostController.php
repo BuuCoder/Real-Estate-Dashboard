@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\PostType;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -13,10 +15,26 @@ class PostController extends Controller
     public function index(Request $request)
     {
         try {
-            $query = Post::with(['author', 'tags', 'postTypes']);
+            $query = Post::query()->published()->with(['author', 'tags', 'postTypes']);
             if ($search = $request->input('search')) {
                 $query->where('title', 'like', "%$search%");
             }
+
+            $types = $request->input('types');
+            $tags = $request->input('tags');
+
+            if ($types && is_array($types)) {
+                $query->whereHas('postTypes', function ($q) use ($types) {
+                    $q->whereIn('id', $types);
+                });
+            }
+
+            if ($tags && is_array($tags)) {
+                $query->whereHas('tags', function ($q) use ($tags) {
+                    $q->whereIn('id', $tags);
+                });
+            }
+            
             $posts = $query->paginate(10);
             return response()->json([
                 'success' => true,
@@ -35,7 +53,7 @@ class PostController extends Controller
     public function show($slug)
     {
         try {
-            $post = Post::with(['author', 'tags', 'postTypes'])->where('slug', $slug)->first();
+            $post = Post::query()->published()->with(['author', 'tags', 'postTypes'])->where('slug', $slug)->first();
             if (!$post) {
                 return response()->json([
                     'success' => false,
@@ -53,5 +71,14 @@ class PostController extends Controller
                 'message' => 'Error fetching post detail.'
             ], 500);
         }
+    }
+
+    public function meta(){
+        $tags = Tag::all();
+        $postTypes = PostType::all();
+        return response()->json([
+            'tags' => $tags,
+            'post_types' => $postTypes
+        ]);
     }
 }

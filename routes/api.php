@@ -7,6 +7,7 @@ Route::prefix('v1')->group(function () {
     });
 
     Route::get('/meta_listing', [App\Http\Controllers\Api\ListingController::class, 'meta']);
+    Route::get('/meta_post', [App\Http\Controllers\Api\PostController::class, 'meta']);
 
     Route::prefix('listings')->group(function () {
         Route::get('/', [App\Http\Controllers\Api\ListingController::class, 'index']);

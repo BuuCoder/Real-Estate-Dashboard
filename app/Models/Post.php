@@ -10,7 +10,6 @@ class Post extends Model
 {
     protected $table = 'posts';
 
-    // Cho phép fill nhanh
     protected $fillable = [
         'author_id',
         'status',
@@ -40,7 +39,6 @@ class Post extends Model
         'breadcrumbs',
     ];
 
-    // Ép kiểu
     protected $casts = [
         'reading_minutes' => 'integer',
         'published_at'    => 'datetime',
@@ -53,7 +51,6 @@ class Post extends Model
         'breadcrumbs'     => 'array',
     ];
 
-    // Quan hệ
     public function author()
     {
         return $this->belongsTo(User::class, 'author_id');
@@ -69,7 +66,6 @@ class Post extends Model
         return $this->belongsToMany(PostType::class, 'post_post_types');
     }
 
-    // Helper: auto tạo slug nếu trống
     public static function booted(): void
     {
         static::saving(function (Post $post) {
@@ -79,7 +75,6 @@ class Post extends Model
         });
     }
 
-    // Scopes tiện dụng
     public function scopePublished(Builder $q): Builder
     {
         return $q->where('status', 'published');
