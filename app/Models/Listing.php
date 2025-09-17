@@ -9,7 +9,7 @@ class Listing extends Model
     protected $table = 'listings';
 
     protected $fillable = [
-        'user_id','property_type_id','land_use_type_id','legal_status_id',
+        'user_id','slug','property_type_id','land_use_type_id','legal_status_id',
         'province_id','district_id','ward_id','street','address','lat','lng',
         'title','description','area_land','area_built','width','length',
         'road_width','frontage','bedrooms','bathrooms','floors','direction',
@@ -26,4 +26,13 @@ class Listing extends Model
 
     public function images(){ return $this->hasMany(Image::class,'listing_id'); }
     public function amenities(){ return $this->belongsToMany(Amenity::class,'listing_amenities','listing_id','amenity_id'); }
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'province_id');
+    }
+
+    public function ward()
+    {
+        return $this->belongsTo(Ward::class, 'ward_id');
+    }
 }

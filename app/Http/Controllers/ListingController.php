@@ -12,40 +12,40 @@ use Illuminate\Support\Facades\Validator;
 class ListingController extends Controller
 {
     protected $propertyTypes = [
-        1 => ['code' => 'house', 'name' => 'Nhà phố'],
-        2 => ['code' => 'apartment', 'name' => 'Căn hộ chung cư'],
-        3 => ['code' => 'land', 'name' => 'Đất nền'],
-        4 => ['code' => 'villa', 'name' => 'Biệt thự'],
-        5 => ['code' => 'shophouse', 'name' => 'Shophouse'],
-        6 => ['code' => 'office', 'name' => 'Văn phòng'],
-        7 => ['code' => 'townhouse', 'name' => 'Nhà liền kề'],
-        8 => ['code' => 'warehouse', 'name' => 'Kho xưởng'],
-        9 => ['code' => 'farm', 'name' => 'Trang trại/Nhà vườn'],
+        1 => ['id' => 1, 'code' => 'house', 'name' => 'Nhà phố'],
+        2 => ['id' => 2, 'code' => 'apartment', 'name' => 'Căn hộ chung cư'],
+        3 => ['id' => 3, 'code' => 'land', 'name' => 'Đất nền'],
+        4 => ['id' => 4, 'code' => 'villa', 'name' => 'Biệt thự'],
+        5 => ['id' => 5, 'code' => 'shophouse', 'name' => 'Shophouse'],
+        6 => ['id' => 6, 'code' => 'office', 'name' => 'Văn phòng'],
+        7 => ['id' => 7, 'code' => 'townhouse', 'name' => 'Nhà liền kề'],
+        8 => ['id' => 8, 'code' => 'warehouse', 'name' => 'Kho xưởng'],
+        9 => ['id' => 9, 'code' => 'farm', 'name' => 'Trang trại/Nhà vườn'],
     ];
 
     protected $landUseTypes = [
-        1 => ['code' => 'ODT', 'name' => 'Đất ở đô thị', 'descr' => 'Đất thổ cư trong khu vực đô thị'],
-        2 => ['code' => 'ONT', 'name' => 'Đất ở nông thôn', 'descr' => 'Đất thổ cư tại khu vực nông thôn'],
-        3 => ['code' => 'CLN', 'name' => 'Đất trồng cây lâu năm', 'descr' => 'Đất dùng cho trồng cây công nghiệp, cây ăn quả lâu năm'],
-        4 => ['code' => 'CHN', 'name' => 'Đất trồng cây hàng năm', 'descr' => 'Đất trồng lúa, hoa màu, rau…'],
-        5 => ['code' => 'NNP', 'name' => 'Đất nông nghiệp khác', 'descr' => 'Đất sử dụng vào mục đích nông nghiệp khác'],
-        6 => ['code' => 'RSX', 'name' => 'Đất rừng sản xuất', 'descr' => 'Đất để phát triển rừng sản xuất'],
-        7 => ['code' => 'RPH', 'name' => 'Đất rừng phòng hộ', 'descr' => 'Đất rừng nhằm mục đích phòng hộ'],
-        8 => ['code' => 'RDD', 'name' => 'Đất rừng đặc dụng', 'descr' => 'Đất rừng bảo tồn, nghiên cứu, du lịch sinh thái'],
-        9 => ['code' => 'TMD', 'name' => 'Đất thương mại dịch vụ', 'descr' => 'Đất sử dụng vào mục đích kinh doanh, thương mại, dịch vụ'],
-        10 => ['code' => 'SKC', 'name' => 'Đất sản xuất kinh doanh phi nông nghiệp', 'descr' => 'Nhà xưởng, cơ sở sản xuất ngoài nông nghiệp'],
-        11 => ['code' => 'DTS', 'name' => 'Đất tôn giáo tín ngưỡng', 'descr' => 'Đất cơ sở tôn giáo, tín ngưỡng'],
-        12 => ['code' => 'DGD', 'name' => 'Đất giáo dục', 'descr' => 'Đất trường học, cơ sở giáo dục'],
-        13 => ['code' => 'DYT', 'name' => 'Đất y tế', 'descr' => 'Đất bệnh viện, cơ sở y tế'],
-        14 => ['code' => 'CQP', 'name' => 'Đất quốc phòng', 'descr' => 'Đất sử dụng cho mục đích quốc phòng, an ninh'],
+        1 => ['id' => 1, 'code' => 'ODT', 'name' => 'Đất ở đô thị', 'descr' => 'Đất thổ cư trong khu vực đô thị'],
+        2 => ['id' => 2, 'code' => 'ONT', 'name' => 'Đất ở nông thôn', 'descr' => 'Đất thổ cư tại khu vực nông thôn'],
+        3 => ['id' => 3, 'code' => 'CLN', 'name' => 'Đất trồng cây lâu năm', 'descr' => 'Đất dùng cho trồng cây công nghiệp, cây ăn quả lâu năm'],
+        4 => ['id' => 4, 'code' => 'CHN', 'name' => 'Đất trồng cây hàng năm', 'descr' => 'Đất trồng lúa, hoa màu, rau…'],
+        5 => ['id' => 5, 'code' => 'NNP', 'name' => 'Đất nông nghiệp khác', 'descr' => 'Đất sử dụng vào mục đích nông nghiệp khác'],
+        6 => ['id' => 6, 'code' => 'RSX', 'name' => 'Đất rừng sản xuất', 'descr' => 'Đất để phát triển rừng sản xuất'],
+        7 => ['id' => 7, 'code' => 'RPH', 'name' => 'Đất rừng phòng hộ', 'descr' => 'Đất rừng nhằm mục đích phòng hộ'],
+        8 => ['id' => 8, 'code' => 'RDD', 'name' => 'Đất rừng đặc dụng', 'descr' => 'Đất rừng bảo tồn, nghiên cứu, du lịch sinh thái'],
+        9 => ['id' => 9, 'code' => 'TMD', 'name' => 'Đất thương mại dịch vụ', 'descr' => 'Đất sử dụng vào mục đích kinh doanh, thương mại, dịch vụ'],
+        10 => ['id' => 10, 'code' => 'SKC', 'name' => 'Đất sản xuất kinh doanh phi nông nghiệp', 'descr' => 'Nhà xưởng, cơ sở sản xuất ngoài nông nghiệp'],
+        11 => ['id' => 11, 'code' => 'DTS', 'name' => 'Đất tôn giáo tín ngưỡng', 'descr' => 'Đất cơ sở tôn giáo, tín ngưỡng'],
+        12 => ['id' => 12, 'code' => 'DGD', 'name' => 'Đất giáo dục', 'descr' => 'Đất trường học, cơ sở giáo dục'],
+        13 => ['id' => 13, 'code' => 'DYT', 'name' => 'Đất y tế', 'descr' => 'Đất bệnh viện, cơ sở y tế'],
+        14 => ['id' => 14, 'code' => 'CQP', 'name' => 'Đất quốc phòng', 'descr' => 'Đất sử dụng cho mục đích quốc phòng, an ninh'],
     ];
 
     protected $legalStatuses = [
-        1 => ['code' => 'sodo', 'name' => 'Sổ đỏ'],
-        2 => ['code' => 'sohong', 'name' => 'Sổ hồng'],
-        3 => ['code' => 'hdmb', 'name' => 'Hợp đồng mua bán'],
-        4 => ['code' => 'giayphepxd', 'name' => 'Giấy phép xây dựng'],
-        5 => ['code' => 'dangcapnhat', 'name' => 'Đang cập nhật'],
+        1 => ['id' => 1, 'code' => 'sodo', 'name' => 'Sổ đỏ'],
+        2 => ['id' => 2, 'code' => 'sohong', 'name' => 'Sổ hồng'],
+        3 => ['id' => 3, 'code' => 'hdmb', 'name' => 'Hợp đồng mua bán'],
+        4 => ['id' => 4, 'code' => 'giayphepxd', 'name' => 'Giấy phép xây dựng'],
+        5 => ['id' => 5, 'code' => 'dangcapnhat', 'name' => 'Đang cập nhật'],
     ];
 
     public function index(Request $request)
@@ -124,6 +124,8 @@ class ListingController extends Controller
             'images.*.url' => 'required_with:images|string|max:255',
             'images.*.is_cover' => 'nullable|boolean',
             'images.*.sort_order' => 'nullable|integer',
+            'slug' => 'required|string|max:255|unique:listings,slug',
+            'title' => 'required|string|max:255',
         ]);
 
         if (empty($data['published_at'])) {
@@ -202,6 +204,8 @@ class ListingController extends Controller
             'images.*.url' => 'required_with:images|string|max:255',
             'images.*.is_cover' => 'nullable|boolean',
             'images.*.sort_order' => 'nullable|integer',
+            'slug' => 'required|string|max:255|unique:listings,slug,' . $listing->id,
+            'title' => 'required|string|max:255',
         ]);
         if ($validator->fails()) {
             dd($validator->errors());

@@ -8,6 +8,45 @@
     <form action="{{ route('listings.store') }}" method="POST" class=" md:bg-white rounded-3xl md:shadow-panel px-2 md:px-8 py-2 pb-8 space-y-5">
         @csrf
         <div>
+            <label class="block text-sm font-medium mb-1">Tiêu đề</label>
+            <input name="title" id="title-input" value="{{ old('title') }}"
+                class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400"
+                required>
+            @error('title')
+                <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+            @enderror
+        </div>
+        <div>
+            <label class="block text-sm font-medium mb-1">Slug</label>
+            <div class="flex gap-2">
+                <input name="slug" id="slug-input" value="{{ old('slug') }}"
+                    class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400"
+                    required>
+                <button type="button"
+                    class="rounded-xl min-w-[100px] bg-brand-600 text-white px-3 py-1 font-semibold hover:bg-brand-700 transition text-xs"
+                    onclick="generateSlugFromTitle()">Tạo slug</button>
+            </div>
+            @error('slug')
+                <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+            @enderror
+        </div>
+        <script>
+            function slugify(str) {
+                return str
+                    .toString()
+                    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove accents
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^a-z0-9\s-]/g, '') // Remove invalid chars
+                    .replace(/\s+/g, '-') // Replace spaces with -
+                    .replace(/-+/g, '-'); // Collapse dashes
+            }
+            function generateSlugFromTitle() {
+                const title = document.getElementById('title-input').value;
+                document.getElementById('slug-input').value = slugify(title);
+            }
+        </script>
+        <div>
             <label class="block text-sm font-medium mb-1">Loại BĐS (Property Type)</label>
             <select name="property_type_id"
                 class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400"
@@ -138,15 +177,6 @@
                     <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                 @enderror
             </div>
-        </div>
-        <div>
-            <label class="block text-sm font-medium mb-1">Tiêu đề</label>
-            <input name="title" value="{{ old('title') }}"
-                class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400"
-                required>
-            @error('title')
-                <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
-            @enderror
         </div>
         <div>
             <label class="block text-sm font-medium mb-1">Mô tả</label>

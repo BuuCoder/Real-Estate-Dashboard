@@ -9,6 +9,24 @@
             class="md:bg-white rounded-3xl md:shadow-panel px-2 md:px-8 py-2 pb-8 space-y-5">
             @csrf @method('PUT')
             <div>
+                <label class="block text-sm font-medium mb-1">Tiêu đề</label>
+                <input name="title" value="{{ old('title', $listing->title) }}"
+                    class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400"
+                    required>
+                @error('title')
+                    <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+                @enderror
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-1">Slug</label>
+                <input name="slug" disabled style="cursor: not-allowed;" value="{{ old('slug', $listing->slug) }}"
+                    class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400"
+                    required>
+                @error('slug')
+                    <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+                @enderror
+            </div>
+            <div>
                 <label class="block text-sm font-medium mb-1">Loại BĐS (Property Type)</label>
                 <select name="property_type_id"
                     class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400"
@@ -141,15 +159,6 @@
                         <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                     @enderror
                 </div>
-            </div>
-            <div>
-                <label class="block text-sm font-medium mb-1">Tiêu đề</label>
-                <input name="title" value="{{ old('title', $listing->title) }}"
-                    class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400"
-                    required>
-                @error('title')
-                    <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
-                @enderror
             </div>
             <div>
                 <label class="block text-sm font-medium mb-1">Mô tả</label>

@@ -11,6 +11,8 @@ class CreateListingsSchema extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('slug')->unique();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedSmallInteger('property_type_id')->nullable();
             $table->unsignedSmallInteger('land_use_type_id')->nullable();
