@@ -183,8 +183,7 @@ class ListingController extends Controller
     public function meta()
     {
         $cacheKey = 'meta_listing_data_v1';
-        // $cacheTtl = 60 * 60 * 24; // 24 hours
-        $cacheTtl = 0; // 24 hours
+        $cacheTtl = 60 * 60 * 24; // 24 hours
 
         $data = cache()->remember($cacheKey, $cacheTtl, function () {
             $amenities = Amenity::all();
