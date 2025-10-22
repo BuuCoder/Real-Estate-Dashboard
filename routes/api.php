@@ -18,4 +18,6 @@ Route::prefix('v1')->group(function () {
         Route::get('/', [App\Http\Controllers\Api\PostController::class, 'index']);
         Route::get('/{slug}', [App\Http\Controllers\Api\PostController::class, 'show']);
     });
+
+    Route::post('/contact-us', [App\Http\Controllers\Api\ContactController::class, 'store']);
 });
