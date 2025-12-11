@@ -51,10 +51,12 @@ class ListingController extends Controller
     {
         if ($price >= 1000000000) {
             $ty = floor($price / 1000000000);
-            $tramTrieu = floor(($price % 1000000000) / 1000000) / 100;
+            $remainder = $price % 1000000000;
+            $tramTrieu = floor($remainder / 1000000);
+            
             $result = $ty . ' tỷ';
             if ($tramTrieu > 0) {
-                $result .= ' ' . number_format($tramTrieu, 1) . ' triệu';
+                $result .= ' ' . $tramTrieu . ' triệu';
             }
             return trim($result);
         } elseif ($price >= 1000000) {

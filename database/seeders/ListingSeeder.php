@@ -35,19 +35,26 @@ class ListingSeeder extends Seeder
 
         // Create or update the Sunshine City listing
         $listing = Listing::updateOrCreate(
-            ['slug' => Str::slug('Quy chuyển nhượng Ciputra tháng 12 2025 3PN giá 9tỷ')],
+            ['slug' => Str::slug('Quỹ chuyển nhượng Ciputra tháng 12 2025 3PN giá 9tỷ')],
             [
-            'title' => 'Quy chuyển nhượng Ciputra tháng 12/2025 - 3PN giá 9tỷ',
-            'slug' => Str::slug('Quy chuyển nhượng Ciputra tháng 12 2025 3PN giá 9tỷ'),
+            'title' => 'Quỹ chuyển nhượng Ciputra tháng 12/2025 - 3PN giá 9tỷ',
+            'slug' => Str::slug('Quỹ chuyển nhượng Ciputra tháng 12 2025 3PN giá 9tỷ'),
             'user_id' => 1, // Assuming user with ID 1 exists
-            'property_type_id' => 1, // Apartment/Chung cư
-            'province_id' => 1, // Hà Nội
-            'district_id' => 1, // Bắc Từ Liêm
-            'ward_id' => 1, // Đông Ngạc
+            'property_type_id' => 2, // Apartment/Chung cư
+            'land_use_type_id' => 1, // Đất ở đô thị
+            'legal_status_id' => 2, // Sổ hồng
+            'province_id' => null, // Will be handled separately
+            'district_id' => null, // Will be handled separately  
+            'ward_id' => null, // Will be handled separately
             'street' => 'Sunshine City',
             'address' => 'Sunshine City, Phường Đông Ngạc, Quận Bắc Từ Liêm, Hà Nội',
             'lat' => 21.0633,
             'lng' => 105.7622,
+            'area_land' => 98.00, // Same as built area for apartments
+            'width' => 8.5, // Typical apartment width
+            'length' => 11.5, // Calculated from area
+            'road_width' => 12.0, // Main road width
+            'frontage' => false, // Not applicable for apartments
             'description' => '<div class="space-y-6">
     <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg border-l-4 border-blue-500">
         <p class="text-gray-800 font-medium leading-relaxed">
@@ -217,14 +224,21 @@ class ListingSeeder extends Seeder
                 'title' => 'Mua nhà đón tết an vui - Cập nhật danh sách bán mới nhất giá ưu đãi',
                 'slug' => Str::slug('Mua nhà đón tết an vui cập nhật danh sách bán mới nhất giá ưu đãi'),
                 'user_id' => 1,
-                'property_type_id' => 1, // Apartment/Chung cư
-                'province_id' => 1, // Hà Nội
+                'property_type_id' => 2, // Apartment/Chung cư
+                'land_use_type_id' => 1, // Đất ở đô thị
+                'legal_status_id' => 2, // Sổ hồng
+                'province_id' => '01', // Hà Nội (using code)
                 'district_id' => 1, // Bắc Từ Liêm
-                'ward_id' => 1, // Đông Ngạc
+                'ward_id' => '00602', // Đông Ngạc (using code)
                 'street' => 'Sunshine City',
                 'address' => 'Sunshine City, Phường Đông Ngạc, Quận Bắc Từ Liêm, Hà Nội',
                 'lat' => 21.0635,
                 'lng' => 105.7625,
+                'area_land' => 105.00, // Same as built area for apartments
+                'width' => 9.0, // Typical apartment width
+                'length' => 11.7, // Calculated from area
+                'road_width' => 12.0, // Main road width
+                'frontage' => false, // Not applicable for apartments
                 'description' => '<div class="space-y-6">
     <div class="bg-gradient-to-r from-red-50 to-pink-50 p-4 rounded-lg border-l-4 border-red-500">
         <div class="flex items-center mb-2">

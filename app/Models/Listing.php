@@ -70,11 +70,11 @@ class Listing extends Model
     }
     public function province()
     {
-        return $this->belongsTo(Province::class, 'province_id');
+        return $this->belongsTo(Province::class, 'province_id', 'code');
     }
 
     public function ward()
     {
-        return $this->belongsTo(Ward::class, 'ward_id');
+        return $this->belongsTo(Ward::class, 'ward_id', 'code');
     }
 }
