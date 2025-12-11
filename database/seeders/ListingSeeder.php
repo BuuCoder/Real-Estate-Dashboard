@@ -227,9 +227,9 @@ class ListingSeeder extends Seeder
                 'property_type_id' => 2, // Apartment/Chung cư
                 'land_use_type_id' => 1, // Đất ở đô thị
                 'legal_status_id' => 2, // Sổ hồng
-                'province_id' => '01', // Hà Nội (using code)
-                'district_id' => 1, // Bắc Từ Liêm
-                'ward_id' => '00602', // Đông Ngạc (using code)
+                'province_id' => null, // Will be handled separately
+                'district_id' => null, // Will be handled separately
+                'ward_id' => null, // Will be handled separately
                 'street' => 'Sunshine City',
                 'address' => 'Sunshine City, Phường Đông Ngạc, Quận Bắc Từ Liêm, Hà Nội',
                 'lat' => 21.0635,
