@@ -32,53 +32,35 @@ class ListingSeeder extends Seeder
                 $amenityData
             );
         }
-
-        // Create or update the third listing - Đất nghỉ dưỡng Hồ Sông Ray
-        $listing3 = Listing::updateOrCreate(
-            ['slug' => Str::slug('Ban 6916m2 view Ho Song Ray khu nghi duong tai Xa Lam San Cam My Dong Nai')],
+        // Create or update the fourth listing - Nhà mặt tiền Nguyễn Trãi Long Khánh
+        $listing4 = Listing::updateOrCreate(
+            ['slug' => Str::slug('Ban nha mat tien 20m Nguyen Trai dien tich 1993m2 681m2 tho cu dac dia trung tam Long Khanh')],
             [
-                'title' => 'Bán 6.916m2 view Hồ Sông Ray, khu nghỉ dưỡng tại Xã Lâm San, Cẩm Mỹ, Đồng Nai',
-                'slug' => Str::slug('Ban 6916m2 view Ho Song Ray khu nghi duong tai Xa Lam San Cam My Dong Nai'),
+                'title' => 'Bán nhà mặt tiền 20m Nguyễn Trãi, diện tích 1993,2m2, 681.9m2 thổ cư đắc địa trung tâm Long Khánh',
+                'slug' => Str::slug('Ban nha mat tien 20m Nguyen Trai dien tich 1993m2 681m2 tho cu dac dia trung tam Long Khanh'),
                 'user_id' => 1,
-                'property_type_id' => 1, // Đất nền
-                'land_use_type_id' => 2, // CLN - Đất canh tác lâu năm
+                'property_type_id' => 3, // Nhà mặt tiền
+                'land_use_type_id' => 1, // Đất ở (thổ cư)
                 'legal_status_id' => 1, // Sổ đỏ
                 'province_id' => null,
                 'district_id' => null,
                 'ward_id' => null,
-                'street' => 'Hồ Sông Ray',
-                'address' => 'Xã Lâm San, Cẩm Mỹ, Đồng Nai',
-                'lat' => 10.8833,
-                'lng' => 107.2500,
-                'area_land' => 6916.00,
-                'width' => 58.0, // Mặt tiền
-                'length' => 119.24, // Tính từ diện tích
-                'road_width' => 3.5, // Đường vào
-                'frontage' => true, // Mặt tiền rộng
-                'description' => '<div class="px-6 py-4">
-    <h2 class="text-2xl font-semibold mb-4">Bán 6.916m² view Hồ Sông Ray - Khu nghỉ dưỡng tại Xã Lâm San, Cẩm Mỹ, Đồng Nai</h2>
-    
-    <p class="text-lg mb-4">Nhanh tay sở hữu farm, khu nghỉ dưỡng tuyệt vời này tại Xã Lâm San, Cẩm Mỹ, Đồng Nai.</p>
-    
-    <ul class="list-none pl-0 space-y-2">
-        <li class="text-lg">- Diện tích rộng lớn 6916m² CLN, thích hợp cho các hoạt động nghỉ dưỡng và đầu tư.</li>
-        <li class="text-lg">- Giá bán hấp dẫn chỉ 9,7 tỷ VND.</li>
-        <li class="text-lg">- Mặt tiền rộng 58m, thuận lợi cho việc kinh doanh hoặc phát triển dự án.</li>
-        <li class="text-lg">- Tiếp giáp Hồ Sông Ray 82m.</li>
-        <li class="text-lg">- Ngõ vào rộng 3,5m, dễ dàng cho xe ô tô ra vào.</li>
-        <li class="text-lg">- Pháp lý đầy đủ, đảm bảo an toàn cho giao dịch.</li>
-        <li class="text-lg">- Phong thủy tốt, mang lại tài lộc cho chủ sở hữu.</li>
-        <li class="text-lg">- Đất đang để trống, đất thịt màu mỡ.</li>
-    </ul>
-
-    <p class="text-lg mt-6">Liên hệ ngay để biết thêm thông tin chi tiết qua số điện thoại <strong>097 432 6036</strong> và gặp <strong>Nguyễn Tấn Phát</strong>.</p>
-</div>',
-                'area_built' => null,
+                'street' => 'Đường Nguyễn Trãi',
+                'address' => 'Đường Nguyễn Trãi, Phường Xuân Hòa, Long Khánh, Đồng Nai',
+                'lat' => 10.919444, // 10°55'10.0"N
+                'lng' => 107.249278, // 107°14'57.4"E
+                'area_land' => 1993.20,
+                'width' => 20.0, // Mặt tiền 20m
+                'length' => 99.66, // Tính từ diện tích
+                'road_width' => 20.0, // Đường Nguyễn Trãi
+                'frontage' => true, // Mặt tiền
+                'description' => '<div><h2 class="text-base sm:text-lg md:text-xl font-semibold mb-4">Bán nhà mặt tiền 20m Nguyễn Trãi - Đắc địa trung tâm Long Khánh</h2><ul class="list-none pl-0 space-y-2"><li class="text-sm sm:text-base md:text-lg">- Diện tích tổng: 1.993,2m²</li><li class="text-sm sm:text-base md:text-lg">- Diện tích thổ cư: 681,9m²</li><li class="text-sm sm:text-base md:text-lg">- Mặt tiền rộng 20m đường Nguyễn Trãi</li><li class="text-sm sm:text-base md:text-lg">- Vị trí đắc địa trung tâm Long Khánh, Đồng Nai</li><li class="text-sm sm:text-base md:text-lg">- Pháp lý: Sổ đỏ/Sổ hồng đầy đủ</li><li class="text-sm sm:text-base md:text-lg">- Giá: 65 tỷ (~32,61 triệu/m²)</li></ul><p class="text-sm sm:text-base md:text-lg mt-6">Vị trí: 10°55\'10.0"N 107°14\'57.4"E</p></div>',
+                'area_built' => 681.90, // Thổ cư
                 'bedrooms' => null,
                 'bathrooms' => null,
                 'floors' => null,
                 'direction' => null,
-                'price_total' => 9700000000.00, // 9,7 tỷ VND
+                'price_total' => 65000000000.00, // 65 tỷ VND
                 'currency' => 'VND',
                 'status' => 'published',
                 'published_at' => now(),
@@ -86,30 +68,32 @@ class ListingSeeder extends Seeder
             ]
         );
 
-        // Add images for the third listing
-        $listing3->images()->delete();
+        // Add images for the fourth listing
+        $listing4->images()->delete();
         
-        $imageUrls3 = [
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765451372/20251210110506-524a_wm_smzskr.jpg',
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765451372/20251210110517-9861_wm_cgkhsd.jpg',
+        $imageUrls4 = [
+            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765452213/20250617150549-ccf1_wm_jeapdz.jpg',
+            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765452212/20251210150340-598b_wm_ajneuq.jpg',
+            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765452213/20250729110932-e741_wm_wolkcz.jpg',
+            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765452213/20250729110932-296e_wm_sx925v.jpg',
         ];
 
-        foreach ($imageUrls3 as $index => $url) {
+        foreach ($imageUrls4 as $index => $url) {
             Image::create([
-                'listing_id' => $listing3->id,
+                'listing_id' => $listing4->id,
                 'url' => $url,
                 'is_cover' => $index === 0,
                 'sort_order' => $index + 1,
             ]);
         }
 
-        // Sync amenities to the third listing (land/farm amenities)
-        $landAmenityIds = Amenity::whereIn('code', [
-            'garden',
+        // Sync amenities to the fourth listing
+        $listing4AmenityIds = Amenity::whereIn('code', [
+            'parking',
         ])->pluck('id')->toArray();
 
-        $listing3->amenities()->sync($landAmenityIds);
+        $listing4->amenities()->sync($listing4AmenityIds);
 
-        $this->command->info('All listings created successfully with images and amenities ! Done');
+        $this->command->info('All listings created successfully with images and amenities!');
     }
 }
