@@ -33,250 +33,83 @@ class ListingSeeder extends Seeder
             );
         }
 
-        // Create or update the Sunshine City listing
-        $listing = Listing::updateOrCreate(
-            ['slug' => Str::slug('Quỹ chuyển nhượng Ciputra tháng 12 2025 3PN giá 9tỷ')],
+        // Create or update the third listing - Đất nghỉ dưỡng Hồ Sông Ray
+        $listing3 = Listing::updateOrCreate(
+            ['slug' => Str::slug('Ban 6916m2 view Ho Song Ray khu nghi duong tai Xa Lam San Cam My Dong Nai')],
             [
-            'title' => 'Quỹ chuyển nhượng Ciputra tháng 12/2025 - 3PN giá 9tỷ',
-            'slug' => Str::slug('Quỹ chuyển nhượng Ciputra tháng 12 2025 3PN giá 9tỷ'),
-            'user_id' => 1, // Assuming user with ID 1 exists
-            'property_type_id' => 2, // Apartment/Chung cư
-            'land_use_type_id' => 1, // Đất ở đô thị
-            'legal_status_id' => 2, // Sổ hồng
-            'province_id' => null, // Will be handled separately
-            'district_id' => null, // Will be handled separately  
-            'ward_id' => null, // Will be handled separately
-            'street' => 'Sunshine City',
-            'address' => 'Sunshine City, Phường Đông Ngạc, Quận Bắc Từ Liêm, Hà Nội',
-            'lat' => 21.0633,
-            'lng' => 105.7622,
-            'area_land' => 98.00, // Same as built area for apartments
-            'width' => 8.5, // Typical apartment width
-            'length' => 11.5, // Calculated from area
-            'road_width' => 12.0, // Main road width
-            'frontage' => false, // Not applicable for apartments
-            'description' => '<div class="px-6 py-4">
-    <h2 class="text-2xl font-semibold mb-4">Cập nhật danh sách căn hộ chung cư Sunshine City cần bán hiện nay</h2>
-    <ul class="list-none pl-0 space-y-2">
-        <li class="text-lg">- Đơn vị chuyên chuyển nhượng Sunshine city.</li>
-        <li class="text-lg">- Cam kết giá tốt nhất thị trường.</li>
-        <li class="text-lg">- Nhận tư vấn miễn phí mọi thủ tục về pháp lý, sổ đỏ sang tên.</li>
-        <li class="text-lg">- Hỗ trợ xem nhà 24/7, gọi là xem nhà được luôn.</li>
-        <li class="text-lg">- Cam kết còn hàng, giá chuẩn.</li>
-        <li class="text-lg">- Miễn phí thủ tục sang tên.</li>
-    </ul>
-
-    <h3 class="text-xl font-semibold mt-6 mb-4">Quỹ căn điển hình:</h3>
-    <ul class="list-none pl-0 space-y-4">
-        <li>
-            <strong class="text-lg">Loại căn 1 ngủ:</strong>
-            <ul class="list-none pl-4 space-y-2">
-                <li class="text-lg">- Căn 1PN 58m², toà S3, view nội khu, giá 6.5 tỷ.</li>
-            </ul>
-        </li>
-        <li>
-            <strong class="text-lg">Loại căn 2 ngủ:</strong>
-            <ul class="list-none pl-4 space-y-2">
-                <li class="text-lg">- Căn 73m², toà S3 - S4, view nội khu giá 8.3 tỷ.</li>
-                <li class="text-lg">- Căn 80m², toà S1 - S2, view nội khu giá 8.5 tỷ.</li>
-                <li class="text-lg">- Căn 86m², toà S1 - S2, view sân golf giá 8,7 tỷ.</li>
-            </ul>
-        </li>
-        <li>
-            <strong class="text-lg">Loại căn 3 ngủ:</strong>
-            <ul class="list-none pl-4 space-y-2">
-                <li class="text-lg">- Căn 3PN 89m², toà S3 - S4, view sông Hồng, giá 9 tỷ.</li>
-                <li class="text-lg">- Căn 3PN 99m², toà S1 - S2. View nội khu, giá 9,9 tỷ.</li>
-                <li class="text-lg">- Căn 3PN 104m², toà S3 - S4, view nội khu, giá 10 tỷ.</li>
-                <li class="text-lg">- Căn 3PN 104m², toà S3 - S4, view sông, giá 12 tỷ.</li>
-                <li class="text-lg">- Căn 3PN 116m², toà S3 - S4, view sông, giá 14 tỷ.</li>
-                <li class="text-lg">- Căn 3PN 99m², toà S5 - S6, view sân golf, giá 12 tỷ.</li>
-            </ul>
-        </li>
-        <li>
-            <strong class="text-lg">Loại căn Duplex:</strong>
-            <ul class="list-none pl-4 space-y-2">
-                <li class="text-lg">- Căn duplex 5PN 190m², view sông Hồng, cầu Nhật Tân, giá 20 tỷ.</li>
-                <li class="text-lg">- Căn duplex 4PN 195m², view quảng trường giá 23 tỷ.</li>
-            </ul>
-        </li>
-    </ul>
-
-    <p class="text-lg mt-6">* Dự án hiện tại đã full tiện ích 5*: Vườn treo, bể bơi trong và ngoài trời, siêu thị, phòng tập gym, yoga, vườn dạo bộ trên cao nối từ toà S1 sang đến S6.</p>
-    <p class="text-lg">* Nội thất bàn giao cao cấp: Điều hòa âm trần 2 chiều, tủ bếp trên dưới, bếp từ hút mùi Hafele, sàn gỗ, thiết bị vệ sinh Kohler có bồn tắm và bệt thông minh, cửa chống cháy, hệ thống Smart home.</p>
-</div>
-',
-            'area_built' => 98.00,
-            'bedrooms' => 3,
-            'bathrooms' => 2,
-            'floors' => 1,
-            'direction' => 'Đông Nam',
-            'price_total' => 9000000000.00, // 9 tỷ VND
-            'currency' => 'VND',
-            'status' => 'published',
-            'published_at' => now(),
-            'expired_at' => now()->addMonths(3),
-            ]
-        );
-
-        // Add images (delete existing ones first)
-        $listing->images()->delete();
-        
-        $imageUrls = [
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765444125/20251204101859-8b17_wm_xfbqoq.jpg',
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765444126/20251204101859-a6f0_wm_wi7mco.jpg',
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765444125/20251204101859-7dfc_wm_nrkakj.jpg',
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765444125/20251204101859-537c_wm_d2e5jq.jpg',
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765444124/20251204101859-7577_wm_w5gerq.jpg',
-        ];
-
-        foreach ($imageUrls as $index => $url) {
-            Image::create([
-                'listing_id' => $listing->id,
-                'url' => $url,
-                'is_cover' => $index === 0, // First image as cover
-                'sort_order' => $index + 1,
-            ]);
-        }
-
-        // Sync amenities to the listing
-        $amenityIds = Amenity::whereIn('code', [
-            'elevator',
-            'parking', 
-            'security',
-            'gym',
-            'swimming_pool',
-            'playground',
-            'garden',
-            'balcony',
-            'air_conditioning'
-        ])->pluck('id')->toArray();
-
-        $listing->amenities()->sync($amenityIds);
-
-        // Create or update the second Sunshine City listing - Tet promotion
-        $listing2 = Listing::updateOrCreate(
-            ['slug' => Str::slug('Mua nhà đón tết an vui cập nhật danh sách bán mới nhất giá ưu đãi')],
-            [
-                'title' => 'Mua nhà đón tết an vui - Cập nhật danh sách bán mới nhất giá ưu đãi',
-                'slug' => Str::slug('Mua nhà đón tết an vui cập nhật danh sách bán mới nhất giá ưu đãi'),
+                'title' => 'Bán 6.916m2 view Hồ Sông Ray, khu nghỉ dưỡng tại Xã Lâm San, Cẩm Mỹ, Đồng Nai',
+                'slug' => Str::slug('Ban 6916m2 view Ho Song Ray khu nghi duong tai Xa Lam San Cam My Dong Nai'),
                 'user_id' => 1,
-                'property_type_id' => 2, // Apartment/Chung cư
-                'land_use_type_id' => 1, // Đất ở đô thị
-                'legal_status_id' => 2, // Sổ hồng
-                'province_id' => null, // Will be handled separately
-                'district_id' => null, // Will be handled separately
-                'ward_id' => null, // Will be handled separately
-                'street' => 'Sunshine City',
-                'address' => 'Sunshine City, Phường Đông Ngạc, Quận Bắc Từ Liêm, Hà Nội',
-                'lat' => 21.0635,
-                'lng' => 105.7625,
-                'area_land' => 105.00, // Same as built area for apartments
-                'width' => 9.0, // Typical apartment width
-                'length' => 11.7, // Calculated from area
-                'road_width' => 12.0, // Main road width
-                'frontage' => false, // Not applicable for apartments
+                'property_type_id' => 1, // Đất nền
+                'land_use_type_id' => 2, // CLN - Đất canh tác lâu năm
+                'legal_status_id' => 1, // Sổ đỏ
+                'province_id' => null,
+                'district_id' => null,
+                'ward_id' => null,
+                'street' => 'Hồ Sông Ray',
+                'address' => 'Xã Lâm San, Cẩm Mỹ, Đồng Nai',
+                'lat' => 10.8833,
+                'lng' => 107.2500,
+                'area_land' => 6916.00,
+                'width' => 58.0, // Mặt tiền
+                'length' => 119.24, // Tính từ diện tích
+                'road_width' => 3.5, // Đường vào
+                'frontage' => true, // Mặt tiền rộng
                 'description' => '<div class="px-6 py-4">
-    <h2 class="text-2xl font-semibold mb-4">Cập nhật danh sách căn hộ chung cư Sunshine City cần bán hiện nay</h2>
+    <h2 class="text-2xl font-semibold mb-4">Bán 6.916m² view Hồ Sông Ray - Khu nghỉ dưỡng tại Xã Lâm San, Cẩm Mỹ, Đồng Nai</h2>
+    
+    <p class="text-lg mb-4">Nhanh tay sở hữu farm, khu nghỉ dưỡng tuyệt vời này tại Xã Lâm San, Cẩm Mỹ, Đồng Nai.</p>
+    
     <ul class="list-none pl-0 space-y-2">
-        <li class="text-lg">- Đơn vị chuyên chuyển nhượng Sunshine city.</li>
-        <li class="text-lg">- Cam kết giá tốt nhất thị trường.</li>
-        <li class="text-lg">- Nhận tư vấn miễn phí mọi thủ tục về pháp lý, sổ đỏ sang tên.</li>
-        <li class="text-lg">- Hỗ trợ xem nhà 24/7, gọi là xem nhà được luôn.</li>
-        <li class="text-lg">- Cam kết còn hàng, giá chuẩn.</li>
-        <li class="text-lg">- Miễn phí thủ tục sang tên.</li>
+        <li class="text-lg">- Diện tích rộng lớn 6916m² CLN, thích hợp cho các hoạt động nghỉ dưỡng và đầu tư.</li>
+        <li class="text-lg">- Giá bán hấp dẫn chỉ 9,7 tỷ VND.</li>
+        <li class="text-lg">- Mặt tiền rộng 58m, thuận lợi cho việc kinh doanh hoặc phát triển dự án.</li>
+        <li class="text-lg">- Tiếp giáp Hồ Sông Ray 82m.</li>
+        <li class="text-lg">- Ngõ vào rộng 3,5m, dễ dàng cho xe ô tô ra vào.</li>
+        <li class="text-lg">- Pháp lý đầy đủ, đảm bảo an toàn cho giao dịch.</li>
+        <li class="text-lg">- Phong thủy tốt, mang lại tài lộc cho chủ sở hữu.</li>
+        <li class="text-lg">- Đất đang để trống, đất thịt màu mỡ.</li>
     </ul>
 
-    <h3 class="text-xl font-semibold mt-6 mb-4">Quỹ căn điển hình:</h3>
-    <ul class="list-none pl-0 space-y-4">
-        <li>
-            <strong class="text-lg">Loại căn 1 ngủ:</strong>
-            <ul class="list-none pl-4 space-y-2">
-                <li class="text-lg">- Căn 1PN 58m², toà S3, view nội khu, giá 6.5 tỷ.</li>
-            </ul>
-        </li>
-        <li>
-            <strong class="text-lg">Loại căn 2 ngủ:</strong>
-            <ul class="list-none pl-4 space-y-2">
-                <li class="text-lg">- Căn 73m², toà S3 - S4, view nội khu giá 8.3 tỷ.</li>
-                <li class="text-lg">- Căn 80m², toà S1 - S2, view nội khu giá 8.5 tỷ.</li>
-                <li class="text-lg">- Căn 86m², toà S1 - S2, view sân golf giá 8,7 tỷ.</li>
-            </ul>
-        </li>
-        <li>
-            <strong class="text-lg">Loại căn 3 ngủ:</strong>
-            <ul class="list-none pl-4 space-y-2">
-                <li class="text-lg">- Căn 3PN 89m², toà S3 - S4, view sông Hồng, giá 9 tỷ.</li>
-                <li class="text-lg">- Căn 3PN 99m², toà S1 - S2. View nội khu, giá 9,9 tỷ.</li>
-                <li class="text-lg">- Căn 3PN 104m², toà S3 - S4, view nội khu, giá 10 tỷ.</li>
-                <li class="text-lg">- Căn 3PN 104m², toà S3 - S4, view sông, giá 12 tỷ.</li>
-                <li class="text-lg">- Căn 3PN 116m², toà S3 - S4, view sông, giá 14 tỷ.</li>
-                <li class="text-lg">- Căn 3PN 99m², toà S5 - S6, view sân golf, giá 12 tỷ.</li>
-            </ul>
-        </li>
-        <li>
-            <strong class="text-lg">Loại căn Duplex:</strong>
-            <ul class="list-none pl-4 space-y-2">
-                <li class="text-lg">- Căn duplex 5PN 190m², view sông Hồng, cầu Nhật Tân, giá 20 tỷ.</li>
-                <li class="text-lg">- Căn duplex 4PN 195m², view quảng trường giá 23 tỷ.</li>
-            </ul>
-        </li>
-    </ul>
-
-    <p class="text-lg mt-6">* Dự án hiện tại đã full tiện ích 5*: Vườn treo, bể bơi trong và ngoài trời, siêu thị, phòng tập gym, yoga, vườn dạo bộ trên cao nối từ toà S1 sang đến S6.</p>
-    <p class="text-lg">* Nội thất bàn giao cao cấp: Điều hòa âm trần 2 chiều, tủ bếp trên dưới, bếp từ hút mùi Hafele, sàn gỗ, thiết bị vệ sinh Kohler có bồn tắm và bệt thông minh, cửa chống cháy, hệ thống Smart home.</p>
-</div>
-',
-                'area_built' => 105.00,
-                'bedrooms' => 2,
-                'bathrooms' => 2,
-                'floors' => 1,
-                'direction' => 'Nam',
-                'price_total' => 7800000000.00, // 7.8 tỷ VND (giá ưu đãi)
+    <p class="text-lg mt-6">Liên hệ ngay để biết thêm thông tin chi tiết qua số điện thoại <strong>097 432 6036</strong> và gặp <strong>Nguyễn Tấn Phát</strong>.</p>
+</div>',
+                'area_built' => null,
+                'bedrooms' => null,
+                'bathrooms' => null,
+                'floors' => null,
+                'direction' => null,
+                'price_total' => 9700000000.00, // 9,7 tỷ VND
                 'currency' => 'VND',
                 'status' => 'published',
                 'published_at' => now(),
-                'expired_at' => now()->addMonth(), // Ưu đãi có thời hạn
+                'expired_at' => now()->addMonths(3),
             ]
         );
 
-        // Add images for the second listing
-        $listing2->images()->delete();
+        // Add images for the third listing
+        $listing3->images()->delete();
         
-        $imageUrls2 = [
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765444480/20231222154730-a943_wm_q74kbg.jpg',
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765444480/20231222154839-84b7_wm_zgnhka.jpg',
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765444479/20231222154748-fa66_wm_z2zk9t.jpg',
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765444479/20231222154840-7cc0_wm_jop1jl.jpg',
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765444479/20231222154730-4de2_wm_esgpaa.jpg',
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765444126/20251204101859-a6f0_wm_wi7mco.jpg',
+        $imageUrls3 = [
+            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765451372/20251210110506-524a_wm_smzskr.jpg',
+            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765451372/20251210110517-9861_wm_cgkhsd.jpg',
         ];
 
-        foreach ($imageUrls2 as $index => $url) {
+        foreach ($imageUrls3 as $index => $url) {
             Image::create([
-                'listing_id' => $listing2->id,
+                'listing_id' => $listing3->id,
                 'url' => $url,
                 'is_cover' => $index === 0,
                 'sort_order' => $index + 1,
             ]);
         }
 
-        // Sync amenities to the second listing (premium amenities)
-        $premiumAmenityIds = Amenity::whereIn('code', [
-            'elevator',
-            'parking',
-            'security',
-            'gym',
-            'swimming_pool',
-            'playground',
+        // Sync amenities to the third listing (land/farm amenities)
+        $landAmenityIds = Amenity::whereIn('code', [
             'garden',
-            'shopping_center',
-            'balcony',
-            'air_conditioning'
         ])->pluck('id')->toArray();
 
-        $listing2->amenities()->sync($premiumAmenityIds);
+        $listing3->amenities()->sync($landAmenityIds);
 
-        $this->command->info('Both Sunshine City listings created successfully with images and amenities!');
+        $this->command->info('All listings created successfully with images and amenities!');
     }
 }
