@@ -110,6 +110,6 @@ class ListingSeeder extends Seeder
 
         $listing3->amenities()->sync($landAmenityIds);
 
-        $this->command->info('All listings created successfully with images and amenities!');
+        $this->command->info('All listings created successfully with images and amenities ! Done');
     }
 }
