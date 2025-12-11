@@ -20,4 +20,10 @@ Route::prefix('v1')->group(function () {
     });
 
     Route::post('/contact-us', [App\Http\Controllers\Api\ContactController::class, 'store']);
+
+    Route::prefix('auth')->group(function () {
+        Route::post('/register', [App\Http\Controllers\Api\ClientController::class, 'register']);
+        Route::post('/login', [App\Http\Controllers\Api\ClientController::class, 'login']);
+        Route::post('/login-google', [App\Http\Controllers\Api\ClientController::class, 'loginGoogle']);
+    });
 });
