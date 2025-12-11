@@ -23,7 +23,9 @@ class ContactService
         // Gửi email qua Brevo (gửi cho customer và CC cho admin)
         $emailResult = [];
         if ($contact) {
-            $emailResult = $this->brevoEmailService->sendContactConfirmationEmail($data);
+            // Thêm contact ID vào data để tạo mã liên hệ
+            $dataWithId = array_merge($data, ['contact_id' => $contact->id]);
+            $emailResult = $this->brevoEmailService->sendContactConfirmationEmail($dataWithId);
         }
 
         return [
