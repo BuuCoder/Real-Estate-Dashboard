@@ -410,7 +410,7 @@ HTML;
             'meta_keywords' => 'sân bay Long Thành, Boeing 787-10, Vietnam Airlines, Đồng Nai, bất động sản Long Thành, đầu tư sân bay',
             'og_title' => $title,
             'og_description' => 'Boeing 787-10 Dreamliner - máy bay thân rộng lớn nhất của Vietnam Airlines - hạ cánh thành công tại sân bay quốc tế Long Thành.',
-            'og_image' => 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765443231/may-bay-boeing-787-10-long-thanh_jtc9kw.jpg',
+            'og_image' => 'https://res.cloudinary.com/daxynpb9m/image/upload/v1765814335/a-nh-ma-n-hi-nh-2023-12-16-lu-2248-4709-1765764955_rohv89.webp',
             'twitter_card' => 'summary_large_image',
             'robots_index' => true,
             'robots_follow' => true,
