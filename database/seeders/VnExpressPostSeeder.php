@@ -351,9 +351,20 @@ HTML;
         </ul>
     </div>
 
-    <p class="text-gray-500 text-sm mt-6 pt-4 border-t border-gray-200">
-        <em>Nguồn: VnExpress.net</em>
-    </p>
+    <div class="mt-4 mb-4 p-3 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-lg">
+      <div class="text-sm font-medium text-gray-700 mb-2">Nguồn bài viết:</div>
+      <a href="https://vnexpress.net" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium text-sm transition-colors">
+        <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+        </svg>
+        VnExpress.net
+        <svg class="w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokewidth="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15,3 21,3 21,9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+    </div>
 </article>
 HTML;
 
@@ -393,7 +404,7 @@ HTML;
         ];
 
         $postId = DB::table('posts')->insertGetId([
-            'author_id' => 1,
+            'author_id' => 4,
             'status' => 'published',
             'title' => $title,
             'slug' => $slug,
