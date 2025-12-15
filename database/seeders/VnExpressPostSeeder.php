@@ -11,7 +11,7 @@ class VnExpressPostSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->createMayBayLongThanhPost();
+        $this->createSanBayLongThanhBaChuyenBayPost();
     }
     
     private function createMayBayLongThanhPost(): void
@@ -207,6 +207,234 @@ HTML;
             'og_title' => $title,
             'og_description' => 'Boeing 787-10 Dreamliner - máy bay thân rộng lớn nhất của Vietnam Airlines - hạ cánh thành công tại sân bay quốc tế Long Thành.',
             'og_image' => 'https://res.cloudinary.com/daxynpb9m/image/upload/v1765814335/a-nh-ma-n-hi-nh-2023-12-16-lu-2248-4709-1765764955_rohv89.webp',
+            'twitter_card' => 'summary_large_image',
+            'robots_index' => true,
+            'robots_follow' => true,
+            'robots_advanced' => null,
+            'schema_type' => 'NewsArticle',
+            'schema_json' => json_encode($schemaJson, JSON_UNESCAPED_UNICODE),
+            'hreflangs' => json_encode([
+                ['lang' => 'vi', 'url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug],
+            ], JSON_UNESCAPED_UNICODE),
+            'breadcrumbs' => json_encode($breadcrumbs, JSON_UNESCAPED_UNICODE),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        // Link to post type (news - Tin tức bất động sản)
+        $newsType = DB::table('post_types')->where('code', 'news')->first();
+        if ($newsType) {
+            DB::table('post_post_types')->insert([
+                'post_id' => $postId,
+                'post_type_id' => $newsType->id,
+            ]);
+        }
+
+        // Link to tags
+        $tagCodes = ['dong-nai', 'thi-truong', 'quy-hoach'];
+        $tags = DB::table('tags')->whereIn('code', $tagCodes)->get();
+        foreach ($tags as $tag) {
+            DB::table('post_tags')->insert([
+                'post_id' => $postId,
+                'tag_id' => $tag->id,
+            ]);
+        }
+
+        $this->command->info("Created post: {$title}");
+    }
+
+    private function createSanBayLongThanhBaChuyenBayPost(): void
+    {
+        $title = 'Sân bay Long Thành sẽ đón ba chuyến bay sáng 19/12';
+        $slug = Str::slug($title);
+        $publishedAt = Carbon::parse('2025-12-15 10:30:00');
+
+        $content = <<<'HTML'
+<article class="font-sans max-w-none text-base text-gray-800">
+    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Sân bay quốc tế Long Thành sẽ đón ba chuyến bay thử nghiệm vào sáng ngày 19/12, đánh dấu bước chuẩn bị quan trọng trước khi chính thức khai trương đón khách thương mại.
+    </p>
+
+    <figure class="my-6">
+        <img src="https://res.cloudinary.com/daxynpb9m/image/upload/v1765815393/nha-ga-hanh-khach_bwuaq3.webp" alt="Nhà ga hành khách sân bay Long Thành" class="w-full rounded-lg shadow-md" />
+        <figcaption class="text-center text-gray-500 text-sm mt-2 italic">Nhà ga hành khách T1 sân bay quốc tế Long Thành với thiết kế hiện đại</figcaption>
+    </figure>
+
+    <h2 class="text-xl font-bold text-gray-900 mt-6 mb-3">Lịch trình ba chuyến bay thử nghiệm</h2>
+
+    <p class="leading-relaxed mb-4">
+        Theo thông tin từ Cục Hàng không Việt Nam, ba chuyến bay thử nghiệm sẽ được thực hiện vào buổi sáng ngày 19/12/2025, nhằm kiểm tra toàn bộ hệ thống vận hành của sân bay trước khi đưa vào khai thác chính thức.
+    </p>
+
+    <div class="overflow-x-auto my-4">
+        <table class="min-w-full rounded-xl overflow-hidden shadow-sm">
+            <thead class="bg-gradient-to-r from-teal-500 to-teal-600">
+                <tr>
+                    <th class="px-4 py-3 text-left font-semibold text-white">Chuyến bay</th>
+                    <th class="px-4 py-3 text-left font-semibold text-white">Hãng hàng không</th>
+                    <th class="px-4 py-3 text-left font-semibold text-white">Loại máy bay</th>
+                    <th class="px-4 py-3 text-left font-semibold text-white">Thời gian dự kiến</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white hover:bg-teal-50 transition-colors">
+                    <td class="px-4 py-3 border-b border-gray-100 font-semibold">Chuyến 1</td>
+                    <td class="px-4 py-3 border-b border-gray-100">Vietnam Airlines</td>
+                    <td class="px-4 py-3 border-b border-gray-100">Boeing 787-10</td>
+                    <td class="px-4 py-3 border-b border-gray-100 text-teal-600 font-semibold">6:00 - 7:00</td>
+                </tr>
+                <tr class="bg-teal-50/50 hover:bg-teal-50 transition-colors">
+                    <td class="px-4 py-3 border-b border-gray-100 font-semibold">Chuyến 2</td>
+                    <td class="px-4 py-3 border-b border-gray-100">VietJet Air</td>
+                    <td class="px-4 py-3 border-b border-gray-100">Airbus A321</td>
+                    <td class="px-4 py-3 border-b border-gray-100 text-amber-600 font-semibold">7:30 - 8:30</td>
+                </tr>
+                <tr class="bg-white hover:bg-teal-50 transition-colors">
+                    <td class="px-4 py-3 border-b border-gray-100 font-semibold">Chuyến 3</td>
+                    <td class="px-4 py-3 border-b border-gray-100">Bamboo Airways</td>
+                    <td class="px-4 py-3 border-b border-gray-100">Boeing 787-9</td>
+                    <td class="px-4 py-3 border-b border-gray-100 text-rose-600 font-bold">9:00 - 10:00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="bg-teal-50 border border-teal-200 rounded-lg p-4 my-4">
+        <h3 class="font-semibold text-teal-800 mb-2">✈️ Mục đích các chuyến bay thử nghiệm</h3>
+        <ul class="list-none space-y-2 text-teal-900">
+            <li>• <strong>Kiểm tra đường băng:</strong> Đánh giá chất lượng mặt đường, hệ thống đèn dẫn đường</li>
+            <li>• <strong>Hệ thống dẫn đường:</strong> Kiểm tra radar, ILS và các thiết bị không lưu</li>
+            <li>• <strong>Nhà ga hành khách:</strong> Thử nghiệm quy trình check-in, an ninh, xuất nhập cảnh</li>
+            <li>• <strong>Dịch vụ mặt đất:</strong> Kiểm tra xe đẩy hành lý, cầu ống lên máy bay</li>
+        </ul>
+    </div>
+
+    <h2 class="text-xl font-bold text-gray-900 mt-6 mb-3">Thủ tướng chỉ đạo đẩy nhanh tiến độ</h2>
+
+    <figure class="my-6">
+        <img src="https://res.cloudinary.com/daxynpb9m/image/upload/v1765815393/thu-tuong_e1js3d.webp" alt="Thủ tướng kiểm tra sân bay Long Thành" class="w-full rounded-lg shadow-md" />
+        <figcaption class="text-center text-gray-500 text-sm mt-2 italic">Thủ tướng Chính phủ kiểm tra và chỉ đạo tiến độ xây dựng sân bay Long Thành</figcaption>
+    </figure>
+
+    <p class="leading-relaxed mb-4">
+        Thủ tướng Chính phủ đã có chuyến thị sát và làm việc với các đơn vị liên quan, yêu cầu đẩy nhanh tiến độ hoàn thiện các hạng mục còn lại để đảm bảo sân bay khai trương đúng kế hoạch.
+    </p>
+
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-4 my-4">
+        <p class="text-amber-800">
+            📋 <strong>Chỉ đạo của Thủ tướng:</strong> Các bộ, ngành và địa phương cần phối hợp chặt chẽ, tập trung nguồn lực để hoàn thành các hạng mục còn lại, đảm bảo sân bay Long Thành khai trương đúng tiến độ vào <strong>Quý II/2026</strong>.
+        </p>
+    </div>
+
+    <h2 class="text-xl font-bold text-gray-900 mt-6 mb-3">Năng lực phục vụ của sân bay</h2>
+
+    <div class="bg-sky-50 border border-sky-200 rounded-lg p-4 my-4">
+        <h3 class="font-semibold text-sky-800 mb-2">🏗️ Thông số kỹ thuật giai đoạn 1</h3>
+        <ul class="list-none space-y-2 text-sky-900">
+            <li>• <strong>Công suất:</strong> 25 triệu hành khách/năm</li>
+            <li>• <strong>Đường băng:</strong> 4.000m x 75m, tiếp nhận máy bay cỡ lớn nhất</li>
+            <li>• <strong>Nhà ga T1:</strong> Diện tích 373.000 m², 20 cầu ống lên máy bay</li>
+            <li>• <strong>Sân đỗ:</strong> 50 vị trí đỗ máy bay các loại</li>
+            <li>• <strong>Hàng hóa:</strong> 1,2 triệu tấn hàng hóa/năm</li>
+        </ul>
+    </div>
+
+    <h2 class="text-xl font-bold text-gray-900 mt-6 mb-3">Tác động đến bất động sản khu vực</h2>
+
+    <div class="bg-rose-50 border border-rose-200 rounded-lg p-4 my-4">
+        <h3 class="font-semibold text-rose-800 mb-2">📈 Cơ hội đầu tư</h3>
+        <p class="text-rose-900 mb-2">
+            Việc sân bay Long Thành sắp đi vào hoạt động tạo ra nhiều cơ hội đầu tư bất động sản:
+        </p>
+        <ul class="list-none space-y-2 text-rose-900">
+            <li>• <strong>Đất nền:</strong> Giá đất khu vực Long Thành, Nhơn Trạch tiếp tục tăng</li>
+            <li>• <strong>Logistics:</strong> Nhu cầu kho bãi, trung tâm phân phối tăng cao</li>
+            <li>• <strong>Khách sạn:</strong> Phục vụ hành khách quá cảnh và du khách</li>
+            <li>• <strong>Khu đô thị:</strong> Thu hút lao động và chuyên gia đến sinh sống</li>
+        </ul>
+    </div>
+
+    <div class="bg-gray-50 rounded-lg p-4 my-4">
+        <h3 class="font-semibold text-gray-900 mb-3">🎯 Ý nghĩa của sự kiện</h3>
+        <ul class="list-none space-y-2 text-gray-700">
+            <li class="flex items-start"><span class="text-teal-500 mr-2">✓</span><span>Khẳng định sân bay Long Thành sẵn sàng đón khách thương mại</span></li>
+            <li class="flex items-start"><span class="text-teal-500 mr-2">✓</span><span>Kiểm tra đồng bộ toàn bộ hệ thống vận hành</span></li>
+            <li class="flex items-start"><span class="text-teal-500 mr-2">✓</span><span>Tạo niềm tin cho các hãng hàng không và hành khách</span></li>
+            <li class="flex items-start"><span class="text-teal-500 mr-2">✓</span><span>Thúc đẩy phát triển kinh tế vùng Đông Nam Bộ</span></li>
+        </ul>
+    </div>
+
+    <div class="mt-4 mb-4 p-3 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-lg">
+      <div class="text-sm font-medium text-gray-700 mb-2">Nguồn bài viết:</div>
+      <a href="https://vnexpress.net/san-bay-long-thanh-se-don-ba-chuyen-bay-sang-19-12-4993626.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium text-sm transition-colors">
+        <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+        </svg>
+        VnExpress.net
+        <svg class="w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokewidth="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15,3 21,3 21,9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+    </div>
+</article>
+HTML;
+
+        $schemaJson = [
+            '@context' => 'https://schema.org',
+            '@type' => 'NewsArticle',
+            'headline' => $title,
+            'description' => 'Sân bay quốc tế Long Thành sẽ đón ba chuyến bay thử nghiệm vào sáng ngày 19/12, đánh dấu bước chuẩn bị quan trọng trước khi chính thức khai trương.',
+            'image' => 'https://res.cloudinary.com/daxynpb9m/image/upload/v1765815393/nha-ga-hanh-khach_bwuaq3.webp',
+            'datePublished' => '2025-12-15T10:30:00+07:00',
+            'dateModified' => '2025-12-15T10:30:00+07:00',
+            'author' => [
+                '@type' => 'Person',
+                'name' => 'VnExpress',
+            ],
+            'publisher' => [
+                '@type' => 'Organization',
+                'name' => 'Phát Đạt Bất Động Sản',
+                'logo' => [
+                    '@type' => 'ImageObject',
+                    'url' => 'https://phatdatbatdongsan.com/images/logo.png',
+                ],
+            ],
+            'mainEntityOfPage' => [
+                '@type' => 'WebPage',
+                '@id' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug,
+            ],
+            'keywords' => 'sân bay Long Thành, chuyến bay thử nghiệm, Vietnam Airlines, Đồng Nai, hàng không',
+            'articleSection' => 'Tin tức bất động sản',
+        ];
+
+        $breadcrumbs = [
+            ['name' => 'Trang chủ', 'url' => 'https://phatdatbatdongsan.com'],
+            ['name' => 'Tin tức', 'url' => 'https://phatdatbatdongsan.com/tin-tuc'],
+            ['name' => 'Tin tức bất động sản', 'url' => 'https://phatdatbatdongsan.com/tin-tuc?type=news'],
+            ['name' => $title, 'url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug],
+        ];
+
+        $postId = DB::table('posts')->insertGetId([
+            'author_id' => 4,
+            'status' => 'published',
+            'title' => $title,
+            'slug' => $slug,
+            'summary' => 'Sân bay quốc tế Long Thành sẽ đón ba chuyến bay thử nghiệm vào sáng ngày 19/12, đánh dấu bước chuẩn bị quan trọng trước khi chính thức khai trương đón khách thương mại.',
+            'content' => $content,
+            'content_fmt' => 'html',
+            'cover_image_url' => 'https://res.cloudinary.com/daxynpb9m/image/upload/v1765815393/nha-ga-hanh-khach_bwuaq3.webp',
+            'reading_minutes' => 4,
+            'locale' => 'vi',
+            'published_at' => $publishedAt,
+            'canonical_url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug,
+            'meta_title' => $title . ' | Phát Đạt Bất Động Sản',
+            'meta_description' => 'Sân bay Long Thành đón ba chuyến bay thử nghiệm sáng 19/12. Cập nhật tiến độ và cơ hội đầu tư bất động sản khu vực Đồng Nai.',
+            'meta_keywords' => 'sân bay Long Thành, chuyến bay thử nghiệm, Vietnam Airlines, VietJet, Bamboo Airways, Đồng Nai, bất động sản',
+            'og_title' => $title,
+            'og_description' => 'Sân bay quốc tế Long Thành sẽ đón ba chuyến bay thử nghiệm vào sáng ngày 19/12, đánh dấu bước chuẩn bị quan trọng.',
+            'og_image' => 'https://res.cloudinary.com/daxynpb9m/image/upload/v1765815393/nha-ga-hanh-khach_bwuaq3.webp',
             'twitter_card' => 'summary_large_image',
             'robots_index' => true,
             'robots_follow' => true,
