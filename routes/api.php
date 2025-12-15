@@ -7,6 +7,9 @@ Route::prefix('v1')->group(function () {
         return response()->json(['status' => 'OK'], 200);
     });
 
+    // Sitemap XML - public, không cần API key
+    Route::get('/sitemap.xml', [App\Http\Controllers\Api\SitemapController::class, 'index']);
+
     // Protected routes - cần API key
     Route::middleware('api.key')->group(function () {
         Route::get('/meta_listing', [App\Http\Controllers\Api\ListingController::class, 'meta']);
