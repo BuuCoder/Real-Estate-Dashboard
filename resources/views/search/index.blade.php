@@ -119,7 +119,7 @@
                             </div>
                             
                             @if($listing->description)
-                                <p class="text-gray-600 mb-3">{{ Str::limit($listing->description, 200) }}</p>
+                                <p class="text-gray-600 mb-3">{{ Str::limit(strip_tags($listing->description), 200) }}</p>
                             @endif
                             
                             <div class="flex justify-between items-center text-sm text-gray-500">

@@ -106,6 +106,18 @@ class PostController extends Controller
         }
     }
 
+    public function show(Post $post)
+    {
+        try {
+            $post->load(['author', 'tags', 'postTypes']);
+            $statuses = self::STATUS;
+            return view('posts.show', compact('post', 'statuses'));
+        } catch (\Exception $e) {
+            Log::error('Đã xảy ra lỗi khi xem bài viết: ' . $e->getMessage());
+            return back()->withErrors('Đã xảy ra lỗi khi xem bài viết.');
+        }
+    }
+
     public function edit(Post $post)
     {
         try {

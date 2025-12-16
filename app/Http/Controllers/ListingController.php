@@ -154,9 +154,18 @@ class ListingController extends Controller
         return redirect()->route('listings.index')->with('success', 'Tạo tin đăng thành công.');
     }
 
+    public function show($id)
+    {
+        $listing = Listing::with(['amenities', 'images', 'user', 'province', 'ward'])->findOrFail($id);
+        $propertyTypes = $this->propertyTypes;
+        $landUseTypes = $this->landUseTypes;
+        $legalStatuses = $this->legalStatuses;
+        
+        return view('listings.show', compact('listing', 'propertyTypes', 'landUseTypes', 'legalStatuses'));
+    }
+
     public function edit($id)
     {
-
         $listing = Listing::with(['amenities', 'images'])->findOrFail($id);
         $amenities = Amenity::all();
         $provinces = \App\Models\Province::orderBy('name', 'asc')->get();
