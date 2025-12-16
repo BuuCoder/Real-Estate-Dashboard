@@ -39,7 +39,7 @@ class SearchController extends Controller
             
             // Search in listings
             if (!$type || $type === 'all' || $type === 'listings') {
-                $listings = Listing::where('status', 'active')
+                $listings = Listing::where('status', 'published')
                     ->where(function($q) use ($query) {
                         $q->where('title', 'LIKE', "%{$query}%")
                           ->orWhere('description', 'LIKE', "%{$query}%");
