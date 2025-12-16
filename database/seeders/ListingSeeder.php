@@ -33,101 +33,35 @@ class ListingSeeder extends Seeder
             );
         }
 
-        // Create listing 4 - Lô đất thổ cư ONT Phước An, Nhơn Trạch
-        $listing4 = Listing::updateOrCreate(
-            ['slug' => Str::slug('Ban lo dat tho cu ONT tai Phuoc An Nhon Trach dien tich 112.6m2 To 138 Thua 516')],
+        // Create listing 5 - Lô đất CLN + DGT Xã Đại Phước, Nhơn Trạch
+        $listing5 = Listing::updateOrCreate(
+            ['slug' => Str::slug('Ban lo dat CLN DGT Xa Dai Phuoc Nhon Trach 311.3m2 To 79 Thua 27')],
             [
-                'title' => 'Bán lô đất thổ cư ONT tại Phước An, Nhơn Trạch – diện tích 112,6m² (Tờ 138, Thửa 516)',
-                'slug' => Str::slug('Ban lo dat tho cu ONT tai Phuoc An Nhon Trach dien tich 112.6m2 To 138 Thua 516'),
+                'title' => 'Bán lô đất CLN + DGT Xã Đại Phước, Nhơn Trạch – 311,3m² (Tờ 79, Thửa 27)',
+                'slug' => Str::slug('Ban lo dat CLN DGT Xa Dai Phuoc Nhon Trach 311.3m2 To 79 Thua 27'),
                 'user_id' => 1,
-                'property_type_id' => 2, // Đất nền
-                'land_use_type_id' => 1, // Đất ở
+                'property_type_id' => 3, // Đất nền
+                'land_use_type_id' => 3, // Đất trồng cây lâu năm
                 'legal_status_id' => 1, // Sổ đỏ
                 'province_id' => null,
                 'district_id' => null,
                 'ward_id' => null,
-                'street' => 'Phước An',
-                'address' => 'Phước An, Nhơn Trạch, Đồng Nai',
-                'lat' => 10.7833, // Tọa độ Nhơn Trạch
-                'lng' => 106.8333,
-                'area_land' => 112.60,
-                'width' => 5.05, // Trung bình 5.0-5.1m
-                'length' => 22.40, // Trung bình 22.3-22.5m
+                'street' => 'Xã Đại Phước',
+                'address' => 'Xã Đại Phước, Nhơn Trạch, Đồng Nai',
+                'lat' => 10.7500, // Tọa độ Đại Phước
+                'lng' => 106.8500,
+                'area_land' => 311.30,
+                'width' => null,
+                'length' => null,
                 'road_width' => null,
-                'frontage' => false,
-                'description' => '<div class="px-4 py-4 sm:px-6 sm:py-5">
-      <div class="space-y-3 text-[13px] leading-relaxed text-slate-700 sm:text-sm">
-        <p>
-          Cần bán lô đất vị trí <span class="font-medium text-emerald-700">Phước An, Nhơn Trạch</span>,
-          thuộc <span class="font-medium">Tờ bản đồ số 138 – Thửa 516</span>, tổng diện tích
-          <span class="font-semibold text-emerald-700">112,6m²</span>.
-          Đất có mục đích sử dụng <span class="font-semibold text-emerald-700">ONT (đất ở nông thôn)</span>,
-          phù hợp để xây nhà ở, làm nhà vườn nhỏ hoặc đầu tư giữ tài sản lâu dài.
-          Theo thông tin tra cứu, khu vực có quy hoạch sử dụng đất đến năm 2030.
-        </p>
-
-        <p>
-          Lô đất có dáng thửa gọn, chiều dài hai cạnh khoảng <span class="font-medium">22,5m</span> và
-          <span class="font-medium">22,3m</span>, bề ngang thể hiện khoảng <span class="font-medium">5,0–5,1m</span>
-          (thích hợp thiết kế nhà 1 trệt 1 lầu/nhà cấp 4 có sân trước – sân sau tùy nhu cầu).
-          Vị trí nằm trong khu vực Phước An – Nhơn Trạch, thuận tiện cho người mua cần an cư yên tĩnh
-          hoặc nhà đầu tư tìm sản phẩm diện tích vừa phải, dễ giao dịch.
-        </p>
-
-        <p>
-          Khu vực Nhơn Trạch đang phát triển mạnh với nhiều dự án hạ tầng lớn như cảng Cái Mép - Thị Vải,
-          khu công nghiệp và các tuyến đường kết nối thuận tiện. Đây là cơ hội đầu tư tốt
-          với tiềm năng tăng giá trong tương lai gần.
-        </p>
-      </div>
-
-      <div class="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3">
-        <div class="mb-2 flex items-center justify-between">
-          <h3 class="text-sm font-semibold text-emerald-800 sm:text-[15px]">
-            Thông tin nổi bật
-          </h3>
-          <span class="text-[11px] font-medium text-emerald-700/90 sm:text-xs">
-            SDĐ 2030
-          </span>
-        </div>
-
-        <ul class="grid gap-2 text-[13px] text-slate-700 sm:grid-cols-2 sm:text-sm">
-          <li class="flex items-start gap-2">
-            <span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span>
-            <span><span class="font-medium text-slate-900">Diện tích:</span> 112,6m²</span>
-          </li>
-
-          <li class="flex items-start gap-2">
-            <span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span>
-            <span><span class="font-medium text-slate-900">Tờ/Thửa:</span> Tờ 138 – Thửa 516</span>
-          </li>
-
-          <li class="flex items-start gap-2">
-            <span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span>
-            <span><span class="font-medium text-slate-900">Loại đất:</span> ONT – Đất ở nông thôn</span>
-          </li>
-
-          <li class="flex items-start gap-2">
-            <span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span>
-            <span>
-              <span class="font-medium text-slate-900">Kích thước tham khảo:</span>
-              ngang ~5,0–5,1m, dài ~22,3–22,5m
-            </span>
-          </li>
-
-          <li class="flex items-start gap-2 sm:col-span-2">
-            <span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span>
-            <span><span class="font-medium text-slate-900">Quy hoạch:</span> theo tra cứu hiển thị "SDĐ 2030"</span>
-          </li>
-        </ul>
-      </div>
-    </div>',
+                'frontage' => true, // Tiếp giáp đường giao thông
+                'description' => '<div><div class="space-y-3 text-[13px] leading-relaxed text-slate-700 sm:text-sm"><p>🌿 Cần bán lô đất vị trí <span class="font-medium text-emerald-700">Xã Đại Phước, Nhơn Trạch</span>,thuộc <span class="font-medium">Tờ bản đồ số 79 – Thửa 27</span>, tổng diện tích<span class="font-semibold text-emerald-700">311,3m²</span>.Đất có mục đích sử dụng <span class="font-semibold text-emerald-700">CLN (đất trồng cây lâu năm) 278,1m²</span>và <span class="font-semibold text-emerald-700">DGT (đất giao thông) 33,2m²</span>,phù hợp để làm vườn, nhà vườn nghỉ dưỡng hoặc đầu tư lâu dài chờ chuyển mục đích theo quy hoạch.</p><p>Thửa đất có vị trí đắc địa <span class="font-medium">tiếp giáp đường giao thông</span>, thuận tiện đi lại và kết nối. Khu vực có dân cư hiện hữu, hạ tầng đang phát triển mạnh.Vị trí nằm trong khu vực Nhơn Trạch – Đại Phước có tiềm năng tăng giá tốt nhờ gần TP.HCM và các trục giao thông lớn, phù hợp cho nhà đầu tư tìm cơ hội sinh lời.</p><p>Khu vực Nhơn Trạch đang phát triển mạnh với nhiều dự án hạ tầng lớn như cảng Cái Mép - Thị Vải,khu công nghiệp và các tuyến đường kết nối thuận tiện. Đây là cơ hội đầu tư tốtvới tiềm năng tăng giá trong tương lai gần.</p></div><div class="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3"><div class="mb-2 flex items-center justify-between"><h3 class="text-sm font-semibold text-emerald-800 sm:text-[15px]">🌿 Thông tin nổi bật</h3><span class="text-[11px] font-medium text-emerald-700/90 sm:text-xs">Đại Phước - Nhơn Trạch</span></div><ul class="grid gap-2 text-[13px] text-slate-700 sm:grid-cols-2 sm:text-sm"><li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span><span><span class="font-medium text-slate-900">Tổng diện tích:</span> 311,3m²</span></li><li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span><span><span class="font-medium text-slate-900">Tờ/Thửa:</span> Tờ 79 – Thửa 27</span></li><li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span><span><span class="font-medium text-slate-900">Đất CLN:</span> 278,1m² (trồng cây lâu năm)</span></li><li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span><span><span class="font-medium text-slate-900">Đất DGT:</span> 33,2m² (đất giao thông)</span></li><li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span><span><span class="font-medium text-slate-900">Vị trí:</span> Tiếp giáp đường giao thông</span></li><li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span><span><span class="font-medium text-slate-900">Pháp lý:</span> Rõ ràng, đầy đủ</span></li></ul></div></div>',
                 'area_built' => null,
                 'bedrooms' => null,
                 'bathrooms' => null,
                 'floors' => null,
                 'direction' => null,
-                'price_total' => 850000000.00, // 850 triệu VND (giá ước tính cho đất ONT)
+                'price_total' => 24000000000.00,
                 'currency' => 'VND',
                 'status' => 'published',
                 'published_at' => now(),
@@ -135,29 +69,22 @@ class ListingSeeder extends Seeder
             ]
         );
 
-        // Add images for the fourth listing
-        $listing4->images()->delete();
+        // Add image for the fifth listing
+        $listing5->images()->delete();
         
-        $imageUrls4 = [
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765856240/z7331716364260_cc6067d1662789cb56c592684298aebf_xvzeqf.jpg',
-            'https://res.cloudinary.com/dsiier5sg/image/upload/v1765856239/z7331716371789_36421626d34ea73f63fe0401ab85c52d_rflh8c.jpg'
-        ];
+        Image::create([
+            'listing_id' => $listing5->id,
+            'url' => 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765860123/z7331991216138_2e717e5ba409d6acc6396d57a1dc211f_jvsp8x.jpg',
+            'is_cover' => true,
+            'sort_order' => 1,
+        ]);
 
-        foreach ($imageUrls4 as $index => $url) {
-            Image::create([
-                'listing_id' => $listing4->id,
-                'url' => $url,
-                'is_cover' => $index === 0,
-                'sort_order' => $index + 1,
-            ]);
-        }
-
-        // Sync amenities to the fourth listing (đất nông thôn ít tiện ích)
-        $listing4AmenityIds = Amenity::whereIn('code', [
-            'garden' // Phù hợp với đất nông thôn
+        // Sync amenities to the fifth listing (đất trồng cây lâu năm)
+        $listing5AmenityIds = Amenity::whereIn('code', [
+            'garden' // Phù hợp với đất trồng cây
         ])->pluck('id')->toArray();
 
-        $listing4->amenities()->sync($listing4AmenityIds);
+        $listing5->amenities()->sync($listing5AmenityIds);
 
         $this->command->info('All listings created successfully with updated descriptions, images and amenities!');
     }
