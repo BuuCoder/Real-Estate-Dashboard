@@ -224,8 +224,6 @@
                             <div class="mb-2 text-md font-semibold text-green-600">
                                 {{ formatVietnamesePrice($listing->price_total, $listing->currency) }}
                             </div>
-
-                            </div>
                         </div>
                         <div class="flex gap-2 mt-4">
                             <a href="{{ route('listings.edit', $listing) }}"
@@ -246,9 +244,6 @@
             <div class="mt-4">
                 {{ $listings->links() }}
             </div>
-        </div>
-        <div class="mt-4">
-            {{ $listings->links() }}
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
