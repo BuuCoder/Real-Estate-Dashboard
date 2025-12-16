@@ -302,22 +302,17 @@
                         <!-- Images -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                                <label class="block text-sm font-medium text-gray-700">Hình ảnh (<span id="imageCount">0</span> ảnh):</label>
-                                <button onclick="downloadAllImages()" class="inline-flex items-center px-3 py-1 bg-green-600 hover:bg-green-700 text-white text-sm rounded-lg">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                                    </svg>
-                                    Tải tất cả ảnh
-                                </button>
+                                <label class="block text-sm font-medium text-gray-700">Hình ảnh (<span id="imageCount">0</span> ảnh) - Click vào ảnh để copy:</label>
                             </div>
                             <div id="imageGrid" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+                            <p id="copyStatus" class="mt-2 text-sm text-green-600 hidden">✓ Đã copy ảnh vào clipboard!</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="px-6 py-4 border-t border-gray-200 bg-gray-50">
                     <p class="text-sm text-gray-600">
-                        💡 Copy nội dung và tải ảnh về, sau đó paste vào Facebook/Zalo để đăng bài.
+                        💡 Copy nội dung, click vào ảnh để copy, sau đó paste vào Facebook/Zalo để đăng bài.
                     </p>
                 </div>
             </div>
@@ -364,14 +359,14 @@ function renderShareContent() {
     
     shareData.images.forEach((img, index) => {
         const div = document.createElement('div');
-        div.className = 'relative group';
+        div.className = 'relative group cursor-pointer';
+        div.onclick = () => copyImage(img.url, index);
         div.innerHTML = `
-            <img src="${img.url}" alt="${img.caption}" class="w-full h-32 object-cover rounded-lg border border-gray-200">
+            <img src="${img.url}" alt="${img.caption}" class="w-full h-32 object-cover rounded-lg border-2 border-gray-200 hover:border-blue-500 transition-colors">
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all rounded-lg flex items-center justify-center">
-                <button onclick="downloadImage('${img.url}', ${index})" 
-                    class="opacity-0 group-hover:opacity-100 px-3 py-1 bg-white text-gray-800 text-sm rounded-lg shadow">
-                    Tải ảnh
-                </button>
+                <span class="opacity-0 group-hover:opacity-100 px-3 py-1 bg-white text-gray-800 text-sm rounded-lg shadow">
+                    📋 Copy ảnh
+                </span>
             </div>
             <p class="mt-1 text-xs text-gray-600 truncate">${img.caption}</p>
             ${img.is_cover ? '<span class="absolute top-1 left-1 bg-blue-600 text-white text-xs px-1 rounded">Bìa</span>' : ''}
@@ -402,24 +397,27 @@ function copyShareText() {
     }, 2000);
 }
 
-function downloadImage(url, index) {
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `image_${index + 1}.jpg`;
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+async function copyImage(url, index) {
+    try {
+        const response = await fetch(url);
+        const blob = await response.blob();
+        
+        await navigator.clipboard.write([
+            new ClipboardItem({ [blob.type]: blob })
+        ]);
+        
+        showCopyStatus();
+    } catch (err) {
+        // Fallback: mở ảnh trong tab mới để user copy thủ công
+        window.open(url, '_blank');
+        alert('Không thể copy tự động. Ảnh đã mở trong tab mới, hãy click chuột phải > Copy image.');
+    }
 }
 
-function downloadAllImages() {
-    if (!shareData || !shareData.images.length) return;
-    
-    shareData.images.forEach((img, index) => {
-        setTimeout(() => {
-            downloadImage(img.url, index);
-        }, index * 500);
-    });
+function showCopyStatus() {
+    const status = document.getElementById('copyStatus');
+    status.classList.remove('hidden');
+    setTimeout(() => status.classList.add('hidden'), 2000);
 }
 
 document.addEventListener('keydown', function(e) {
