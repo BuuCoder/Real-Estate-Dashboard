@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\PostType;
 use App\Models\Tag;
+use App\Services\PostShareService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -112,5 +113,40 @@ class PostController extends Controller
             'tags' => $tags,
             'post_types' => $postTypes
         ]);
+    }
+
+    /**
+     * GET /api/posts/{slug}/share
+     * Lấy nội dung để share lên Facebook/Zalo
+     */
+    public function share($slug, PostShareService $shareService)
+    {
+        try {
+            $post = Post::query()
+                ->published()
+                ->with(['author', 'tags', 'postTypes'])
+                ->where('slug', $slug)
+                ->first();
+
+            if (!$post) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Post not found.'
+                ], 404);
+            }
+
+            $shareData = $shareService->generateShareContent($post);
+
+            return response()->json([
+                'success' => true,
+                'data' => $shareData
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Error generating share content: ' . $e->getMessage());
+            return response()->json([
+                'success' => false,
+                'message' => 'Error generating share content.'
+            ], 500);
+        }
     }
 }

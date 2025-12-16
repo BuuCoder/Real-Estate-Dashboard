@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\PostType;
 use App\Models\Tag;
+use App\Services\PostShareService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -333,6 +334,28 @@ class PostController extends Controller
         } catch (\Exception $e) {
             Log::error('Đã xảy ra lỗi khi xóa tag: ' . $e->getMessage());
             return back()->withErrors('Đã xảy ra lỗi khi xóa tag.');
+        }
+    }
+
+    /**
+     * Lấy nội dung để share lên Facebook/Zalo
+     */
+    public function share(Post $post, PostShareService $shareService)
+    {
+        try {
+            $post->load(['author', 'tags', 'postTypes']);
+            $shareData = $shareService->generateShareContent($post);
+
+            return response()->json([
+                'success' => true,
+                'data' => $shareData
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Đã xảy ra lỗi khi tạo nội dung share: ' . $e->getMessage());
+            return response()->json([
+                'success' => false,
+                'message' => 'Đã xảy ra lỗi khi tạo nội dung share.'
+            ], 500);
         }
     }
 }

@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
     
     // Post CRUD
     Route::resource('posts', PostController::class);
+    Route::get('posts/{post}/share', [PostController::class, 'share'])->name('posts.share');
 
     // PostType CRUD
     Route::get('post-types', [PostController::class, 'postTypesIndex'])->name('post_types.index');
