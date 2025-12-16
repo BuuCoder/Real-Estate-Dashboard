@@ -207,8 +207,8 @@ class ListingController extends Controller
             'slug' => 'required|string|max:255|unique:listings,slug,' . $listing->id,
             'title' => 'required|string|max:255',
         ]);
+
         if ($validator->fails()) {
-            dd($validator->errors());
             return redirect()->back()
                 ->withErrors($validator)
                 ->withInput();

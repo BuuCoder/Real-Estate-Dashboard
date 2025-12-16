@@ -18,8 +18,8 @@
                 @enderror
             </div>
             <div>
-                <label class="block text-sm font-medium mb-1">Slug</label>
-                <input name="slug" disabled style="cursor: not-allowed;" value="{{ old('slug', $listing->slug) }}"
+                <label class="block text-sm font-medium mb-1">Slug (tự động tạo từ tiêu đề)</label>
+                <input name="slug" value="{{ old('slug', $listing->slug) }}"
                     class="w-full rounded-xl bg-gray-100 border border-gray-200 py-2.5 px-3 outline-none focus:ring-2 focus:ring-brand-400"
                     required>
                 @error('slug')
