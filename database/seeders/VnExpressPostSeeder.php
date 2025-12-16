@@ -11,145 +11,347 @@ class VnExpressPostSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->createSanBayLongThanhBaChuyenBayPost();
+        $this->createCauPhuocKhanhPost();
     }
-    
-    private function createMayBayLongThanhPost(): void
+
+
+    private function createCauPhuocKhanhPost(): void
     {
-        $title = 'Máy bay lớn nhất Việt Nam hạ cánh tại Long Thành hôm nay';
+        $title = 'Cận cảnh cầu Phước Khánh trên cao tốc Bến Lức – Long Thành sắp về đích';
         $slug = Str::slug($title);
-        $publishedAt = Carbon::parse('2025-12-15 08:00:00');
+        $publishedAt = Carbon::parse('2025-12-16 14:30:00');
 
         $content = <<<'HTML'
 <article class="font-sans max-w-none text-base text-gray-800">
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-        Chiếc Boeing 787-10 Dreamliner - máy bay thân rộng lớn nhất trong đội bay của Vietnam Airlines - đã thực hiện chuyến bay lịch sử, hạ cánh thành công tại sân bay quốc tế Long Thành trong ngày hôm nay.
-    </p>
-
-    <figure class="my-6">
-        <img src="https://res.cloudinary.com/daxynpb9m/image/upload/v1765814335/a-nh-ma-n-hi-nh-2023-12-16-lu-2248-4709-1765764955_rohv89.webp" alt="Boeing 787-10 hạ cánh tại sân bay Long Thành" class="w-full rounded-lg shadow-md" />
-        <figcaption class="text-center text-gray-500 text-sm mt-2 italic">Boeing 787-10 Dreamliner của Vietnam Airlines hạ cánh tại sân bay quốc tế Long Thành</figcaption>
-    </figure>
-
-    <h2 class="text-xl font-bold text-gray-900 mt-6 mb-3">Chuyến bay lịch sử đánh dấu cột mốc quan trọng</h2>
-
-    <p class="leading-relaxed mb-4">
-        Đây là chuyến bay thử nghiệm đầu tiên của dòng máy bay thân rộng tại sân bay quốc tế Long Thành, đánh dấu bước tiến quan trọng trong quá trình chuẩn bị đưa sân bay vào khai thác thương mại.
-    </p>
-
-    <div class="bg-teal-50 border border-teal-200 rounded-lg p-4 my-4">
-        <h3 class="font-semibold text-teal-800 mb-2">✈️ Thông số kỹ thuật Boeing 787-10 Dreamliner</h3>
-        <ul class="list-none space-y-2 text-teal-900">
-            <li>• <strong>Chiều dài:</strong> 68,3 mét - dài nhất trong dòng 787</li>
-            <li>• <strong>Sải cánh:</strong> 60,1 mét</li>
-            <li>• <strong>Sức chứa:</strong> Lên đến 330 hành khách</li>
-            <li>• <strong>Tầm bay:</strong> Khoảng 11.910 km</li>
-            <li>• <strong>Động cơ:</strong> 2 động cơ General Electric GEnx hoặc Rolls-Royce Trent 1000</li>
-        </ul>
-    </div>
-
-    <div class="bg-amber-50 border-l-4 border-amber-400 p-4 my-4">
-        <p class="text-amber-800">
-            📋 <strong>Sân bay quốc tế Long Thành</strong> được thiết kế để tiếp nhận các loại máy bay lớn nhất thế giới như Airbus A380 và Boeing 747-8, với đường băng dài <strong>4.000 mét</strong> và rộng <strong>75 mét</strong>.
+    <!-- Header -->
+    <div class="mb-6">
+        <p class="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-800">
+            <svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            Tiến độ dự án
+        </p>
+        <h1 class="mt-3 text-lg font-semibold tracking-tight text-emerald-950 sm:text-xl">Cận cảnh cầu Phước Khánh trên cao tốc Bến Lức – Long Thành sắp về đích</h1>
+        <p class="mt-2 text-sm leading-6 text-emerald-900/80">
+            Sau thời gian dài gián đoạn, cầu Phước Khánh (bắc qua sông Lòng Tàu, kết nối Cần Giờ – Nhơn Trạch) đang được đẩy nhanh thi công. Các mốc lắp đặt cáp dây văng và hoàn thiện kết cấu đang giúp công trình tiến gần "vạch đích", tạo kỳ vọng khép kín toàn tuyến cao tốc Bến Lức – Long Thành.
         </p>
     </div>
 
-    <h2 class="text-xl font-bold text-gray-900 mt-6 mb-3">Sân bay Long Thành - Cửa ngõ hàng không mới của Việt Nam</h2>
-
-    <p class="leading-relaxed mb-4">
-        Sân bay quốc tế Long Thành tọa lạc tại huyện Long Thành, tỉnh Đồng Nai, cách trung tâm TP HCM khoảng 40 km về phía Đông. Đây là dự án hạ tầng giao thông trọng điểm quốc gia với tổng vốn đầu tư giai đoạn 1 khoảng 4,8 tỷ USD.
-    </p>
-
-    <figure class="my-6">
-        <img src="https://res.cloudinary.com/daxynpb9m/image/upload/v1765814334/3583031170096492182-1765752750-2642-1765753486_ylal9t.webp" alt="Sân bay quốc tế Long Thành sẵn sàng đón khách" class="w-full rounded-lg shadow-md" />
-        <figcaption class="text-center text-gray-500 text-sm mt-2 italic">Sân bay quốc tế Long Thành sẵn sàng đón các chuyến bay thương mại</figcaption>
-    </figure>
-
-    <div class="bg-sky-50 border border-sky-200 rounded-lg p-4 my-4">
-        <h3 class="font-semibold text-sky-800 mb-2">🏗️ Tiến độ xây dựng giai đoạn 1</h3>
-        <ul class="list-none space-y-2 text-sky-900">
-            <li>• Hoàn thành đường băng số 1 dài <strong>4.000m x 75m</strong></li>
-            <li>• Nhà ga hành khách T1 công suất <strong>25 triệu khách/năm</strong></li>
-            <li>• Hệ thống đường lăn, sân đỗ máy bay hiện đại</li>
-            <li>• Đài kiểm soát không lưu cao <strong>123 mét</strong></li>
-        </ul>
+    <!-- Quick facts -->
+    <div class="mb-6 grid gap-3 sm:grid-cols-3">
+        <div class="rounded-xl border border-emerald-100 bg-white p-4">
+            <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <p class="text-xs font-medium text-emerald-700">Vị trí</p>
+            </div>
+            <p class="text-sm text-emerald-950">Sông Lòng Tàu • Cần Giờ (TP.HCM) ↔ Nhơn Trạch (Đồng Nai)</p>
+        </div>
+        <div class="rounded-xl border border-emerald-100 bg-white p-4">
+            <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <p class="text-xs font-medium text-emerald-700">Vai trò</p>
+            </div>
+            <p class="text-sm text-emerald-950">Hạng mục then chốt để khép kín tuyến cao tốc</p>
+        </div>
+        <div class="rounded-xl border border-emerald-100 bg-white p-4">
+            <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                </svg>
+                <p class="text-xs font-medium text-emerald-700">Kỳ vọng</p>
+            </div>
+            <p class="text-sm text-emerald-950">Giảm tải trục giao thông, hỗ trợ logistics & liên kết vùng</p>
+        </div>
     </div>
 
-    <h2 class="text-xl font-bold text-gray-900 mt-6 mb-3">Lộ trình khai thác thương mại</h2>
+    <!-- Gallery -->
+    <div class="rounded-2xl border border-emerald-100 bg-white p-4 sm:p-5">
+        <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <h2 class="text-sm font-semibold text-emerald-950">Hình ảnh cập nhật</h2>
+            </div>
+            <span class="text-xs text-emerald-700">Nguồn: ảnh bạn cung cấp</span>
+        </div>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" id="gallery-grid">
+            <!-- 1 -->
+            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer" onclick="openSlideshow(0)">
+                <div class="relative">
+                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/ac6aa21c5255bb0be244_ymul2b.jpg" alt="Cầu Phước Khánh - ảnh 1" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c0-1.1-.9-2-2-2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Góc nhìn tổng quan công trình đang thi công.</figcaption>
+            </figure>
+            <!-- 2 -->
+            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer" onclick="openSlideshow(1)">
+                <div class="relative">
+                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/416b401db054590a0045_zlmapp.jpg" alt="Cầu Phước Khánh - ảnh 2" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c0-1.1-.9-2-2-2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Hình hài cầu ngày càng rõ nét giữa dòng sông.</figcaption>
+            </figure>
+            <!-- 3 -->
+            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer" onclick="openSlideshow(2)">
+                <div class="relative">
+                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/25c22eb4defd37a36eec_qe3pg7.jpg" alt="Cầu Phước Khánh - ảnh 3" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c0-1.1-.9-2-2-2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Chi tiết kết cấu và khu vực thi công.</figcaption>
+            </figure>
+            <!-- 4 -->
+            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer" onclick="openSlideshow(3)">
+                <div class="relative">
+                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/5e205856a81f4141180e_t6u0zg.jpg" alt="Cầu Phước Khánh - ảnh 4" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c0-1.1-.9-2-2-2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Nhịp cầu và hạng mục liên quan đang được tăng tốc.</figcaption>
+            </figure>
+            <!-- 5 -->
+            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer" onclick="openSlideshow(4)">
+                <div class="relative">
+                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/e8c3e8b518fcf1a2a8ed_qts0bp.jpg" alt="Cầu Phước Khánh - ảnh 5" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c0-1.1-.9-2-2-2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Khu vực trụ/cụm thi công nhìn cận cảnh.</figcaption>
+            </figure>
+            <!-- 6 -->
+            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 sm:col-span-2 lg:col-span-3 cursor-pointer" onclick="openSlideshow(5)">
+                <div class="relative">
+                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1765872513/9db199c7698e80d0d99f_qbgp1j.jpg" alt="Cầu Phước Khánh - ảnh 6" class="h-52 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c0-1.1-.9-2-2-2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Toàn cảnh dự án — kỳ vọng sớm khép kín tuyến cao tốc Bến Lức – Long Thành.</figcaption>
+            </figure>
+        </div>
 
-    <div class="overflow-x-auto my-4">
-        <table class="min-w-full rounded-xl overflow-hidden shadow-sm">
-            <thead class="bg-gradient-to-r from-teal-500 to-teal-600">
-                <tr>
-                    <th class="px-4 py-3 text-left font-semibold text-white">Giai đoạn</th>
-                    <th class="px-4 py-3 text-left font-semibold text-white">Nội dung</th>
-                    <th class="px-4 py-3 text-left font-semibold text-white">Thời gian</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="bg-white hover:bg-teal-50 transition-colors">
-                    <td class="px-4 py-3 border-b border-gray-100 font-semibold">Bay thử nghiệm</td>
-                    <td class="px-4 py-3 border-b border-gray-100">Kiểm tra hệ thống đường băng, dẫn đường</td>
-                    <td class="px-4 py-3 border-b border-gray-100 text-teal-600 font-semibold">Tháng 12/2025</td>
-                </tr>
-                <tr class="bg-teal-50/50 hover:bg-teal-50 transition-colors">
-                    <td class="px-4 py-3 border-b border-gray-100 font-semibold">Nghiệm thu</td>
-                    <td class="px-4 py-3 border-b border-gray-100">Hoàn thiện các hạng mục còn lại</td>
-                    <td class="px-4 py-3 border-b border-gray-100 text-amber-600 font-semibold">Quý I/2026</td>
-                </tr>
-                <tr class="bg-white hover:bg-teal-50 transition-colors">
-                    <td class="px-4 py-3 border-b border-gray-100 font-semibold">Khai trương</td>
-                    <td class="px-4 py-3 border-b border-gray-100">Đón chuyến bay thương mại đầu tiên</td>
-                    <td class="px-4 py-3 border-b border-gray-100 text-rose-600 font-bold">Quý II/2026</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Body -->
+        <div class="mt-6 space-y-4 text-sm leading-6 text-emerald-900/80">
+            <p>
+                Cầu Phước Khánh là hạng mục "nút thắt" cuối cùng của tuyến cao tốc Bến Lức – Long Thành. Khi hoàn thiện, tuyến đường sẽ tăng khả năng kết nối liên vùng giữa Tây Nam Bộ và Đông Nam Bộ, đồng thời hỗ trợ vận tải hàng hoá, giảm áp lực cho các trục đường hiện hữu.
+            </p>
+            
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 my-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                    <h3 class="font-semibold text-emerald-800">Thông số kỹ thuật cầu Phước Khánh</h3>
+                </div>
+                <ul class="list-none space-y-2 text-emerald-900">
+                    <li>• <strong>Chiều dài:</strong> 1.875m (cầu chính 420m)</li>
+                    <li>• <strong>Chiều rộng:</strong> 23m (4 làn xe)</li>
+                    <li>• <strong>Loại cầu:</strong> Cầu dây văng bê tông cốt thép</li>
+                    <li>• <strong>Khoảng thông thuyền:</strong> 120m, cao 42m</li>
+                    <li>• <strong>Tổng mức đầu tư:</strong> Khoảng 2.800 tỷ đồng</li>
+                </ul>
+            </div>
+
+            <p>
+                Trong giai đoạn nước rút, các đầu việc quan trọng thường tập trung vào hoàn thiện kết cấu nhịp, hệ dây văng, mặt cầu và hạng mục an toàn giao thông. Tiến độ thực tế có thể thay đổi theo điều kiện thi công và công tác điều phối, nhưng tín hiệu chung là công trường đang được thúc đẩy mạnh để sớm đưa công trình vào khai thác.
+            </p>
+
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    <h3 class="font-semibold text-blue-800">Ý nghĩa khi hoàn thành</h3>
+                </div>
+                <ul class="list-none space-y-2 text-blue-900">
+                    <li>• <strong>Kết nối vùng:</strong> Liên thông Tây Nam Bộ - Đông Nam Bộ</li>
+                    <li>• <strong>Logistics:</strong> Hỗ trợ vận chuyển hàng hóa từ cảng Cái Mép - Thị Vải</li>
+                    <li>• <strong>Giao thông:</strong> Giảm tải cho quốc lộ 51 và các tuyến hiện hữu</li>
+                    <li>• <strong>Phát triển:</strong> Thúc đẩy kinh tế khu vực Cần Giờ - Nhơn Trạch</li>
+                </ul>
+            </div>
+
+            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Tác động đến thị trường bất động sản</h2>
+            
+            <p>
+                Việc cầu Phước Khánh sắp hoàn thành tạo ra nhiều cơ hội đầu tư bất động sản tại khu vực Nhơn Trạch (Đồng Nai) và Cần Giờ (TP.HCM). Kết nối giao thông thuận lợi sẽ thúc đẩy phát triển các dự án logistics, khu công nghiệp và khu đô thị mới.
+            </p>
+
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                    </svg>
+                    <h3 class="font-semibold text-amber-800">Cơ hội đầu tư bất động sản</h3>
+                </div>
+                <ul class="list-none space-y-2 text-amber-900">
+                    <li>• <strong>Đất nền:</strong> Khu vực Nhơn Trạch, Long Thành có tiềm năng tăng giá</li>
+                    <li>• <strong>Kho bãi:</strong> Phục vụ logistics từ cảng Cái Mép - Thị Vải</li>
+                    <li>• <strong>Khu công nghiệp:</strong> Thu hút đầu tư sản xuất, gia công</li>
+                    <li>• <strong>Nhà ở:</strong> Đáp ứng nhu cầu an cư của lao động</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-xs text-emerald-700">
+                Nguồn tham khảo: 
+                <a href="https://znews.vn" target="_blank" rel="nofollow noopener" class="font-medium text-emerald-600 hover:underline">
+                    ZNews
+                </a>
+            </p>    
+        </div>
     </div>
 
-    <h2 class="text-xl font-bold text-gray-900 mt-6 mb-3">Tác động đến thị trường bất động sản</h2>
-
-    <figure class="my-6">
-        <img src="https://res.cloudinary.com/daxynpb9m/image/upload/v1765814334/0d5a6d3fe2386d663429-176575325-1891-6894-1765753486_rk6er1.webp" alt="Thủ tướng kiểm tra sân bay Long Thành" class="w-full rounded-lg shadow-md" />
-        <figcaption class="text-center text-gray-500 text-sm mt-2 italic">Thủ tướng Chính phủ kiểm tra tiến độ xây dựng sân bay quốc tế Long Thành</figcaption>
-    </figure>
-
-    <div class="bg-rose-50 border border-rose-200 rounded-lg p-4 my-4">
-        <h3 class="font-semibold text-rose-800 mb-2">📈 Cơ hội đầu tư bất động sản</h3>
-        <p class="text-rose-900 mb-2">
-            Sự kiện máy bay lớn nhất hạ cánh thành công tại Long Thành là tín hiệu tích cực cho thị trường bất động sản khu vực:
-        </p>
-        <ul class="list-none space-y-2 text-rose-900">
-            <li>• <strong>Đất nền Long Thành:</strong> Tiếp tục tăng giá khi sân bay sắp đi vào hoạt động</li>
-            <li>• <strong>Bất động sản công nghiệp:</strong> Nhu cầu kho bãi, logistics tăng cao</li>
-            <li>• <strong>Nhà ở, căn hộ:</strong> Thu hút lao động và chuyên gia đến làm việc</li>
-            <li>• <strong>Thương mại dịch vụ:</strong> Khách sạn, nhà hàng phục vụ du khách</li>
-        </ul>
+    <!-- Image Slideshow Modal -->
+    <div id="slideshow-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center">
+        <div class="relative max-w-4xl max-h-full p-4">
+            <!-- Close Button -->
+            <button onclick="closeSlideshow()" class="absolute top-4 right-4 z-10 text-white hover:text-gray-300 transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            
+            <!-- Previous Button -->
+            <button onclick="previousImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            
+            <!-- Next Button -->
+            <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+            
+            <!-- Image Container -->
+            <div class="text-center">
+                <img id="slideshow-image" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg">
+                <div class="mt-4 text-white">
+                    <p id="slideshow-caption" class="text-sm"></p>
+                    <p id="slideshow-counter" class="text-xs text-gray-300 mt-2"></p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="bg-gray-50 rounded-lg p-4 my-4">
-        <h3 class="font-semibold text-gray-900 mb-3">🎯 Ý nghĩa của sự kiện</h3>
-        <ul class="list-none space-y-2 text-gray-700">
-            <li class="flex items-start"><span class="text-teal-500 mr-2">✓</span><span>Khẳng định năng lực tiếp nhận máy bay cỡ lớn của sân bay Long Thành</span></li>
-            <li class="flex items-start"><span class="text-teal-500 mr-2">✓</span><span>Đánh dấu bước tiến quan trọng trong lộ trình khai thác thương mại</span></li>
-            <li class="flex items-start"><span class="text-teal-500 mr-2">✓</span><span>Nâng cao vị thế hàng không Việt Nam trong khu vực</span></li>
-            <li class="flex items-start"><span class="text-teal-500 mr-2">✓</span><span>Thúc đẩy phát triển kinh tế - xã hội vùng Đông Nam Bộ</span></li>
-        </ul>
-    </div>
+    <script>
+        // Image slideshow functionality
+        const images = [
+            {
+                src: 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/ac6aa21c5255bb0be244_ymul2b.jpg',
+                alt: 'Cầu Phước Khánh - ảnh 1',
+                caption: 'Góc nhìn tổng quan công trình đang thi công.'
+            },
+            {
+                src: 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/416b401db054590a0045_zlmapp.jpg',
+                alt: 'Cầu Phước Khánh - ảnh 2',
+                caption: 'Hình hài cầu ngày càng rõ nét giữa dòng sông.'
+            },
+            {
+                src: 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/25c22eb4defd37a36eec_qe3pg7.jpg',
+                alt: 'Cầu Phước Khánh - ảnh 3',
+                caption: 'Chi tiết kết cấu và khu vực thi công.'
+            },
+            {
+                src: 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/5e205856a81f4141180e_t6u0zg.jpg',
+                alt: 'Cầu Phước Khánh - ảnh 4',
+                caption: 'Nhịp cầu và hạng mục liên quan đang được tăng tốc.'
+            },
+            {
+                src: 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/e8c3e8b518fcf1a2a8ed_qts0bp.jpg',
+                alt: 'Cầu Phước Khánh - ảnh 5',
+                caption: 'Khu vực trụ/cụm thi công nhìn cận cảnh.'
+            },
+            {
+                src: 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872513/9db199c7698e80d0d99f_qbgp1j.jpg',
+                alt: 'Cầu Phước Khánh - ảnh 6',
+                caption: 'Toàn cảnh dự án — kỳ vọng sớm khép kín tuyến cao tốc Bến Lức – Long Thành.'
+            }
+        ];
 
-    <div class="mt-4 mb-4 p-3 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-lg">
-      <div class="text-sm font-medium text-gray-700 mb-2">Nguồn bài viết:</div>
-      <a href="https://vnexpress.net" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium text-sm transition-colors">
-        <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
-        </svg>
-        VnExpress.net
-        <svg class="w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokewidth="2">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-          <polyline points="15,3 21,3 21,9"></polyline>
-          <line x1="10" y1="14" x2="21" y2="3"></line>
-        </svg>
-      </a>
-    </div>
+        let currentImageIndex = 0;
+
+        function openSlideshow(index) {
+            currentImageIndex = index;
+            updateSlideshow();
+            document.getElementById('slideshow-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSlideshow() {
+            document.getElementById('slideshow-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateSlideshow();
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateSlideshow();
+        }
+
+        function updateSlideshow() {
+            const image = images[currentImageIndex];
+            document.getElementById('slideshow-image').src = image.src;
+            document.getElementById('slideshow-image').alt = image.alt;
+            document.getElementById('slideshow-caption').textContent = image.caption;
+            document.getElementById('slideshow-counter').textContent = `${currentImageIndex + 1} / ${images.length}`;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('slideshow-modal');
+            if (!modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') {
+                    closeSlideshow();
+                } else if (e.key === 'ArrowLeft') {
+                    previousImage();
+                } else if (e.key === 'ArrowRight') {
+                    nextImage();
+                }
+            }
+        });
+
+        // Close modal when clicking outside the image
+        document.getElementById('slideshow-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSlideshow();
+            }
+        });
+    </script>
 </article>
 HTML;
 
@@ -157,13 +359,13 @@ HTML;
             '@context' => 'https://schema.org',
             '@type' => 'NewsArticle',
             'headline' => $title,
-            'description' => 'Boeing 787-10 Dreamliner - máy bay thân rộng lớn nhất của Vietnam Airlines - hạ cánh thành công tại sân bay quốc tế Long Thành, đánh dấu cột mốc quan trọng trước thềm khai thác thương mại.',
-            'image' => 'https://res.cloudinary.com/daxynpb9m/image/upload/v1765814335/a-nh-ma-n-hi-nh-2023-12-16-lu-2248-4709-1765764955_rohv89.webp',
-            'datePublished' => '2025-12-15T08:00:00+07:00',
-            'dateModified' => '2025-12-15T08:00:00+07:00',
+            'description' => 'Cầu Phước Khánh bắc qua sông Lòng Tàu đang được đẩy nhanh thi công, sắp hoàn thành để khép kín tuyến cao tốc Bến Lức – Long Thành.',
+            'image' => 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/ac6aa21c5255bb0be244_ymul2b.jpg',
+            'datePublished' => '2025-12-16T14:30:00+07:00',
+            'dateModified' => '2025-12-16T14:30:00+07:00',
             'author' => [
                 '@type' => 'Person',
-                'name' => 'VnExpress',
+                'name' => 'ZNews',
             ],
             'publisher' => [
                 '@type' => 'Organization',
@@ -177,36 +379,40 @@ HTML;
                 '@type' => 'WebPage',
                 '@id' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug,
             ],
-            'keywords' => 'sân bay Long Thành, Boeing 787-10, Vietnam Airlines, Đồng Nai, hàng không, máy bay',
-            'articleSection' => 'Tin tức bất động sản',
+            'keywords' => 'cầu Phước Khánh, cao tốc Bến Lức Long Thành, Nhơn Trạch, Cần Giờ, bất động sản',
+            'articleSection' => 'Tin tức hạ tầng',
         ];
 
         $breadcrumbs = [
             ['name' => 'Trang chủ', 'url' => 'https://phatdatbatdongsan.com'],
             ['name' => 'Tin tức', 'url' => 'https://phatdatbatdongsan.com/tin-tuc'],
-            ['name' => 'Tin tức bất động sản', 'url' => 'https://phatdatbatdongsan.com/tin-tuc?type=news'],
+            ['name' => 'Hạ tầng giao thông', 'url' => 'https://phatdatbatdongsan.com/tin-tuc?type=infrastructure'],
             ['name' => $title, 'url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug],
         ];
 
-        $postId = DB::table('posts')->insertGetId([
+        // Update existing post or create new one
+        $existingPost = DB::table('posts')->where('slug', $slug)->first();
+        
+        if ($existingPost) {
+            DB::table('posts')->where('slug', $slug)->update([
             'author_id' => 4,
             'status' => 'published',
             'title' => $title,
             'slug' => $slug,
-            'summary' => 'Boeing 787-10 Dreamliner - máy bay thân rộng lớn nhất của Vietnam Airlines - hạ cánh thành công tại sân bay quốc tế Long Thành, đánh dấu cột mốc quan trọng trước thềm khai thác thương mại.',
+            'summary' => 'Cầu Phước Khánh bắc qua sông Lòng Tàu đang được đẩy nhanh thi công, sắp hoàn thành để khép kín tuyến cao tốc Bến Lức – Long Thành. Công trình này sẽ tạo ra nhiều cơ hội đầu tư bất động sản tại khu vực.',
             'content' => $content,
             'content_fmt' => 'html',
-            'cover_image_url' => 'https://res.cloudinary.com/daxynpb9m/image/upload/v1765814335/a-nh-ma-n-hi-nh-2023-12-16-lu-2248-4709-1765764955_rohv89.webp',
-            'reading_minutes' => 4,
+            'cover_image_url' => 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/ac6aa21c5255bb0be244_ymul2b.jpg',
+            'reading_minutes' => 5,
             'locale' => 'vi',
             'published_at' => $publishedAt,
             'canonical_url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug,
             'meta_title' => $title . ' | Phát Đạt Bất Động Sản',
-            'meta_description' => 'Boeing 787-10 Dreamliner hạ cánh tại sân bay Long Thành. Cập nhật tiến độ xây dựng và cơ hội đầu tư bất động sản khu vực Đồng Nai.',
-            'meta_keywords' => 'sân bay Long Thành, Boeing 787-10, Vietnam Airlines, Đồng Nai, bất động sản Long Thành, đầu tư sân bay',
+            'meta_description' => 'Cận cảnh cầu Phước Khánh sắp hoàn thành trên cao tốc Bến Lức - Long Thành. Cơ hội đầu tư bất động sản khu vực Nhơn Trạch, Đồng Nai.',
+            'meta_keywords' => 'cầu Phước Khánh, cao tốc Bến Lức Long Thành, Nhơn Trạch, Đồng Nai, Cần Giờ, bất động sản, hạ tầng giao thông',
             'og_title' => $title,
-            'og_description' => 'Boeing 787-10 Dreamliner - máy bay thân rộng lớn nhất của Vietnam Airlines - hạ cánh thành công tại sân bay quốc tế Long Thành.',
-            'og_image' => 'https://res.cloudinary.com/daxynpb9m/image/upload/v1765814335/a-nh-ma-n-hi-nh-2023-12-16-lu-2248-4709-1765764955_rohv89.webp',
+            'og_description' => 'Cầu Phước Khánh bắc qua sông Lòng Tàu đang được đẩy nhanh thi công, sắp hoàn thành để khép kín tuyến cao tốc.',
+            'og_image' => 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/ac6aa21c5255bb0be244_ymul2b.jpg',
             'twitter_card' => 'summary_large_image',
             'robots_index' => true,
             'robots_follow' => true,
@@ -221,245 +427,43 @@ HTML;
             'updated_at' => now(),
         ]);
 
-        // Link to post type (news - Tin tức bất động sản)
-        $newsType = DB::table('post_types')->where('code', 'news')->first();
-        if ($newsType) {
-            DB::table('post_post_types')->insert([
-                'post_id' => $postId,
-                'post_type_id' => $newsType->id,
+        // Link to post type (infrastructure - Hạ tầng giao thông)
+        $infrastructureType = DB::table('post_types')->where('code', 'infrastructure')->first();
+        if (!$infrastructureType) {
+            // Create infrastructure post type if not exists
+            $infrastructureTypeId = DB::table('post_types')->insertGetId([
+                'code' => 'infrastructure',
+                'name' => 'Hạ tầng giao thông',
             ]);
+        } else {
+            $infrastructureTypeId = $infrastructureType->id;
         }
-
-        // Link to tags
-        $tagCodes = ['dong-nai', 'thi-truong', 'quy-hoach'];
-        $tags = DB::table('tags')->whereIn('code', $tagCodes)->get();
-        foreach ($tags as $tag) {
-            DB::table('post_tags')->insert([
-                'post_id' => $postId,
-                'tag_id' => $tag->id,
-            ]);
-        }
-
-        $this->command->info("Created post: {$title}");
-    }
-
-    private function createSanBayLongThanhBaChuyenBayPost(): void
-    {
-        $title = 'Sân bay Long Thành sẽ đón ba chuyến bay sáng 19/12';
-        $slug = Str::slug($title);
-        $publishedAt = Carbon::parse('2025-12-15 10:30:00');
-
-        $content = <<<'HTML'
-<article class="font-sans max-w-none text-base text-gray-800">
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-        Sân bay quốc tế Long Thành sẽ đón ba chuyến bay thử nghiệm vào sáng ngày 19/12, đánh dấu bước chuẩn bị quan trọng trước khi chính thức khai trương đón khách thương mại.
-    </p>
-
-    <figure class="my-6">
-        <img src="https://res.cloudinary.com/daxynpb9m/image/upload/v1765815393/nha-ga-hanh-khach_bwuaq3.webp" alt="Nhà ga hành khách sân bay Long Thành" class="w-full rounded-lg shadow-md" />
-        <figcaption class="text-center text-gray-500 text-sm mt-2 italic">Nhà ga hành khách T1 sân bay quốc tế Long Thành với thiết kế hiện đại</figcaption>
-    </figure>
-
-    <h2 class="text-xl font-bold text-gray-900 mt-6 mb-3">Lịch trình ba chuyến bay thử nghiệm</h2>
-
-    <p class="leading-relaxed mb-4">
-        Theo thông tin từ Cục Hàng không Việt Nam, ba chuyến bay thử nghiệm sẽ được thực hiện vào buổi sáng ngày 19/12/2025, nhằm kiểm tra toàn bộ hệ thống vận hành của sân bay trước khi đưa vào khai thác chính thức.
-    </p>
-
-    <div class="overflow-x-auto my-4">
-        <table class="min-w-full rounded-xl overflow-hidden shadow-sm">
-            <thead class="bg-gradient-to-r from-teal-500 to-teal-600">
-                <tr>
-                    <th class="px-4 py-3 text-left font-semibold text-white">Chuyến bay</th>
-                    <th class="px-4 py-3 text-left font-semibold text-white">Hãng hàng không</th>
-                    <th class="px-4 py-3 text-left font-semibold text-white">Loại máy bay</th>
-                    <th class="px-4 py-3 text-left font-semibold text-white">Thời gian dự kiến</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="bg-white hover:bg-teal-50 transition-colors">
-                    <td class="px-4 py-3 border-b border-gray-100 font-semibold">Chuyến 1</td>
-                    <td class="px-4 py-3 border-b border-gray-100">Vietnam Airlines</td>
-                    <td class="px-4 py-3 border-b border-gray-100">Boeing 787-10</td>
-                    <td class="px-4 py-3 border-b border-gray-100 text-teal-600 font-semibold">6:00 - 7:00</td>
-                </tr>
-                <tr class="bg-teal-50/50 hover:bg-teal-50 transition-colors">
-                    <td class="px-4 py-3 border-b border-gray-100 font-semibold">Chuyến 2</td>
-                    <td class="px-4 py-3 border-b border-gray-100">VietJet Air</td>
-                    <td class="px-4 py-3 border-b border-gray-100">Airbus A321</td>
-                    <td class="px-4 py-3 border-b border-gray-100 text-amber-600 font-semibold">7:30 - 8:30</td>
-                </tr>
-                <tr class="bg-white hover:bg-teal-50 transition-colors">
-                    <td class="px-4 py-3 border-b border-gray-100 font-semibold">Chuyến 3</td>
-                    <td class="px-4 py-3 border-b border-gray-100">Bamboo Airways</td>
-                    <td class="px-4 py-3 border-b border-gray-100">Boeing 787-9</td>
-                    <td class="px-4 py-3 border-b border-gray-100 text-rose-600 font-bold">9:00 - 10:00</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="bg-teal-50 border border-teal-200 rounded-lg p-4 my-4">
-        <h3 class="font-semibold text-teal-800 mb-2">✈️ Mục đích các chuyến bay thử nghiệm</h3>
-        <ul class="list-none space-y-2 text-teal-900">
-            <li>• <strong>Kiểm tra đường băng:</strong> Đánh giá chất lượng mặt đường, hệ thống đèn dẫn đường</li>
-            <li>• <strong>Hệ thống dẫn đường:</strong> Kiểm tra radar, ILS và các thiết bị không lưu</li>
-            <li>• <strong>Nhà ga hành khách:</strong> Thử nghiệm quy trình check-in, an ninh, xuất nhập cảnh</li>
-            <li>• <strong>Dịch vụ mặt đất:</strong> Kiểm tra xe đẩy hành lý, cầu ống lên máy bay</li>
-        </ul>
-    </div>
-
-    <h2 class="text-xl font-bold text-gray-900 mt-6 mb-3">Thủ tướng chỉ đạo đẩy nhanh tiến độ</h2>
-
-    <figure class="my-6">
-        <img src="https://res.cloudinary.com/daxynpb9m/image/upload/v1765815393/thu-tuong_e1js3d.webp" alt="Thủ tướng kiểm tra sân bay Long Thành" class="w-full rounded-lg shadow-md" />
-        <figcaption class="text-center text-gray-500 text-sm mt-2 italic">Thủ tướng Chính phủ kiểm tra và chỉ đạo tiến độ xây dựng sân bay Long Thành</figcaption>
-    </figure>
-
-    <p class="leading-relaxed mb-4">
-        Thủ tướng Chính phủ đã có chuyến thị sát và làm việc với các đơn vị liên quan, yêu cầu đẩy nhanh tiến độ hoàn thiện các hạng mục còn lại để đảm bảo sân bay khai trương đúng kế hoạch.
-    </p>
-
-    <div class="bg-amber-50 border-l-4 border-amber-400 p-4 my-4">
-        <p class="text-amber-800">
-            📋 <strong>Chỉ đạo của Thủ tướng:</strong> Các bộ, ngành và địa phương cần phối hợp chặt chẽ, tập trung nguồn lực để hoàn thành các hạng mục còn lại, đảm bảo sân bay Long Thành khai trương đúng tiến độ vào <strong>Quý II/2026</strong>.
-        </p>
-    </div>
-
-    <h2 class="text-xl font-bold text-gray-900 mt-6 mb-3">Năng lực phục vụ của sân bay</h2>
-
-    <div class="bg-sky-50 border border-sky-200 rounded-lg p-4 my-4">
-        <h3 class="font-semibold text-sky-800 mb-2">🏗️ Thông số kỹ thuật giai đoạn 1</h3>
-        <ul class="list-none space-y-2 text-sky-900">
-            <li>• <strong>Công suất:</strong> 25 triệu hành khách/năm</li>
-            <li>• <strong>Đường băng:</strong> 4.000m x 75m, tiếp nhận máy bay cỡ lớn nhất</li>
-            <li>• <strong>Nhà ga T1:</strong> Diện tích 373.000 m², 20 cầu ống lên máy bay</li>
-            <li>• <strong>Sân đỗ:</strong> 50 vị trí đỗ máy bay các loại</li>
-            <li>• <strong>Hàng hóa:</strong> 1,2 triệu tấn hàng hóa/năm</li>
-        </ul>
-    </div>
-
-    <h2 class="text-xl font-bold text-gray-900 mt-6 mb-3">Tác động đến bất động sản khu vực</h2>
-
-    <div class="bg-rose-50 border border-rose-200 rounded-lg p-4 my-4">
-        <h3 class="font-semibold text-rose-800 mb-2">📈 Cơ hội đầu tư</h3>
-        <p class="text-rose-900 mb-2">
-            Việc sân bay Long Thành sắp đi vào hoạt động tạo ra nhiều cơ hội đầu tư bất động sản:
-        </p>
-        <ul class="list-none space-y-2 text-rose-900">
-            <li>• <strong>Đất nền:</strong> Giá đất khu vực Long Thành, Nhơn Trạch tiếp tục tăng</li>
-            <li>• <strong>Logistics:</strong> Nhu cầu kho bãi, trung tâm phân phối tăng cao</li>
-            <li>• <strong>Khách sạn:</strong> Phục vụ hành khách quá cảnh và du khách</li>
-            <li>• <strong>Khu đô thị:</strong> Thu hút lao động và chuyên gia đến sinh sống</li>
-        </ul>
-    </div>
-
-    <div class="bg-gray-50 rounded-lg p-4 my-4">
-        <h3 class="font-semibold text-gray-900 mb-3">🎯 Ý nghĩa của sự kiện</h3>
-        <ul class="list-none space-y-2 text-gray-700">
-            <li class="flex items-start"><span class="text-teal-500 mr-2">✓</span><span>Khẳng định sân bay Long Thành sẵn sàng đón khách thương mại</span></li>
-            <li class="flex items-start"><span class="text-teal-500 mr-2">✓</span><span>Kiểm tra đồng bộ toàn bộ hệ thống vận hành</span></li>
-            <li class="flex items-start"><span class="text-teal-500 mr-2">✓</span><span>Tạo niềm tin cho các hãng hàng không và hành khách</span></li>
-            <li class="flex items-start"><span class="text-teal-500 mr-2">✓</span><span>Thúc đẩy phát triển kinh tế vùng Đông Nam Bộ</span></li>
-        </ul>
-    </div>
-
-    <div class="mt-4 mb-4 p-3 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-lg">
-      <div class="text-sm font-medium text-gray-700 mb-2">Nguồn bài viết:</div>
-      <a href="https://vnexpress.net/san-bay-long-thanh-se-don-ba-chuyen-bay-sang-19-12-4993626.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium text-sm transition-colors">
-        <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
-        </svg>
-        VnExpress.net
-        <svg class="w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokewidth="2">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-          <polyline points="15,3 21,3 21,9"></polyline>
-          <line x1="10" y1="14" x2="21" y2="3"></line>
-        </svg>
-      </a>
-    </div>
-</article>
-HTML;
-
-        $schemaJson = [
-            '@context' => 'https://schema.org',
-            '@type' => 'NewsArticle',
-            'headline' => $title,
-            'description' => 'Sân bay quốc tế Long Thành sẽ đón ba chuyến bay thử nghiệm vào sáng ngày 19/12, đánh dấu bước chuẩn bị quan trọng trước khi chính thức khai trương.',
-            'image' => 'https://res.cloudinary.com/daxynpb9m/image/upload/v1765815393/nha-ga-hanh-khach_bwuaq3.webp',
-            'datePublished' => '2025-12-15T10:30:00+07:00',
-            'dateModified' => '2025-12-15T10:30:00+07:00',
-            'author' => [
-                '@type' => 'Person',
-                'name' => 'VnExpress',
-            ],
-            'publisher' => [
-                '@type' => 'Organization',
-                'name' => 'Phát Đạt Bất Động Sản',
-                'logo' => [
-                    '@type' => 'ImageObject',
-                    'url' => 'https://phatdatbatdongsan.com/images/logo.png',
-                ],
-            ],
-            'mainEntityOfPage' => [
-                '@type' => 'WebPage',
-                '@id' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug,
-            ],
-            'keywords' => 'sân bay Long Thành, chuyến bay thử nghiệm, Vietnam Airlines, Đồng Nai, hàng không',
-            'articleSection' => 'Tin tức bất động sản',
-        ];
-
-        $breadcrumbs = [
-            ['name' => 'Trang chủ', 'url' => 'https://phatdatbatdongsan.com'],
-            ['name' => 'Tin tức', 'url' => 'https://phatdatbatdongsan.com/tin-tuc'],
-            ['name' => 'Tin tức bất động sản', 'url' => 'https://phatdatbatdongsan.com/tin-tuc?type=news'],
-            ['name' => $title, 'url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug],
-        ];
-
-        $postId = DB::table('posts')->insertGetId([
-            'author_id' => 4,
-            'status' => 'published',
-            'title' => $title,
-            'slug' => $slug,
-            'summary' => 'Sân bay quốc tế Long Thành sẽ đón ba chuyến bay thử nghiệm vào sáng ngày 19/12, đánh dấu bước chuẩn bị quan trọng trước khi chính thức khai trương đón khách thương mại.',
-            'content' => $content,
-            'content_fmt' => 'html',
-            'cover_image_url' => 'https://res.cloudinary.com/daxynpb9m/image/upload/v1765815393/nha-ga-hanh-khach_bwuaq3.webp',
-            'reading_minutes' => 4,
-            'locale' => 'vi',
-            'published_at' => $publishedAt,
-            'canonical_url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug,
-            'meta_title' => $title . ' | Phát Đạt Bất Động Sản',
-            'meta_description' => 'Sân bay Long Thành đón ba chuyến bay thử nghiệm sáng 19/12. Cập nhật tiến độ và cơ hội đầu tư bất động sản khu vực Đồng Nai.',
-            'meta_keywords' => 'sân bay Long Thành, chuyến bay thử nghiệm, Vietnam Airlines, VietJet, Bamboo Airways, Đồng Nai, bất động sản',
-            'og_title' => $title,
-            'og_description' => 'Sân bay quốc tế Long Thành sẽ đón ba chuyến bay thử nghiệm vào sáng ngày 19/12, đánh dấu bước chuẩn bị quan trọng.',
-            'og_image' => 'https://res.cloudinary.com/daxynpb9m/image/upload/v1765815393/nha-ga-hanh-khach_bwuaq3.webp',
-            'twitter_card' => 'summary_large_image',
-            'robots_index' => true,
-            'robots_follow' => true,
-            'robots_advanced' => null,
-            'schema_type' => 'NewsArticle',
-            'schema_json' => json_encode($schemaJson, JSON_UNESCAPED_UNICODE),
-            'hreflangs' => json_encode([
-                ['lang' => 'vi', 'url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug],
-            ], JSON_UNESCAPED_UNICODE),
-            'breadcrumbs' => json_encode($breadcrumbs, JSON_UNESCAPED_UNICODE),
-            'created_at' => now(),
-            'updated_at' => now(),
+        
+        DB::table('post_post_types')->insert([
+            'post_id' => $postId,
+            'post_type_id' => $infrastructureTypeId,
         ]);
 
-        // Link to post type (news - Tin tức bất động sản)
-        $newsType = DB::table('post_types')->where('code', 'news')->first();
-        if ($newsType) {
-            DB::table('post_post_types')->insert([
-                'post_id' => $postId,
-                'post_type_id' => $newsType->id,
-            ]);
-        }
-
         // Link to tags
-        $tagCodes = ['dong-nai', 'thi-truong', 'quy-hoach'];
+        $tagCodes = ['dong-nai', 'ha-tang', 'giao-thong'];
+        
+        // Create tags if not exist
+        foreach ($tagCodes as $tagCode) {
+            $tagNames = [
+                'dong-nai' => 'Đồng Nai',
+                'ha-tang' => 'Hạ tầng',
+                'giao-thong' => 'Giao thông'
+            ];
+            
+            $existingTag = DB::table('tags')->where('code', $tagCode)->first();
+            if (!$existingTag) {
+                DB::table('tags')->insert([
+                    'code' => $tagCode,
+                    'name' => $tagNames[$tagCode],
+                ]);
+            }
+        }
+        
         $tags = DB::table('tags')->whereIn('code', $tagCodes)->get();
         foreach ($tags as $tag) {
             DB::table('post_tags')->insert([
