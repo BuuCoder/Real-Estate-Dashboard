@@ -176,7 +176,7 @@
                                 <span class="sr-only">Open menu</span>
                             </button>
                             <div>
-                                <h1 class="text-md lg:text-2xl font-extrabold text-slate-900">@yield('heading', 'Welcome to Planti.')</h1>
+                                <h1 class="text-md lg:text-2xl font-extrabold text-slate-900">@yield('heading', 'Welcome to Bất Động Sản Phát Đạt.')</h1>
                                 <p class="text-gray-500 text-xs lg:text-sm">Hello Shakir, welcome back!</p>
                             </div>
                         </div>

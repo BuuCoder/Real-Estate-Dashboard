@@ -178,49 +178,10 @@
                                 </td>
                                 <td class="px-6 py-4">{{ $listing->title }}</td>
                                 <td class="px-6 py-4">
-                                    @php
-                                        $price = $listing->price_total;
-                                        $currency = $listing->currency;
-                                        $displayPrice = '';
-                                        if ($currency === 'VND') {
-                                            $displayPrice =
-                                                '<span class="js-vnd-words" data-price="' . $price . '"></span>';
-                                        } else {
-                                            $displayPrice = number_format($price) . ' ' . $currency;
-                                        }
-                                    @endphp
-                                    {!! $displayPrice !!}
-                                    @if ($currency === 'VND')
-                                        <script>
-                                            function numberToWordsVND(number) {
-                                                let n = parseInt(number, 10);
-                                                if (isNaN(n) || n === 0) return "";
-                                                let str = "";
-                                                if (n >= 1000000000) {
-                                                    str += Math.floor(n / 1000000000) + " tỷ ";
-                                                    n = n % 1000000000;
-                                                }
-                                                if (n >= 1000000) {
-                                                    str += Math.floor(n / 1000000) + " triệu ";
-                                                    n = n % 1000000;
-                                                }
-                                                if (n >= 1000) {
-                                                    str += Math.floor(n / 1000) + " nghìn ";
-                                                    n = n % 1000;
-                                                }
-                                                if (n > 0) {
-                                                    str += n + " đồng";
-                                                }
-                                                return str.trim();
-                                            }
-                                            document.addEventListener('DOMContentLoaded', function() {
-                                                document.querySelectorAll('.js-vnd-words').forEach(function(el) {
-                                                    const price = el.getAttribute('data-price');
-                                                    el.textContent = numberToWordsVND(price);
-                                                });
-                                            });
-                                        </script>
-                                    @endif
+                                    <span class="font-semibold text-green-600">
+                                        {{ formatVietnamesePrice($listing->price_total, $listing->currency) }}
+                                    </span>
+
                                 </td>
                                 <td class="px-6 py-4 ">
                                     <div class="flex items-center gap-2">
@@ -260,29 +221,10 @@
                         @endif
                         <div class="flex-1">
                             <h3 class="font-bold text-md mb-2">{{ $listing->title }}</h3>
-                            <div class="mb-2 text-md font-semibold text-red-600">
-                                @php
-                                    $price = $listing->price_total;
-                                    $currency = $listing->currency;
-                                    $displayPrice = '';
-                                    if ($currency === 'VND') {
-                                        $displayPrice =
-                                            '<span class="js-vnd-words" data-price="' . $price . '"></span>';
-                                    } else {
-                                        $displayPrice = number_format($price) . ' ' . $currency;
-                                    }
-                                @endphp
-                                {!! $displayPrice !!}
-                                @if ($currency === 'VND')
-                                    <script>
-                                        document.addEventListener('DOMContentLoaded', function() {
-                                            document.querySelectorAll('.js-vnd-words').forEach(function(el) {
-                                                const price = el.getAttribute('data-price');
-                                                el.textContent = numberToWordsVND(price);
-                                            });
-                                        });
-                                    </script>
-                                @endif
+                            <div class="mb-2 text-md font-semibold text-green-600">
+                                {{ formatVietnamesePrice($listing->price_total, $listing->currency) }}
+                            </div>
+
                             </div>
                         </div>
                         <div class="flex gap-2 mt-4">

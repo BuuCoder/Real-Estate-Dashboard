@@ -114,7 +114,7 @@
                                     <a href="{{ route('listings.show', $listing) }}">{{ $listing->title }}</a>
                                 </h4>
                                 <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full font-medium">
-                                    {{ number_format($listing->price_total) }} {{ $listing->currency }}
+                                    {{ formatVietnamesePrice($listing->price_total, $listing->currency) }}
                                 </span>
                             </div>
                             

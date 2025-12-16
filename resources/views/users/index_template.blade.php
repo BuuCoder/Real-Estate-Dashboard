@@ -1,7 +1,7 @@
 @extends('dashboard.layout')
 
 @section('title', 'Dashboard')
-@section('heading', 'Welcome to Planti.')
+@section('heading', 'Welcome to Bất Động Sản Phát Đạt.')
 
 @section('content')
     <!-- Top Cards -->

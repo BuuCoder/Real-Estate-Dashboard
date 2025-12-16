@@ -7,17 +7,14 @@ use App\Http\Controllers\GeoDashboardController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/dashboard', function () {
-        return view('dashboard.index');
-    });
-    Route::get('/', function () {
-        return view('dashboard.index');
-    });
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index']);
     Route::resource('users', UserController::class);
     Route::get('/geo', [GeoDashboardController::class, 'index'])->name('geo.dashboard');
     Route::get('/geo/wards/{provinceCode}', [GeoDashboardController::class, 'getWardsByProvince'])->name('geo.wards.by_province');

@@ -270,7 +270,7 @@
                                 <span class="sr-only">Open menu</span>
                             </button>
                             <div>
-                                <h1 class="text-md lg:text-2xl font-extrabold text-slate-900">@yield('heading', 'Chào mừng đến với Planti.')</h1>
+                                <h1 class="text-md lg:text-2xl font-extrabold text-slate-900">@yield('heading', 'Chào mừng đến với Bất Động Sản Phát Đạt.')</h1>
                                 <p class="text-gray-500 text-xs lg:text-sm">Xin chào {{ Auth::user()->name ?? 'bạn' }}, chào mừng trở lại!</p>
                             </div>
                         </div>

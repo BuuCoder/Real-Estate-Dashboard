@@ -42,11 +42,11 @@
                 </div>
                 <div class="text-right">
                     <div class="text-3xl font-bold text-green-600">
-                        {{ number_format($listing->price_total) }} {{ $listing->currency }}
+                        {{ formatVietnamesePrice($listing->price_total, $listing->currency) }}
                     </div>
                     @if($listing->area_land)
                         <div class="text-sm text-gray-500">
-                            {{ number_format($listing->price_total / $listing->area_land) }} {{ $listing->currency }}/m²
+                            {{ formatPricePerSquareMeter($listing->price_total, $listing->area_land, $listing->currency) }}
                         </div>
                     @endif
                 </div>
