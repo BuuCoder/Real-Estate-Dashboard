@@ -178,10 +178,11 @@ class ListingController extends Controller
         $listingArr = $listing->toArray();
         $listingArr['price_total_text'] = $this->formatPriceTotal($listingArr['price_total']);
 
-        // Lấy các listings liên quan: cùng property_type_id, mới nhất, loại trừ listing hiện tại
+        // Lấy các listings liên quan: cùng property_type_id, mới nhất, loại trừ listing hiện tại và đã bán
         $relativeQuery = Listing::with(['images', 'amenities', 'province', 'ward'])
             ->where('id', '!=', $listing->id)
             ->where('property_type_id', $listing->property_type_id)
+            ->where('status', '!=', 'sold')
             ->orderBy('created_at', 'desc')
             ->limit(5)
             ->get();
@@ -192,11 +193,12 @@ class ListingController extends Controller
             return $arr;
         });
 
-        // Nếu không đủ 5 listings, bổ sung thêm các listings mới nhất khác
+        // Nếu không đủ 5 listings, bổ sung thêm các listings mới nhất khác (không bao gồm đã bán)
         if ($relative->count() < 5) {
             $excludeIds = $relativeQuery->pluck('id')->push($listing->id)->toArray();
             $additional = Listing::with(['images', 'amenities', 'province', 'ward'])
                 ->whereNotIn('id', $excludeIds)
+                ->where('status', '!=', 'sold')
                 ->orderBy('created_at', 'desc')
                 ->limit(5 - $relative->count())
                 ->get()
