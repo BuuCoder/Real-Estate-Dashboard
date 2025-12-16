@@ -270,23 +270,26 @@
                                 <span class="sr-only">Open menu</span>
                             </button>
                             <div>
-                                <h1 class="text-md lg:text-2xl font-extrabold text-slate-900">@yield('heading', 'Welcome to Planti.')</h1>
-                                <p class="text-gray-500 text-xs lg:text-sm">Hello Shakir, welcome back!</p>
+                                <h1 class="text-md lg:text-2xl font-extrabold text-slate-900">@yield('heading', 'Chào mừng đến với Planti.')</h1>
+                                <p class="text-gray-500 text-xs lg:text-sm">Xin chào {{ Auth::user()->name ?? 'bạn' }}, chào mừng trở lại!</p>
                             </div>
                         </div>
                         <div class="flex-1 max-w-lg md:w-full">
-                            <div class="relative">
+                            <form action="{{ route('search') }}" method="GET" class="relative">
                                 <input
+                                    name="q"
                                     class="w-full rounded-2xl bg-gray-100 border border-gray-200 py-2.5 pl-10 pr-12 outline-none focus:ring-2 focus:ring-brand-400"
-                                    placeholder="Search Dashboard">
+                                    placeholder="Tìm kiếm bài viết, bài đăng..."
+                                    value="{{ request('q') }}">
                                 <svg class="absolute left-3 top-2.5 w-5 h-5 text-gray-400" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                         d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z" />
                                 </svg>
                                 <button
-                                    class="absolute right-2 top-1.5 px-3 py-1 text-sm bg-brand-600 text-white rounded-xl hover:bg-brand-700">Search</button>
-                            </div>
+                                    type="submit"
+                                    class="absolute right-2 top-1.5 px-3 py-1 text-sm bg-brand-600 text-white rounded-xl hover:bg-brand-700">Tìm kiếm</button>
+                            </form>
                         </div>
                     </div>
 

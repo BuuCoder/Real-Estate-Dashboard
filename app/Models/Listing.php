@@ -77,4 +77,14 @@ class Listing extends Model
     {
         return $this->belongsTo(Ward::class, 'ward_id', 'code');
     }
+
+    public function scopeSearch($query, $term)
+    {
+        if (!$term) return $query;
+        
+        return $query->where(function($q) use ($term) {
+            $q->where('title', 'LIKE', "%{$term}%")
+              ->orWhere('description', 'LIKE', "%{$term}%");
+        });
+    }
 }

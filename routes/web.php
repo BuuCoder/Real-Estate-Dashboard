@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\GeoDashboardController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SearchController;
 
 Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -21,6 +22,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/geo', [GeoDashboardController::class, 'index'])->name('geo.dashboard');
     Route::get('/geo/wards/{provinceCode}', [GeoDashboardController::class, 'getWardsByProvince'])->name('geo.wards.by_province');
     Route::resource('listings', ListingController::class);
+    
+    // Search
+    Route::get('/search', [SearchController::class, 'index'])->name('search');
     
     // Post CRUD
     Route::resource('posts', PostController::class);

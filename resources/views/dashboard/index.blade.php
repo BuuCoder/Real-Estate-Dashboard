@@ -1,7 +1,7 @@
 @extends('dashboard.layout')
 
 @section('title', 'Dashboard')
-@section('heading', 'Welcome to Planti.')
+@section('heading', 'Chào mừng đến với Planti.')
 
 @section('content')
     Dashboard
