@@ -225,6 +225,15 @@
                         </svg>
                         Chỉnh sửa
                     </a>
+
+                    <!-- Share Button -->
+                    <button type="button" id="shareBtn"
+                            class="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+                        </svg>
+                        Share Facebook/Zalo
+                    </button>
                     
                     <form action="{{ route('listings.destroy', $listing) }}" method="POST" class="inline"
                           onsubmit="return confirm('Bạn có chắc chắn muốn xóa bài đăng này?')">
@@ -250,6 +259,175 @@
                 </div>
             </div>
         </div>
+
+        <!-- Share Modal -->
+        <div id="shareModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden">
+                <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+                    <h3 class="text-xl font-bold text-gray-900">Share lên Facebook/Zalo</h3>
+                    <button onclick="closeShareModal()" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+                    <!-- Loading -->
+                    <div id="shareLoading" class="text-center py-8">
+                        <svg class="animate-spin h-8 w-8 text-blue-600 mx-auto" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <p class="mt-2 text-gray-600">Đang tải...</p>
+                    </div>
+
+                    <!-- Content -->
+                    <div id="shareContent" class="hidden space-y-6">
+                        <!-- Share Text -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="block text-sm font-medium text-gray-700">Nội dung để copy:</label>
+                                <button onclick="copyShareText()" class="inline-flex items-center px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+                                    </svg>
+                                    Copy Text
+                                </button>
+                            </div>
+                            <textarea id="shareText" readonly rows="12" 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-50 text-sm font-mono"></textarea>
+                        </div>
+
+                        <!-- Images -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="block text-sm font-medium text-gray-700">Hình ảnh (<span id="imageCount">0</span> ảnh):</label>
+                                <button onclick="downloadAllImages()" class="inline-flex items-center px-3 py-1 bg-green-600 hover:bg-green-700 text-white text-sm rounded-lg">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                    </svg>
+                                    Tải tất cả ảnh
+                                </button>
+                            </div>
+                            <div id="imageGrid" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-4 border-t border-gray-200 bg-gray-50">
+                    <p class="text-sm text-gray-600">
+                        💡 Copy nội dung và tải ảnh về, sau đó paste vào Facebook/Zalo để đăng bài.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+let shareData = null;
+
+document.getElementById('shareBtn').addEventListener('click', function() {
+    document.getElementById('shareModal').classList.remove('hidden');
+    document.getElementById('shareLoading').classList.remove('hidden');
+    document.getElementById('shareContent').classList.add('hidden');
+    
+    fetch('{{ route("listings.share", $listing) }}')
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                shareData = data.data;
+                renderShareContent();
+            } else {
+                alert('Lỗi: ' + data.message);
+                closeShareModal();
+            }
+        })
+        .catch(err => {
+            alert('Đã xảy ra lỗi khi tải dữ liệu');
+            closeShareModal();
+        });
+});
+
+function renderShareContent() {
+    document.getElementById('shareLoading').classList.add('hidden');
+    document.getElementById('shareContent').classList.remove('hidden');
+    
+    document.getElementById('shareText').value = shareData.share_text;
+    document.getElementById('imageCount').textContent = shareData.images.length;
+    
+    const grid = document.getElementById('imageGrid');
+    grid.innerHTML = '';
+    
+    shareData.images.forEach((img, index) => {
+        const div = document.createElement('div');
+        div.className = 'relative group';
+        div.innerHTML = `
+            <img src="${img.url}" alt="${img.caption}" class="w-full h-32 object-cover rounded-lg border border-gray-200">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all rounded-lg flex items-center justify-center">
+                <button onclick="downloadImage('${img.url}', ${index})" 
+                    class="opacity-0 group-hover:opacity-100 px-3 py-1 bg-white text-gray-800 text-sm rounded-lg shadow">
+                    Tải ảnh
+                </button>
+            </div>
+            <p class="mt-1 text-xs text-gray-600 truncate">${img.caption}</p>
+            ${img.is_cover ? '<span class="absolute top-1 left-1 bg-blue-600 text-white text-xs px-1 rounded">Bìa</span>' : ''}
+        `;
+        grid.appendChild(div);
+    });
+}
+
+function closeShareModal() {
+    document.getElementById('shareModal').classList.add('hidden');
+}
+
+function copyShareText() {
+    const textarea = document.getElementById('shareText');
+    textarea.select();
+    document.execCommand('copy');
+    
+    const btn = event.target.closest('button');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Đã copy!';
+    btn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+    btn.classList.add('bg-green-600');
+    
+    setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.classList.remove('bg-green-600');
+        btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+    }, 2000);
+}
+
+function downloadImage(url, index) {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `image_${index + 1}.jpg`;
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+function downloadAllImages() {
+    if (!shareData || !shareData.images.length) return;
+    
+    shareData.images.forEach((img, index) => {
+        setTimeout(() => {
+            downloadImage(img.url, index);
+        }, index * 500);
+    });
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeShareModal();
+});
+
+document.getElementById('shareModal').addEventListener('click', function(e) {
+    if (e.target === this) closeShareModal();
+});
+</script>
 @endsection

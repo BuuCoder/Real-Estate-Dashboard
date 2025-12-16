@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/geo', [GeoDashboardController::class, 'index'])->name('geo.dashboard');
     Route::get('/geo/wards/{provinceCode}', [GeoDashboardController::class, 'getWardsByProvince'])->name('geo.wards.by_province');
     Route::resource('listings', ListingController::class);
+    Route::get('listings/{listing}/share', [ListingController::class, 'share'])->name('listings.share');
     
     // Search
     Route::get('/search', [SearchController::class, 'index'])->name('search');

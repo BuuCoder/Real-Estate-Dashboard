@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Listing;
 use App\Models\Amenity;
 use App\Models\Image;
+use App\Services\ListingShareService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class ListingController extends Controller
@@ -254,5 +256,27 @@ class ListingController extends Controller
         $listing->images()->delete();
         $listing->delete();
         return redirect()->route('listings.index')->with('success', 'Xóa tin đăng thành công.');
+    }
+
+    /**
+     * Lấy nội dung để share lên Facebook/Zalo
+     */
+    public function share($id, ListingShareService $shareService)
+    {
+        try {
+            $listing = Listing::with(['images', 'amenities', 'province', 'ward'])->findOrFail($id);
+            $shareData = $shareService->generateShareContent($listing);
+
+            return response()->json([
+                'success' => true,
+                'data' => $shareData
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Đã xảy ra lỗi khi tạo nội dung share: ' . $e->getMessage());
+            return response()->json([
+                'success' => false,
+                'message' => 'Đã xảy ra lỗi khi tạo nội dung share.'
+            ], 500);
+        }
     }
 }
