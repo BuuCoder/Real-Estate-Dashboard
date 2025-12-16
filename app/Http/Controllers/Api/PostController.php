@@ -60,9 +60,41 @@ class PostController extends Controller
                     'message' => 'Post not found.'
                 ], 404);
             }
+
+            // Lấy các bài viết liên quan: cùng postTypes, mới nhất, loại trừ bài hiện tại
+            $postTypeIds = $post->postTypes->pluck('id')->toArray();
+            $relative = collect();
+
+            if (!empty($postTypeIds)) {
+                $relative = Post::query()
+                    ->published()
+                    ->with(['author', 'tags', 'postTypes'])
+                    ->where('id', '!=', $post->id)
+                    ->whereHas('postTypes', function ($q) use ($postTypeIds) {
+                        $q->whereIn('post_types.id', $postTypeIds);
+                    })
+                    ->orderBy('published_at', 'desc')
+                    ->limit(5)
+                    ->get();
+            }
+
+            // Nếu không đủ 5 bài, bổ sung thêm các bài mới nhất khác
+            if ($relative->count() < 5) {
+                $excludeIds = $relative->pluck('id')->push($post->id)->toArray();
+                $additional = Post::query()
+                    ->published()
+                    ->with(['author', 'tags', 'postTypes'])
+                    ->whereNotIn('id', $excludeIds)
+                    ->orderBy('published_at', 'desc')
+                    ->limit(5 - $relative->count())
+                    ->get();
+                $relative = $relative->concat($additional);
+            }
+
             return response()->json([
                 'success' => true,
-                'data' => $post
+                'data' => $post,
+                'relative' => $relative
             ]);
         } catch (\Exception $e) {
             Log::error('Error fetching post detail: ' . $e->getMessage());

@@ -178,7 +178,40 @@ class ListingController extends Controller
         $listingArr = $listing->toArray();
         $listingArr['price_total_text'] = $this->formatPriceTotal($listingArr['price_total']);
 
-        return response()->json(['data' => $listingArr]);
+        // Lấy các listings liên quan: cùng property_type_id, mới nhất, loại trừ listing hiện tại
+        $relativeQuery = Listing::with(['images', 'amenities', 'province', 'ward'])
+            ->where('id', '!=', $listing->id)
+            ->where('property_type_id', $listing->property_type_id)
+            ->orderBy('created_at', 'desc')
+            ->limit(5)
+            ->get();
+
+        $relative = $relativeQuery->map(function ($item) {
+            $arr = $item->toArray();
+            $arr['price_total_text'] = $this->formatPriceTotal($arr['price_total']);
+            return $arr;
+        });
+
+        // Nếu không đủ 5 listings, bổ sung thêm các listings mới nhất khác
+        if ($relative->count() < 5) {
+            $excludeIds = $relativeQuery->pluck('id')->push($listing->id)->toArray();
+            $additional = Listing::with(['images', 'amenities', 'province', 'ward'])
+                ->whereNotIn('id', $excludeIds)
+                ->orderBy('created_at', 'desc')
+                ->limit(5 - $relative->count())
+                ->get()
+                ->map(function ($item) {
+                    $arr = $item->toArray();
+                    $arr['price_total_text'] = $this->formatPriceTotal($arr['price_total']);
+                    return $arr;
+                });
+            $relative = $relative->concat($additional);
+        }
+
+        return response()->json([
+            'data' => $listingArr,
+            'relative' => $relative
+        ]);
     }
 
     // GET /api/listings/meta_listing
