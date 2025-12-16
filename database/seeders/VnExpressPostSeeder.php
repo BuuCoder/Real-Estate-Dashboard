@@ -390,11 +390,8 @@ HTML;
             ['name' => $title, 'url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug],
         ];
 
-        // Update existing post or create new one
-        $existingPost = DB::table('posts')->where('slug', $slug)->first();
         
-        if ($existingPost) {
-            DB::table('posts')->where('slug', $slug)->update([
+        $postId = DB::table('posts')->insertGetId([
             'author_id' => 4,
             'status' => 'published',
             'title' => $title,
