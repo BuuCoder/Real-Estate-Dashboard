@@ -11,195 +11,170 @@ class VnExpressPostSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->createCauPhuocKhanhPost();
+        $this->createThangLongRealGroupPost();
     }
 
 
-    private function createCauPhuocKhanhPost(): void
+    private function createThangLongRealGroupPost(): void
     {
-        $title = 'Cận cảnh cầu Phước Khánh trên cao tốc Bến Lức – Long Thành sắp về đích';
+        $title = 'Thang Long Real Group phát triển đô thị gần sân bay Long Thành';
         $slug = Str::slug($title);
-        $publishedAt = Carbon::parse('2025-12-16 14:30:00');
+        $publishedAt = Carbon::parse('2025-12-18 10:00:00');
 
         $content = <<<'HTML'
 <article class="font-sans max-w-none text-base text-gray-800">
     <!-- Header -->
     <div class="mb-6">
-        <p class="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-800">
-            <svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+        <p class="inline-flex items-center gap-2 rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800">
+            <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
             </svg>
-            Tiến độ dự án
+            Dự án mới
         </p>
-        <h1 class="mt-3 text-lg font-semibold tracking-tight text-emerald-950 sm:text-xl">Cận cảnh cầu Phước Khánh trên cao tốc Bến Lức – Long Thành sắp về đích</h1>
-        <p class="mt-2 text-sm leading-6 text-emerald-900/80">
-            Sau thời gian dài gián đoạn, cầu Phước Khánh (bắc qua sông Lòng Tàu, kết nối Cần Giờ – Nhơn Trạch) đang được đẩy nhanh thi công. Các mốc lắp đặt cáp dây văng và hoàn thiện kết cấu đang giúp công trình tiến gần "vạch đích", tạo kỳ vọng khép kín toàn tuyến cao tốc Bến Lức – Long Thành.
+        <h1 class="mt-3 text-lg font-semibold tracking-tight text-blue-950 sm:text-xl">Thang Long Real Group phát triển đô thị gần sân bay Long Thành</h1>
+        <p class="mt-2 text-sm leading-6 text-blue-900/80">
+            Thang Long Real Group công bố kế hoạch phát triển khu đô thị hiện đại tại khu vực gần sân bay Long Thành, tỉnh Đồng Nai. Dự án hứa hẹn mang đến không gian sống chất lượng cao với thiết kế hiện đại và tiện ích đầy đủ.
         </p>
     </div>
 
     <!-- Quick facts -->
     <div class="mb-6 grid gap-3 sm:grid-cols-3">
-        <div class="rounded-xl border border-emerald-100 bg-white p-4">
+        <div class="rounded-xl border border-blue-100 bg-white p-4">
             <div class="flex items-center gap-2 mb-2">
-                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
-                <p class="text-xs font-medium text-emerald-700">Vị trí</p>
+                <p class="text-xs font-medium text-blue-700">Vị trí</p>
             </div>
-            <p class="text-sm text-emerald-950">Sông Lòng Tàu • Cần Giờ (TP.HCM) ↔ Nhơn Trạch (Đồng Nai)</p>
+            <p class="text-sm text-blue-950">Gần sân bay Long Thành • Đồng Nai</p>
         </div>
-        <div class="rounded-xl border border-emerald-100 bg-white p-4">
+        <div class="rounded-xl border border-blue-100 bg-white p-4">
             <div class="flex items-center gap-2 mb-2">
-                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                 </svg>
-                <p class="text-xs font-medium text-emerald-700">Vai trò</p>
+                <p class="text-xs font-medium text-blue-700">Loại hình</p>
             </div>
-            <p class="text-sm text-emerald-950">Hạng mục then chốt để khép kín tuyến cao tốc</p>
+            <p class="text-sm text-blue-950">Khu đô thị hiện đại với căn hộ và tiện ích</p>
         </div>
-        <div class="rounded-xl border border-emerald-100 bg-white p-4">
+        <div class="rounded-xl border border-blue-100 bg-white p-4">
             <div class="flex items-center gap-2 mb-2">
-                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
                 </svg>
-                <p class="text-xs font-medium text-emerald-700">Kỳ vọng</p>
+                <p class="text-xs font-medium text-blue-700">Ưu thế</p>
             </div>
-            <p class="text-sm text-emerald-950">Giảm tải trục giao thông, hỗ trợ logistics & liên kết vùng</p>
+            <p class="text-sm text-blue-950">Kết nối thuận lợi với sân bay quốc tế</p>
         </div>
     </div>
 
     <!-- Gallery -->
-    <div class="rounded-2xl border border-emerald-100 bg-white p-4 sm:p-5">
+    <div class="rounded-2xl border border-blue-100 bg-white p-4 sm:p-5">
         <div class="flex items-center justify-between gap-3">
             <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                 </svg>
-                <h2 class="text-sm font-semibold text-emerald-950">Hình ảnh cập nhật</h2>
+                <h2 class="text-sm font-semibold text-blue-950">Hình ảnh dự án</h2>
             </div>
-            <span class="text-xs text-emerald-700">Nguồn: ảnh bạn cung cấp</span>
+            <span class="text-xs text-blue-700">Nguồn: Thang Long Real Group</span>
         </div>
-        <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" id="gallery-grid">
+        <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-2" id="gallery-grid">
             <!-- 1 -->
-            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer" onclick="openSlideshow(0)">
+            <figure class="group overflow-hidden rounded-xl border border-blue-100 bg-blue-50 cursor-pointer">
                 <div class="relative">
-                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/ac6aa21c5255bb0be244_ymul2b.jpg" alt="Cầu Phước Khánh - ảnh 1" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1766020702/thang-long-home_kdf1ez.webp" alt="Thang Long Home - Hình 1" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                         <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M21 19V5c0-1.1-.9-2-2-2H5c0-1.1-.9-2-2-2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
                         </svg>
                     </div>
                 </div>
-                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Góc nhìn tổng quan công trình đang thi công.</figcaption>
+                <figcaption class="px-3 py-2 text-xs text-blue-900/80">Tổng quan khu đô thị Thang Long Home.</figcaption>
             </figure>
             <!-- 2 -->
-            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer" onclick="openSlideshow(1)">
+            <figure class="group overflow-hidden rounded-xl border border-blue-100 bg-blue-50 cursor-pointer sm:col-span-2 lg:col-span-2">
                 <div class="relative">
-                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/416b401db054590a0045_zlmapp.jpg" alt="Cầu Phước Khánh - ảnh 2" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1766020703/phoi-canh-fiato-airpot_mjckkz.webp" alt="Phối cảnh Fiato Airport - Cover" class="h-52 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                         <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M21 19V5c0-1.1-.9-2-2-2H5c0-1.1-.9-2-2-2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
                         </svg>
                     </div>
                 </div>
-                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Hình hài cầu ngày càng rõ nét giữa dòng sông.</figcaption>
+                <figcaption class="px-3 py-2 text-xs text-blue-900/80">Phối cảnh dự án Fiato Airport - khu đô thị hiện đại gần sân bay Long Thành.</figcaption>
             </figure>
             <!-- 3 -->
-            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer" onclick="openSlideshow(2)">
+            <figure class="group overflow-hidden rounded-xl border border-blue-100 bg-blue-50 cursor-pointer">
                 <div class="relative">
-                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/25c22eb4defd37a36eec_qe3pg7.jpg" alt="Cầu Phước Khánh - ảnh 3" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1766020702/phoi-canh-can-ho-2-phong-ngu_chcmuc.webp" alt="Phối cảnh căn hộ 2 phòng ngủ - Hình 3" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                         <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M21 19V5c0-1.1-.9-2-2-2H5c0-1.1-.9-2-2-2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
                         </svg>
                     </div>
                 </div>
-                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Chi tiết kết cấu và khu vực thi công.</figcaption>
+                <figcaption class="px-3 py-2 text-xs text-blue-900/80">Thiết kế căn hộ 2 phòng ngủ hiện đại.</figcaption>
             </figure>
             <!-- 4 -->
-            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer" onclick="openSlideshow(3)">
+            <figure class="group overflow-hidden rounded-xl border border-blue-100 bg-blue-50 cursor-pointer">
                 <div class="relative">
-                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/5e205856a81f4141180e_t6u0zg.jpg" alt="Cầu Phước Khánh - ảnh 4" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1766020702/hub-thuong-mai_znt43p.webp" alt="Hub thương mại - Hình 4" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                         <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M21 19V5c0-1.1-.9-2-2-2H5c0-1.1-.9-2-2-2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
                         </svg>
                     </div>
                 </div>
-                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Nhịp cầu và hạng mục liên quan đang được tăng tốc.</figcaption>
-            </figure>
-            <!-- 5 -->
-            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer" onclick="openSlideshow(4)">
-                <div class="relative">
-                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/e8c3e8b518fcf1a2a8ed_qts0bp.jpg" alt="Cầu Phước Khánh - ảnh 5" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                        <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c0-1.1-.9-2-2-2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-                        </svg>
-                    </div>
-                </div>
-                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Khu vực trụ/cụm thi công nhìn cận cảnh.</figcaption>
-            </figure>
-            <!-- 6 -->
-            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 sm:col-span-2 lg:col-span-3 cursor-pointer" onclick="openSlideshow(5)">
-                <div class="relative">
-                    <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1765872513/9db199c7698e80d0d99f_qbgp1j.jpg" alt="Cầu Phước Khánh - ảnh 6" class="h-52 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                        <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c0-1.1-.9-2-2-2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-                        </svg>
-                    </div>
-                </div>
-                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Toàn cảnh dự án — kỳ vọng sớm khép kín tuyến cao tốc Bến Lức – Long Thành.</figcaption>
+                <figcaption class="px-3 py-2 text-xs text-blue-900/80">Hub thương mại tích hợp đa dịch vụ.</figcaption>
             </figure>
         </div>
 
         <!-- Body -->
-        <div class="mt-6 space-y-4 text-sm leading-6 text-emerald-900/80">
+        <div class="mt-6 space-y-4 text-sm leading-6 text-blue-900/80">
             <p>
-                Cầu Phước Khánh là hạng mục "nút thắt" cuối cùng của tuyến cao tốc Bến Lức – Long Thành. Khi hoàn thiện, tuyến đường sẽ tăng khả năng kết nối liên vùng giữa Tây Nam Bộ và Đông Nam Bộ, đồng thời hỗ trợ vận tải hàng hoá, giảm áp lực cho các trục đường hiện hữu.
+                Thang Long Real Group vừa công bố kế hoạch phát triển khu đô thị hiện đại tại khu vực gần sân bay Long Thành, tỉnh Đồng Nai. Dự án được kỳ vọng sẽ trở thành một trong những khu đô thị đáng sống nhất khu vực Đông Nam Bộ, tận dụng lợi thế từ sân bay quốc tế Long Thành sắp đi vào hoạt động.
             </p>
             
-            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 my-4">
-                <div class="flex items-center gap-2 mb-2">
-                    <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                    </svg>
-                    <h3 class="font-semibold text-emerald-800">Thông số kỹ thuật cầu Phước Khánh</h3>
-                </div>
-                <ul class="list-none space-y-2 text-emerald-900">
-                    <li>• <strong>Chiều dài:</strong> 1.875m (cầu chính 420m)</li>
-                    <li>• <strong>Chiều rộng:</strong> 23m (4 làn xe)</li>
-                    <li>• <strong>Loại cầu:</strong> Cầu dây văng bê tông cốt thép</li>
-                    <li>• <strong>Khoảng thông thuyền:</strong> 120m, cao 42m</li>
-                    <li>• <strong>Tổng mức đầu tư:</strong> Khoảng 2.800 tỷ đồng</li>
-                </ul>
-            </div>
-
-            <p>
-                Trong giai đoạn nước rút, các đầu việc quan trọng thường tập trung vào hoàn thiện kết cấu nhịp, hệ dây văng, mặt cầu và hạng mục an toàn giao thông. Tiến độ thực tế có thể thay đổi theo điều kiện thi công và công tác điều phối, nhưng tín hiệu chung là công trường đang được thúc đẩy mạnh để sớm đưa công trình vào khai thác.
-            </p>
-
             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-4">
                 <div class="flex items-center gap-2 mb-2">
                     <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                </svg>
+                <h3 class="font-semibold text-blue-800">Thông tin dự án Fiato Airport</h3>
+            </div>
+            <ul class="list-none space-y-2 text-blue-900">
+                <li>• <strong>Vị trí:</strong> Gần sân bay quốc tế Long Thành, Đồng Nai</li>
+                <li>• <strong>Quy mô:</strong> Khu đô thị tích hợp đa chức năng</li>
+                <li>• <strong>Sản phẩm:</strong> Căn hộ, shophouse, hub thương mại</li>
+                <li>• <strong>Tiện ích:</strong> Trung tâm thương mại, khu vui chơi, công viên</li>
+                <li>• <strong>Kết nối:</strong> Thuận tiện di chuyển đến sân bay và TP.HCM</li>
+            </ul>
+
+            <p>
+                Dự án Fiato Airport được thiết kế theo tiêu chuẩn quốc tế với không gian sống hiện đại, tiện nghi đầy đủ. Các căn hộ được bố trí thông minh, tối ưu hóa ánh sáng tự nhiên và tầm nhìn. Đặc biệt, khu đô thị tích hợp hub thương mại đa dịch vụ, đáp ứng mọi nhu cầu sinh hoạt của cư dân.
+            </p>
+
+            <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
-                    <h3 class="font-semibold text-blue-800">Ý nghĩa khi hoàn thành</h3>
+                    <h3 class="font-semibold text-green-800">Lợi thế vị trí</h3>
                 </div>
-                <ul class="list-none space-y-2 text-blue-900">
-                    <li>• <strong>Kết nối vùng:</strong> Liên thông Tây Nam Bộ - Đông Nam Bộ</li>
-                    <li>• <strong>Logistics:</strong> Hỗ trợ vận chuyển hàng hóa từ cảng Cái Mép - Thị Vải</li>
-                    <li>• <strong>Giao thông:</strong> Giảm tải cho quốc lộ 51 và các tuyến hiện hữu</li>
-                    <li>• <strong>Phát triển:</strong> Thúc đẩy kinh tế khu vực Cần Giờ - Nhơn Trạch</li>
+                <ul class="list-none space-y-2 text-green-900">
+                    <li>• <strong>Sân bay Long Thành:</strong> Kết nối quốc tế thuận lợi</li>
+                    <li>• <strong>Cao tốc Bến Lức - Long Thành:</strong> Liên kết với TP.HCM</li>
+                    <li>• <strong>Khu công nghiệp:</strong> Cơ hội việc làm và phát triển</li>
+                    <li>• <strong>Hạ tầng hoàn chỉnh:</strong> Điện, nước, internet tốc độ cao</li>
                 </ul>
             </div>
 
-            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Tác động đến thị trường bất động sản</h2>
+            <h2 class="text-lg font-bold text-blue-950 mt-6 mb-3">Tiềm năng đầu tư</h2>
             
             <p>
-                Việc cầu Phước Khánh sắp hoàn thành tạo ra nhiều cơ hội đầu tư bất động sản tại khu vực Nhơn Trạch (Đồng Nai) và Cần Giờ (TP.HCM). Kết nối giao thông thuận lợi sẽ thúc đẩy phát triển các dự án logistics, khu công nghiệp và khu đô thị mới.
+                Với vị trí chiến lược gần sân bay quốc tế Long Thành, dự án của Thang Long Real Group hứa hẹn mang lại giá trị đầu tư bền vững. Khu vực này đang trở thành tâm điểm phát triển kinh tế mới của vùng Đông Nam Bộ, thu hút nhiều nhà đầu tư trong và ngoài nước.
             </p>
 
             <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-4">
@@ -210,148 +185,24 @@ class VnExpressPostSeeder extends Seeder
                     <h3 class="font-semibold text-amber-800">Cơ hội đầu tư bất động sản</h3>
                 </div>
                 <ul class="list-none space-y-2 text-amber-900">
-                    <li>• <strong>Đất nền:</strong> Khu vực Nhơn Trạch, Long Thành có tiềm năng tăng giá</li>
-                    <li>• <strong>Kho bãi:</strong> Phục vụ logistics từ cảng Cái Mép - Thị Vải</li>
-                    <li>• <strong>Khu công nghiệp:</strong> Thu hút đầu tư sản xuất, gia công</li>
-                    <li>• <strong>Nhà ở:</strong> Đáp ứng nhu cầu an cư của lao động</li>
+                    <li>• <strong>Căn hộ:</strong> Phù hợp cho gia đình trẻ và chuyên gia</li>
+                    <li>• <strong>Shophouse:</strong> Kinh doanh dịch vụ, thương mại</li>
+                    <li>• <strong>Cho thuê:</strong> Nhu cầu cao từ nhân viên sân bay và khu công nghiệp</li>
+                    <li>• <strong>Tăng giá:</strong> Tiềm năng tăng trưởng mạnh khi sân bay hoạt động</li>
                 </ul>
             </div>
         </div>
 
         <!-- CTA -->
         <div class="mt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <p class="text-xs text-emerald-700">
+            <p class="text-xs text-blue-700">
                 Nguồn tham khảo: 
-                <a href="https://znews.vn" target="_blank" rel="nofollow noopener" class="font-medium text-emerald-600 hover:underline">
-                    ZNews
+                <a href="https://vnexpress.net/thang-long-real-group-phat-trien-do-thi-gan-san-bay-long-thanh-4939614.html" target="_blank" rel="nofollow noopener" class="font-medium text-blue-600 hover:underline">
+                    VnExpress
                 </a>
             </p>    
         </div>
     </div>
-
-    <!-- Image Slideshow Modal -->
-    <div id="slideshow-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center">
-        <div class="relative max-w-4xl max-h-full p-4">
-            <!-- Close Button -->
-            <button onclick="closeSlideshow()" class="absolute top-4 right-4 z-10 text-white hover:text-gray-300 transition-colors">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
-            
-            <!-- Previous Button -->
-            <button onclick="previousImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                </svg>
-            </button>
-            
-            <!-- Next Button -->
-            <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-            </button>
-            
-            <!-- Image Container -->
-            <div class="text-center">
-                <img id="slideshow-image" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg">
-                <div class="mt-4 text-white">
-                    <p id="slideshow-caption" class="text-sm"></p>
-                    <p id="slideshow-counter" class="text-xs text-gray-300 mt-2"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Image slideshow functionality
-        const images = [
-            {
-                src: 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/ac6aa21c5255bb0be244_ymul2b.jpg',
-                alt: 'Cầu Phước Khánh - ảnh 1',
-                caption: 'Góc nhìn tổng quan công trình đang thi công.'
-            },
-            {
-                src: 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/416b401db054590a0045_zlmapp.jpg',
-                alt: 'Cầu Phước Khánh - ảnh 2',
-                caption: 'Hình hài cầu ngày càng rõ nét giữa dòng sông.'
-            },
-            {
-                src: 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/25c22eb4defd37a36eec_qe3pg7.jpg',
-                alt: 'Cầu Phước Khánh - ảnh 3',
-                caption: 'Chi tiết kết cấu và khu vực thi công.'
-            },
-            {
-                src: 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/5e205856a81f4141180e_t6u0zg.jpg',
-                alt: 'Cầu Phước Khánh - ảnh 4',
-                caption: 'Nhịp cầu và hạng mục liên quan đang được tăng tốc.'
-            },
-            {
-                src: 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/e8c3e8b518fcf1a2a8ed_qts0bp.jpg',
-                alt: 'Cầu Phước Khánh - ảnh 5',
-                caption: 'Khu vực trụ/cụm thi công nhìn cận cảnh.'
-            },
-            {
-                src: 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872513/9db199c7698e80d0d99f_qbgp1j.jpg',
-                alt: 'Cầu Phước Khánh - ảnh 6',
-                caption: 'Toàn cảnh dự án — kỳ vọng sớm khép kín tuyến cao tốc Bến Lức – Long Thành.'
-            }
-        ];
-
-        let currentImageIndex = 0;
-
-        function openSlideshow(index) {
-            currentImageIndex = index;
-            updateSlideshow();
-            document.getElementById('slideshow-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeSlideshow() {
-            document.getElementById('slideshow-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            updateSlideshow();
-        }
-
-        function previousImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            updateSlideshow();
-        }
-
-        function updateSlideshow() {
-            const image = images[currentImageIndex];
-            document.getElementById('slideshow-image').src = image.src;
-            document.getElementById('slideshow-image').alt = image.alt;
-            document.getElementById('slideshow-caption').textContent = image.caption;
-            document.getElementById('slideshow-counter').textContent = `${currentImageIndex + 1} / ${images.length}`;
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            const modal = document.getElementById('slideshow-modal');
-            if (!modal.classList.contains('hidden')) {
-                if (e.key === 'Escape') {
-                    closeSlideshow();
-                } else if (e.key === 'ArrowLeft') {
-                    previousImage();
-                } else if (e.key === 'ArrowRight') {
-                    nextImage();
-                }
-            }
-        });
-
-        // Close modal when clicking outside the image
-        document.getElementById('slideshow-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeSlideshow();
-            }
-        });
-    </script>
 </article>
 HTML;
 
@@ -359,13 +210,13 @@ HTML;
             '@context' => 'https://schema.org',
             '@type' => 'NewsArticle',
             'headline' => $title,
-            'description' => 'Cầu Phước Khánh bắc qua sông Lòng Tàu đang được đẩy nhanh thi công, sắp hoàn thành để khép kín tuyến cao tốc Bến Lức – Long Thành.',
-            'image' => 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/ac6aa21c5255bb0be244_ymul2b.jpg',
-            'datePublished' => '2025-12-16T14:30:00+07:00',
-            'dateModified' => '2025-12-16T14:30:00+07:00',
+            'description' => 'Thang Long Real Group công bố kế hoạch phát triển khu đô thị hiện đại gần sân bay Long Thành, Đồng Nai với thiết kế hiện đại và tiện ích đầy đủ.',
+            'image' => 'https://res.cloudinary.com/dsiier5sg/image/upload/v1766020703/phoi-canh-fiato-airpot_mjckkz.webp',
+            'datePublished' => '2025-12-18T10:00:00+07:00',
+            'dateModified' => '2025-12-18T10:00:00+07:00',
             'author' => [
                 '@type' => 'Person',
-                'name' => 'ZNews',
+                'name' => 'VnExpress',
             ],
             'publisher' => [
                 '@type' => 'Organization',
@@ -379,14 +230,14 @@ HTML;
                 '@type' => 'WebPage',
                 '@id' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug,
             ],
-            'keywords' => 'cầu Phước Khánh, cao tốc Bến Lức Long Thành, Nhơn Trạch, Cần Giờ, bất động sản',
-            'articleSection' => 'Tin tức hạ tầng',
+            'keywords' => 'Thang Long Real Group, sân bay Long Thành, Đồng Nai, bất động sản, khu đô thị',
+            'articleSection' => 'Tin tức dự án',
         ];
 
         $breadcrumbs = [
             ['name' => 'Trang chủ', 'url' => 'https://phatdatbatdongsan.com'],
             ['name' => 'Tin tức', 'url' => 'https://phatdatbatdongsan.com/tin-tuc'],
-            ['name' => 'Hạ tầng giao thông', 'url' => 'https://phatdatbatdongsan.com/tin-tuc?type=infrastructure'],
+            ['name' => 'Dự án mới', 'url' => 'https://phatdatbatdongsan.com/tin-tuc?type=projects'],
             ['name' => $title, 'url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug],
         ];
 
@@ -396,20 +247,20 @@ HTML;
             'status' => 'published',
             'title' => $title,
             'slug' => $slug,
-            'summary' => 'Cầu Phước Khánh bắc qua sông Lòng Tàu đang được đẩy nhanh thi công, sắp hoàn thành để khép kín tuyến cao tốc Bến Lức – Long Thành. Công trình này sẽ tạo ra nhiều cơ hội đầu tư bất động sản tại khu vực.',
+            'summary' => 'Thang Long Real Group công bố kế hoạch phát triển khu đô thị hiện đại gần sân bay Long Thành, Đồng Nai. Dự án Fiato Airport hứa hẹn mang đến không gian sống chất lượng cao với thiết kế hiện đại và tiện ích đầy đủ.',
             'content' => $content,
             'content_fmt' => 'html',
-            'cover_image_url' => 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/ac6aa21c5255bb0be244_ymul2b.jpg',
+            'cover_image_url' => 'https://res.cloudinary.com/dsiier5sg/image/upload/v1766020703/phoi-canh-fiato-airpot_mjckkz.webp',
             'reading_minutes' => 5,
             'locale' => 'vi',
             'published_at' => $publishedAt,
             'canonical_url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug,
             'meta_title' => $title . ' | Phát Đạt Bất Động Sản',
-            'meta_description' => 'Cận cảnh cầu Phước Khánh sắp hoàn thành trên cao tốc Bến Lức - Long Thành. Cơ hội đầu tư bất động sản khu vực Nhơn Trạch, Đồng Nai.',
-            'meta_keywords' => 'cầu Phước Khánh, cao tốc Bến Lức Long Thành, Nhơn Trạch, Đồng Nai, Cần Giờ, bất động sản, hạ tầng giao thông',
+            'meta_description' => 'Thang Long Real Group phát triển khu đô thị hiện đại gần sân bay Long Thành. Dự án Fiato Airport với thiết kế hiện đại và tiện ích đầy đủ.',
+            'meta_keywords' => 'Thang Long Real Group, sân bay Long Thành, Đồng Nai, bất động sản, khu đô thị, Fiato Airport, căn hộ',
             'og_title' => $title,
-            'og_description' => 'Cầu Phước Khánh bắc qua sông Lòng Tàu đang được đẩy nhanh thi công, sắp hoàn thành để khép kín tuyến cao tốc.',
-            'og_image' => 'https://res.cloudinary.com/dsiier5sg/image/upload/v1765872512/ac6aa21c5255bb0be244_ymul2b.jpg',
+            'og_description' => 'Thang Long Real Group công bố kế hoạch phát triển khu đô thị hiện đại gần sân bay Long Thành với thiết kế hiện đại.',
+            'og_image' => 'https://res.cloudinary.com/dsiier5sg/image/upload/v1766020703/phoi-canh-fiato-airpot_mjckkz.webp',
             'twitter_card' => 'summary_large_image',
             'robots_index' => true,
             'robots_follow' => true,
@@ -424,32 +275,32 @@ HTML;
             'updated_at' => now(),
         ]);
 
-        // Link to post type (infrastructure - Hạ tầng giao thông)
-        $infrastructureType = DB::table('post_types')->where('code', 'infrastructure')->first();
-        if (!$infrastructureType) {
-            // Create infrastructure post type if not exists
-            $infrastructureTypeId = DB::table('post_types')->insertGetId([
-                'code' => 'infrastructure',
-                'name' => 'Hạ tầng giao thông',
+        // Link to post type (projects - Dự án mới)
+        $projectsType = DB::table('post_types')->where('code', 'projects')->first();
+        if (!$projectsType) {
+            // Create projects post type if not exists
+            $projectsTypeId = DB::table('post_types')->insertGetId([
+                'code' => 'projects',
+                'name' => 'Dự án mới',
             ]);
         } else {
-            $infrastructureTypeId = $infrastructureType->id;
+            $projectsTypeId = $projectsType->id;
         }
         
         DB::table('post_post_types')->insert([
             'post_id' => $postId,
-            'post_type_id' => $infrastructureTypeId,
+            'post_type_id' => $projectsTypeId,
         ]);
 
         // Link to tags
-        $tagCodes = ['dong-nai', 'ha-tang', 'giao-thong'];
+        $tagCodes = ['dong-nai', 'thang-long-real-group', 'san-bay-long-thanh'];
         
         // Create tags if not exist
         foreach ($tagCodes as $tagCode) {
             $tagNames = [
                 'dong-nai' => 'Đồng Nai',
-                'ha-tang' => 'Hạ tầng',
-                'giao-thong' => 'Giao thông'
+                'thang-long-real-group' => 'Thang Long Real Group',
+                'san-bay-long-thanh' => 'Sân bay Long Thành'
             ];
             
             $existingTag = DB::table('tags')->where('code', $tagCode)->first();
