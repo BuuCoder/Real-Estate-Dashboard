@@ -25,64 +25,64 @@ class VnExpressPostSeeder extends Seeder
 <article class="font-sans max-w-none text-base text-gray-800">
     <!-- Header -->
     <div class="mb-6">
-        <p class="inline-flex items-center gap-2 rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800">
-            <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+        <p class="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-800">
+            <svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
             </svg>
             Dự án mới
         </p>
-        <h1 class="mt-3 text-lg font-semibold tracking-tight text-blue-950 sm:text-xl">Thang Long Real Group phát triển đô thị gần sân bay Long Thành</h1>
-        <p class="mt-2 text-sm leading-6 text-blue-900/80">
+        <h1 class="mt-3 text-lg font-semibold tracking-tight text-emerald-950 sm:text-xl">Thang Long Real Group phát triển đô thị gần sân bay Long Thành</h1>
+        <p class="mt-2 text-sm leading-6 text-emerald-900/80">
             Thang Long Real Group công bố kế hoạch phát triển khu đô thị hiện đại tại khu vực gần sân bay Long Thành, tỉnh Đồng Nai. Dự án hứa hẹn mang đến không gian sống chất lượng cao với thiết kế hiện đại và tiện ích đầy đủ.
         </p>
     </div>
 
     <!-- Quick facts -->
     <div class="mb-6 grid gap-3 sm:grid-cols-3">
-        <div class="rounded-xl border border-blue-100 bg-white p-4">
+        <div class="rounded-xl border border-emerald-100 bg-white p-4">
             <div class="flex items-center gap-2 mb-2">
-                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
-                <p class="text-xs font-medium text-blue-700">Vị trí</p>
+                <p class="text-xs font-medium text-emerald-700">Vị trí</p>
             </div>
-            <p class="text-sm text-blue-950">Gần sân bay Long Thành • Đồng Nai</p>
+            <p class="text-sm text-emerald-950">Gần sân bay Long Thành • Đồng Nai</p>
         </div>
-        <div class="rounded-xl border border-blue-100 bg-white p-4">
+        <div class="rounded-xl border border-emerald-100 bg-white p-4">
             <div class="flex items-center gap-2 mb-2">
-                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                 </svg>
-                <p class="text-xs font-medium text-blue-700">Loại hình</p>
+                <p class="text-xs font-medium text-emerald-700">Loại hình</p>
             </div>
-            <p class="text-sm text-blue-950">Khu đô thị hiện đại với căn hộ và tiện ích</p>
+            <p class="text-sm text-emerald-950">Khu đô thị hiện đại với căn hộ và tiện ích</p>
         </div>
-        <div class="rounded-xl border border-blue-100 bg-white p-4">
+        <div class="rounded-xl border border-emerald-100 bg-white p-4">
             <div class="flex items-center gap-2 mb-2">
-                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
                 </svg>
-                <p class="text-xs font-medium text-blue-700">Ưu thế</p>
+                <p class="text-xs font-medium text-emerald-700">Ưu thế</p>
             </div>
-            <p class="text-sm text-blue-950">Kết nối thuận lợi với sân bay quốc tế</p>
+            <p class="text-sm text-emerald-950">Kết nối thuận lợi với sân bay quốc tế</p>
         </div>
     </div>
 
     <!-- Gallery -->
-    <div class="rounded-2xl border border-blue-100 bg-white p-4 sm:p-5">
+    <div class="rounded-2xl border border-emerald-100 bg-white p-4 sm:p-5">
         <div class="flex items-center justify-between gap-3">
             <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                 </svg>
-                <h2 class="text-sm font-semibold text-blue-950">Hình ảnh dự án</h2>
+                <h2 class="text-sm font-semibold text-emerald-950">Hình ảnh dự án</h2>
             </div>
-            <span class="text-xs text-blue-700">Nguồn: Thang Long Real Group</span>
+            <span class="text-xs text-emerald-700">Nguồn: Thang Long Real Group</span>
         </div>
         <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-2" id="gallery-grid">
             <!-- 1 -->
-            <figure class="group overflow-hidden rounded-xl border border-blue-100 bg-blue-50 cursor-pointer">
+            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer">
                 <div class="relative">
                     <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1766020702/thang-long-home_kdf1ez.webp" alt="Thang Long Home - Hình 1" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
@@ -91,10 +91,10 @@ class VnExpressPostSeeder extends Seeder
                         </svg>
                     </div>
                 </div>
-                <figcaption class="px-3 py-2 text-xs text-blue-900/80">Tổng quan khu đô thị Thang Long Home.</figcaption>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Tổng quan khu đô thị Thang Long Home.</figcaption>
             </figure>
             <!-- 2 -->
-            <figure class="group overflow-hidden rounded-xl border border-blue-100 bg-blue-50 cursor-pointer sm:col-span-2 lg:col-span-2">
+            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer sm:col-span-2 lg:col-span-2">
                 <div class="relative">
                     <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1766020703/phoi-canh-fiato-airpot_mjckkz.webp" alt="Phối cảnh Fiato Airport - Cover" class="h-52 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
@@ -103,10 +103,10 @@ class VnExpressPostSeeder extends Seeder
                         </svg>
                     </div>
                 </div>
-                <figcaption class="px-3 py-2 text-xs text-blue-900/80">Phối cảnh dự án Fiato Airport - khu đô thị hiện đại gần sân bay Long Thành.</figcaption>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Phối cảnh dự án Fiato Airport - khu đô thị hiện đại gần sân bay Long Thành.</figcaption>
             </figure>
             <!-- 3 -->
-            <figure class="group overflow-hidden rounded-xl border border-blue-100 bg-blue-50 cursor-pointer">
+            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer">
                 <div class="relative">
                     <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1766020702/phoi-canh-can-ho-2-phong-ngu_chcmuc.webp" alt="Phối cảnh căn hộ 2 phòng ngủ - Hình 3" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
@@ -115,10 +115,10 @@ class VnExpressPostSeeder extends Seeder
                         </svg>
                     </div>
                 </div>
-                <figcaption class="px-3 py-2 text-xs text-blue-900/80">Thiết kế căn hộ 2 phòng ngủ hiện đại.</figcaption>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Thiết kế căn hộ 2 phòng ngủ hiện đại.</figcaption>
             </figure>
             <!-- 4 -->
-            <figure class="group overflow-hidden rounded-xl border border-blue-100 bg-blue-50 cursor-pointer">
+            <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer">
                 <div class="relative">
                     <img src="https://res.cloudinary.com/dsiier5sg/image/upload/v1766020702/hub-thuong-mai_znt43p.webp" alt="Hub thương mại - Hình 4" class="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
@@ -127,24 +127,24 @@ class VnExpressPostSeeder extends Seeder
                         </svg>
                     </div>
                 </div>
-                <figcaption class="px-3 py-2 text-xs text-blue-900/80">Hub thương mại tích hợp đa dịch vụ.</figcaption>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Hub thương mại tích hợp đa dịch vụ.</figcaption>
             </figure>
         </div>
 
         <!-- Body -->
-        <div class="mt-6 space-y-4 text-sm leading-6 text-blue-900/80">
+        <div class="mt-6 space-y-4 text-sm leading-6 text-emerald-900/80">
             <p>
                 Thang Long Real Group vừa công bố kế hoạch phát triển khu đô thị hiện đại tại khu vực gần sân bay Long Thành, tỉnh Đồng Nai. Dự án được kỳ vọng sẽ trở thành một trong những khu đô thị đáng sống nhất khu vực Đông Nam Bộ, tận dụng lợi thế từ sân bay quốc tế Long Thành sắp đi vào hoạt động.
             </p>
             
-            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-4">
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 my-4">
                 <div class="flex items-center gap-2 mb-2">
-                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                 </svg>
-                <h3 class="font-semibold text-blue-800">Thông tin dự án Fiato Airport</h3>
+                <h3 class="font-semibold text-emerald-800">Thông tin dự án Fiato Airport</h3>
             </div>
-            <ul class="list-none space-y-2 text-blue-900">
+            <ul class="list-none space-y-2 text-emerald-900">
                 <li>• <strong>Vị trí:</strong> Gần sân bay quốc tế Long Thành, Đồng Nai</li>
                 <li>• <strong>Quy mô:</strong> Khu đô thị tích hợp đa chức năng</li>
                 <li>• <strong>Sản phẩm:</strong> Căn hộ, shophouse, hub thương mại</li>
@@ -171,7 +171,7 @@ class VnExpressPostSeeder extends Seeder
                 </ul>
             </div>
 
-            <h2 class="text-lg font-bold text-blue-950 mt-6 mb-3">Tiềm năng đầu tư</h2>
+            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Tiềm năng đầu tư</h2>
             
             <p>
                 Với vị trí chiến lược gần sân bay quốc tế Long Thành, dự án của Thang Long Real Group hứa hẹn mang lại giá trị đầu tư bền vững. Khu vực này đang trở thành tâm điểm phát triển kinh tế mới của vùng Đông Nam Bộ, thu hút nhiều nhà đầu tư trong và ngoài nước.
@@ -195,9 +195,9 @@ class VnExpressPostSeeder extends Seeder
 
         <!-- CTA -->
         <div class="mt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <p class="text-xs text-blue-700">
+            <p class="text-xs text-emerald-700">
                 Nguồn tham khảo: 
-                <a href="https://vnexpress.net/thang-long-real-group-phat-trien-do-thi-gan-san-bay-long-thanh-4939614.html" target="_blank" rel="nofollow noopener" class="font-medium text-blue-600 hover:underline">
+                <a href="https://vnexpress.net/thang-long-real-group-phat-trien-do-thi-gan-san-bay-long-thanh-4939614.html" target="_blank" rel="nofollow noopener" class="font-medium text-emerald-600 hover:underline">
                     VnExpress
                 </a>
             </p>    
