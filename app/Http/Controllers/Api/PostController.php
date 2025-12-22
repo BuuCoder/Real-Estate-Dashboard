@@ -36,6 +36,8 @@ class PostController extends Controller
                 });
             }
             
+            $query->orderBy('published_at', 'desc');
+            
             $posts = $query->paginate(10);
             return response()->json([
                 'success' => true,
