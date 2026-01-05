@@ -11,14 +11,14 @@ class VnExpressPostSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->createDuAnDienKhiLNGPost();
+        $this->createGiaiNganVonNhonTrachPost();
     }
 
-    private function createDuAnDienKhiLNGPost(): void
+    private function createGiaiNganVonNhonTrachPost(): void
     {
-        $title = 'Dự án then chốt trong vận hành chuỗi Thị Vải – Nhơn Trạch, đặt nền móng hình thành các trung tâm điện khí LNG hiện đại tại Việt Nam';
+        $title = 'Tăng tốc giải ngân vốn phục vụ giải phóng mặt bằng các dự án lớn tại Nhơn Trạch';
         $slug = Str::slug($title);
-        $publishedAt = Carbon::parse('2025-12-17 16:33:00');
+        $publishedAt = Carbon::parse('2025-06-05 10:00:00');
 
         $content = <<<'HTML'
 <article class="font-sans max-w-none text-base text-gray-800">
@@ -30,9 +30,9 @@ class VnExpressPostSeeder extends Seeder
             </svg>
             Tin tức
         </p>
-        <h1 class="mt-3 text-lg font-semibold tracking-tight text-emerald-950 sm:text-xl">Dự án then chốt trong vận hành chuỗi Thị Vải – Nhơn Trạch, đặt nền móng hình thành các trung tâm điện khí LNG hiện đại tại Việt Nam</h1>
+        <h1 class="mt-3 text-lg font-semibold tracking-tight text-emerald-950 sm:text-xl">Tăng tốc giải ngân vốn phục vụ giải phóng mặt bằng các dự án lớn tại Nhơn Trạch</h1>
         <p class="mt-2 text-sm leading-6 text-emerald-900/80">
-            Dự án nhà máy điện Nhơn Trạch 3 và Nhơn Trạch 4 (NT3&4) là mắt xích quan trọng của chuỗi liên kết Thị Vải – Nhơn Trạch, đồng thời là minh chứng rõ nét cho năng lực của PV Power và tầm nhìn dài hạn của Petrovietnam trong phát triển điện khí LNG.
+            Huyện Nhơn Trạch đang tăng tốc giải ngân nguồn vốn đầu tư công bố trí cho công tác giải phóng mặt bằng tại các dự án lớn trên địa bàn. Từ đó, góp phần thúc đẩy tiến độ chung trong công tác giải ngân vốn đầu tư công trên địa bàn huyện.
         </p>
     </div>
 
@@ -41,29 +41,29 @@ class VnExpressPostSeeder extends Seeder
         <div class="rounded-xl border border-emerald-100 bg-white p-4">
             <div class="flex items-center gap-2 mb-2">
                 <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                </svg>
-                <p class="text-xs font-medium text-emerald-700">Công suất</p>
-            </div>
-            <p class="text-sm text-emerald-950">1.624 MW</p>
-        </div>
-        <div class="rounded-xl border border-emerald-100 bg-white p-4">
-            <div class="flex items-center gap-2 mb-2">
-                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                </svg>
-                <p class="text-xs font-medium text-emerald-700">Sản lượng/năm</p>
-            </div>
-            <p class="text-sm text-emerald-950">Hơn 9 tỷ kWh</p>
-        </div>
-        <div class="rounded-xl border border-emerald-100 bg-white p-4">
-            <div class="flex items-center gap-2 mb-2">
-                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <p class="text-xs font-medium text-emerald-700">Vốn vay</p>
+                <p class="text-xs font-medium text-emerald-700">Tổng vốn đầu tư công</p>
             </div>
-            <p class="text-sm text-emerald-950">Gần 1 tỷ USD</p>
+            <p class="text-sm text-emerald-950">Hơn 2,3 ngàn tỷ đồng</p>
+        </div>
+        <div class="rounded-xl border border-emerald-100 bg-white p-4">
+            <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                </svg>
+                <p class="text-xs font-medium text-emerald-700">Vốn GPMB</p>
+            </div>
+            <p class="text-sm text-emerald-950">Hơn 2,1 ngàn tỷ đồng</p>
+        </div>
+        <div class="rounded-xl border border-emerald-100 bg-white p-4">
+            <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <p class="text-xs font-medium text-emerald-700">Dự kiến giải ngân</p>
+            </div>
+            <p class="text-sm text-emerald-950">960 tỷ đồng (cuối T6/2025)</p>
         </div>
     </div>
 
@@ -76,112 +76,115 @@ class VnExpressPostSeeder extends Seeder
                 </svg>
                 <h2 class="text-sm font-semibold text-emerald-950">Hình ảnh dự án</h2>
             </div>
-            <span class="text-xs text-emerald-700">Nguồn: CafeF</span>
+            <span class="text-xs text-emerald-700">Nguồn: Báo Đồng Nai</span>
         </div>
         <div class="mt-4 grid gap-4 sm:grid-cols-2" id="gallery-grid">
             <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer">
                 <div class="relative">
-                    <img src="https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618489/thi-vai-nhon-trach_us8wci.webp" alt="Chuỗi Thị Vải - Nhơn Trạch" class="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
+                    <img src="https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618765/nang-cap-duong_uq6frc.jpg" alt="Thi công nâng cấp đường tỉnh 25B" class="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
                 </div>
-                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Chuỗi liên kết khí – điện LNG Thị Vải – Nhơn Trạch</figcaption>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Thi công Dự án Nâng cấp đường tỉnh 25B, đoạn từ trung tâm huyện Nhơn Trạch ra quốc lộ 51. Ảnh: Phạm Tùng</figcaption>
             </figure>
             <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer">
                 <div class="relative">
-                    <img src="https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618617/D%E1%BB%B1_%C3%A1n_NMD_NT3_4_wfrmtt.jpg" alt="Dự án NMD NT3&4" class="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
+                    <img src="https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618761/nang-cap-duong-2_uvrfjc.jpg" alt="Thi công nâng cấp đường tỉnh 25B" class="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
                 </div>
-                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Dự án Nhà máy điện Nhơn Trạch 3 và Nhơn Trạch 4</figcaption>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Thi công Dự án Nâng cấp đường tỉnh 25B, đoạn từ trung tâm huyện Nhơn Trạch ra quốc lộ 51. Ảnh: Phạm Tùng</figcaption>
             </figure>
         </div>
 
         <!-- Body -->
         <div class="mt-6 space-y-4 text-sm leading-6 text-emerald-900/80">
-            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Mô hình liên kết hoàn chỉnh đầu tiên của Việt Nam</h2>
+            <p>Năm 2025, Nhơn Trạch là một trong những địa phương có tổng vốn đầu tư công lớn trên địa bàn tỉnh Đồng Nai.</p>
 
-            <p>Chuỗi Thị Vải – Nhơn Trạch là mô hình liên kết khí – điện LNG hiện đại, được xây dựng đồng bộ từ khâu tiếp nhận, lưu trữ và tái tạo hóa khí tại Kho cảng LNG Thị Vải, đến vận chuyển khí và phát điện tại trung tâm Nhơn Trạch.</p>
+            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Cuối tháng 6 sẽ giải ngân gần 1 ngàn tỷ đồng</h2>
+
+            <p>Năm 2025, tổng vốn đầu tư công do UBND tỉnh giao chỉ tiêu kế hoạch đối với các dự án trên địa bàn huyện Nhơn Trạch là hơn 2,3 ngàn tỷ đồng. Trong đó, riêng công tác giải phóng mặt bằng, nguồn vốn được bố trí là hơn 2,1 ngàn tỷ đồng.</p>
 
             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-4">
                 <div class="flex items-center gap-2 mb-2">
                     <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                     </svg>
-                    <h3 class="font-semibold text-blue-800">Thông số dự án NT3&4</h3>
+                    <h3 class="font-semibold text-blue-800">Các dự án lớn được bố trí vốn GPMB</h3>
                 </div>
                 <ul class="list-none space-y-2 text-blue-900">
-                    <li>• <strong>Chủ đầu tư:</strong> Tổng công ty Điện lực Dầu khí Việt Nam (PV Power)</li>
-                    <li>• <strong>Công suất:</strong> 1.624 MW</li>
-                    <li>• <strong>Sản lượng dự kiến:</strong> Hơn 9 tỷ kWh/năm</li>
-                    <li>• <strong>Vai trò:</strong> Mắt xích quyết định hiệu quả của toàn chuỗi LNG</li>
+                    <li>• Đường liên cảng huyện Nhơn Trạch</li>
+                    <li>• Đường vào Khu công nghiệp Ông Kèo</li>
+                    <li>• Dự án Nâng cấp, xây dựng đường tỉnh 25B, 25C</li>
                 </ul>
             </div>
 
-            <p>Trong cấu trúc liên kết ấy, NT3&4 do Tổng công ty Điện lực Dầu khí Việt Nam (PV Power) làm chủ đầu tư, giữ vai trò then chốt, là nơi dòng LNG được chuyển hóa thành điện năng hiệu suất cao, đóng góp trực tiếp vào hệ thống điện quốc gia.</p>
+            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Dự án Đường liên cảng huyện Nhơn Trạch</h2>
 
             <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 my-4">
                 <div class="flex items-center gap-2 mb-2">
                     <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
-                    <h3 class="font-semibold text-emerald-800">Ý nghĩa của mô hình</h3>
+                    <h3 class="font-semibold text-emerald-800">Thông tin vốn đầu tư</h3>
                 </div>
                 <ul class="list-none space-y-2 text-emerald-900">
-                    <li>• Đảm bảo tính ổn định, linh hoạt trong vận hành</li>
-                    <li>• Tạo mô hình mẫu cho các trung tâm điện khí LNG tương lai</li>
-                    <li>• Công nghệ vận hành, hiệu suất phát điện và độ tin cậy cao</li>
+                    <li>• <strong>Tổng nguồn vốn năm 2025:</strong> Khoảng 1,5 ngàn tỷ đồng</li>
+                    <li>• <strong>Vốn ngân sách trung ương (xây lắp):</strong> Khoảng 1,4 ngàn tỷ đồng</li>
+                    <li>• <strong>Vốn ngân sách tỉnh (GPMB):</strong> Khoảng 100 tỷ đồng</li>
+                    <li>• <strong>Tiến độ:</strong> Đã hoàn thành phê duyệt phương án bồi thường, hỗ trợ</li>
                 </ul>
             </div>
 
-            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">PV Power khẳng định vai trò làm chủ dự án</h2>
-
-            <p>Việc PV Power đảm nhận dự án LNG đầu tiên của Việt Nam đã đánh dấu sự trưởng thành của doanh nghiệp từ vai trò vận hành các nhà máy điện truyền thống, sang làm chủ công nghệ tuabin khí thế hệ mới.</p>
+            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Dự án Đường vào Khu công nghiệp Ông Kèo</h2>
 
             <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-4">
                 <div class="flex items-center gap-2 mb-2">
                     <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
-                    <h3 class="font-semibold text-amber-800">Năng lực PV Power</h3>
+                    <h3 class="font-semibold text-amber-800">Thông tin vốn đầu tư</h3>
                 </div>
                 <ul class="list-none space-y-2 text-amber-900">
-                    <li>• Làm chủ công nghệ tuabin khí thế hệ mới</li>
-                    <li>• Hệ thống điều khiển, vận hành chu trình hỗn hợp hiện đại</li>
-                    <li>• Đáp ứng tiêu chuẩn môi trường – an toàn – xã hội theo chuẩn quốc tế</li>
-                    <li>• Thu xếp gần 1 tỷ USD vốn vay nước ngoài không có bảo lãnh Chính phủ</li>
+                    <li>• <strong>Tổng nguồn vốn năm 2025:</strong> 500 tỷ đồng</li>
+                    <li>• <strong>Dự kiến giải ngân thêm (cuối T6):</strong> Khoảng 40 tỷ đồng</li>
+                    <li>• <strong>Tổng giải ngân GPMB dự kiến:</strong> Khoảng 240 tỷ đồng</li>
                 </ul>
             </div>
 
-            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Đóng góp cho hệ thống điện quốc gia</h2>
-
-            <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-4">
-                <div class="flex items-center gap-2 mb-2">
-                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                    </svg>
-                    <h3 class="font-semibold text-green-800">Lợi ích dự án mang lại</h3>
-                </div>
-                <ul class="list-none space-y-2 text-green-900">
-                    <li>• <strong>Tăng cường nguồn điện nền ổn định:</strong> Bổ sung hơn 9 tỷ kWh mỗi năm cho hệ thống</li>
-                    <li>• <strong>Giảm áp lực phụ tải:</strong> Hỗ trợ khu vực Nam Bộ</li>
-                    <li>• <strong>Cắt giảm phát thải CO₂:</strong> Nhờ hiệu suất cao và sử dụng nhiên liệu sạch</li>
-                    <li>• <strong>Mở ra thị trường LNG Việt Nam:</strong> Tạo động lực thu hút đầu tư</li>
-                </ul>
-            </div>
+            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Dự án Xây dựng đường tỉnh 25C</h2>
 
             <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-4">
                 <div class="flex items-center gap-2 mb-2">
                     <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
-                    <h3 class="font-semibold text-purple-800">Tầm nhìn tương lai</h3>
+                    <h3 class="font-semibold text-purple-800">Thông tin vốn đầu tư (đoạn từ QL51 đến HL19)</h3>
                 </div>
-                <p class="text-purple-900">Nhờ vị trí trung tâm trong chuỗi LNG Thị Vải – Nhơn Trạch, NT3&4 trở thành biểu tượng của bước chuyển chiến lược trong ngành năng lượng Việt Nam. Dự án không chỉ bổ sung nguồn điện mới hiệu quả mà còn mở ra nền tảng quan trọng cho kỷ nguyên điện khí LNG của Việt Nam, đóng góp thiết thực vào bảo đảm an ninh năng lượng và thúc đẩy tiến trình chuyển dịch năng lượng xanh – sạch – bền vững.</p>
+                <ul class="list-none space-y-2 text-purple-900">
+                    <li>• <strong>Tổng vốn GPMB năm 2025:</strong> 260 tỷ đồng</li>
+                    <li>• <strong>Dự kiến giải ngân (cuối T6/2025):</strong> Khoảng 127 tỷ đồng</li>
+                </ul>
             </div>
+
+            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Gỡ vướng tại Dự án Đường liên cảng</h2>
+
+            <p>Trong tổng vốn khoảng 1,5 ngàn tỷ đồng bố trí cho dự án, có 1,4 ngàn tỷ đồng nguồn vốn ngân sách trung ương bố trí cho công tác xây lắp. Hiện nay, dự án mới đang thực hiện công tác đấu thầu lựa chọn nhà thầu xây lắp.</p>
+
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <h3 class="font-semibold text-gray-800">Kiến nghị của UBND tỉnh</h3>
+                </div>
+                <p class="text-gray-900">UBND tỉnh đã kiến nghị Bộ Tài chính tổng hợp, báo cáo Thủ tướng Chính phủ chấp thuận chủ trương sử dụng nguồn vốn chi tiết năm 2025 và thực hiện giải ngân nguồn vốn ngân sách trung ương hỗ trợ cho cả dự án theo tiến độ thực hiện, kể cả chi phí bồi thường giải phóng mặt bằng của dự án.</p>
+            </div>
+
+            <p>Nếu được Chính phủ chấp thuận chủ trương cho sử dụng nguồn vốn ngân sách trung ương bố trí cho dự án để thực hiện chi trả cho công tác giải phóng mặt bằng, dự kiến đến cuối tháng 6, nguồn vốn tại dự án này được giải ngân sẽ đạt khoảng 36% kế hoạch vốn năm 2025.</p>
         </div>
 
         <!-- CTA -->
         <div class="mt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <p class="text-xs text-emerald-700">
                 Nguồn tham khảo: 
-                <a href="https://cafef.vn/du-an-then-chot-trong-van-hanh-chuoi-thi-vai-nhon-trach-dat-nen-mong-hinh-thanh-cac-trung-tam-dien-khi-lng-hien-dai-tai-viet-nam-188251217163319184.chn" target="_blank" rel="nofollow noopener" class="font-medium text-emerald-600 hover:underline">CafeF</a>
+                <a href="https://baodongnai.com.vn/trang-dia-phuong/202506/tang-toc-giai-ngan-von-phuc-vu-giai-phong-mat-bang-cac-du-an-lon-ee414e9" target="_blank" rel="nofollow noopener" class="font-medium text-emerald-600 hover:underline">Báo Đồng Nai</a>
             </p>    
         </div>
     </div>
@@ -192,18 +195,18 @@ HTML;
             '@context' => 'https://schema.org',
             '@type' => 'Article',
             'headline' => $title,
-            'description' => 'Dự án nhà máy điện Nhơn Trạch 3 và Nhơn Trạch 4 là mắt xích quan trọng của chuỗi liên kết Thị Vải – Nhơn Trạch trong phát triển điện khí LNG.',
-            'image' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618489/thi-vai-nhon-trach_us8wci.webp',
-            'datePublished' => '2025-12-17T16:33:00+07:00',
-            'dateModified' => '2025-12-17T16:33:00+07:00',
-            'author' => ['@type' => 'Person', 'name' => 'CafeF'],
+            'description' => 'Huyện Nhơn Trạch đang tăng tốc giải ngân nguồn vốn đầu tư công bố trí cho công tác giải phóng mặt bằng tại các dự án lớn trên địa bàn.',
+            'image' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618765/nang-cap-duong_uq6frc.jpg',
+            'datePublished' => '2025-06-05T10:00:00+07:00',
+            'dateModified' => '2025-06-05T10:00:00+07:00',
+            'author' => ['@type' => 'Person', 'name' => 'Báo Đồng Nai'],
             'publisher' => [
                 '@type' => 'Organization',
                 'name' => 'Phát Đạt Bất Động Sản',
                 'logo' => ['@type' => 'ImageObject', 'url' => 'https://phatdatbatdongsan.com/images/logo.png'],
             ],
             'mainEntityOfPage' => ['@type' => 'WebPage', '@id' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug],
-            'keywords' => 'điện khí LNG, Nhơn Trạch, PV Power, Petrovietnam, năng lượng sạch',
+            'keywords' => 'Nhơn Trạch, giải phóng mặt bằng, đầu tư công, Đồng Nai, hạ tầng giao thông',
             'articleSection' => 'Tin tức',
         ];
 
@@ -219,20 +222,20 @@ HTML;
             'status' => 'published',
             'title' => $title,
             'slug' => $slug,
-            'summary' => 'Dự án nhà máy điện Nhơn Trạch 3 và Nhơn Trạch 4 (NT3&4) là mắt xích quan trọng của chuỗi liên kết Thị Vải – Nhơn Trạch, đồng thời là minh chứng rõ nét cho năng lực của PV Power và tầm nhìn dài hạn của Petrovietnam trong phát triển điện khí LNG.',
+            'summary' => 'Huyện Nhơn Trạch đang tăng tốc giải ngân nguồn vốn đầu tư công bố trí cho công tác giải phóng mặt bằng tại các dự án lớn trên địa bàn. Từ đó, góp phần thúc đẩy tiến độ chung trong công tác giải ngân vốn đầu tư công trên địa bàn huyện.',
             'content' => $content,
             'content_fmt' => 'html',
-            'cover_image_url' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618489/thi-vai-nhon-trach_us8wci.webp',
-            'reading_minutes' => 4,
+            'cover_image_url' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618765/nang-cap-duong_uq6frc.jpg',
+            'reading_minutes' => 5,
             'locale' => 'vi',
             'published_at' => $publishedAt,
             'canonical_url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug,
-            'meta_title' => 'Dự án điện khí LNG Thị Vải – Nhơn Trạch | Phát Đạt Bất Động Sản',
-            'meta_description' => 'Dự án nhà máy điện Nhơn Trạch 3 và 4 công suất 1.624MW, sản lượng hơn 9 tỷ kWh/năm - mắt xích quan trọng trong chuỗi điện khí LNG Việt Nam.',
-            'meta_keywords' => 'điện khí LNG, Nhơn Trạch 3, Nhơn Trạch 4, PV Power, Petrovietnam, năng lượng sạch, Thị Vải',
+            'meta_title' => 'Giải ngân vốn GPMB các dự án lớn tại Nhơn Trạch | Phát Đạt Bất Động Sản',
+            'meta_description' => 'Nhơn Trạch tăng tốc giải ngân hơn 2,3 ngàn tỷ đồng vốn đầu tư công cho các dự án lớn: Đường liên cảng, KCN Ông Kèo, đường tỉnh 25B, 25C.',
+            'meta_keywords' => 'Nhơn Trạch, giải phóng mặt bằng, đầu tư công, Đồng Nai, đường liên cảng, KCN Ông Kèo, đường tỉnh 25B, đường tỉnh 25C',
             'og_title' => $title,
-            'og_description' => 'Dự án nhà máy điện Nhơn Trạch 3 và Nhơn Trạch 4 là mắt xích quan trọng của chuỗi liên kết Thị Vải – Nhơn Trạch trong phát triển điện khí LNG.',
-            'og_image' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618489/thi-vai-nhon-trach_us8wci.webp',
+            'og_description' => 'Huyện Nhơn Trạch đang tăng tốc giải ngân nguồn vốn đầu tư công bố trí cho công tác giải phóng mặt bằng tại các dự án lớn trên địa bàn.',
+            'og_image' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618765/nang-cap-duong_uq6frc.jpg',
             'twitter_card' => 'summary_large_image',
             'robots_index' => true,
             'robots_follow' => true,
@@ -262,11 +265,11 @@ HTML;
         ]);
 
         // Link to tags
-        $tagCodes = ['nang-luong', 'dien-khi-lng', 'pv-power'];
+        $tagCodes = ['nhon-trach', 'dong-nai', 'dau-tu-cong'];
         $tagNames = [
-            'nang-luong' => 'Năng lượng',
-            'dien-khi-lng' => 'Điện khí LNG',
-            'pv-power' => 'PV Power'
+            'nhon-trach' => 'Nhơn Trạch',
+            'dong-nai' => 'Đồng Nai',
+            'dau-tu-cong' => 'Đầu tư công'
         ];
         
         foreach ($tagCodes as $tagCode) {
