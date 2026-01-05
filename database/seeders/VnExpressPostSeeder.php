@@ -11,15 +11,14 @@ class VnExpressPostSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->createCauPhuMy2VaCauCanGioPost();
+        $this->createDuAnDienKhiLNGPost();
     }
 
-
-    private function createCauPhuMy2VaCauCanGioPost(): void
+    private function createDuAnDienKhiLNGPost(): void
     {
-        $title = 'TP HCM xây cầu Phú Mỹ 2 và Cầu Cần Giờ hơn 36.000 tỷ đồng';
+        $title = 'Dự án then chốt trong vận hành chuỗi Thị Vải – Nhơn Trạch, đặt nền móng hình thành các trung tâm điện khí LNG hiện đại tại Việt Nam';
         $slug = Str::slug($title);
-        $publishedAt = Carbon::parse('2025-12-26 18:00:00');
+        $publishedAt = Carbon::parse('2025-12-17 16:33:00');
 
         $content = <<<'HTML'
 <article class="font-sans max-w-none text-base text-gray-800">
@@ -31,9 +30,9 @@ class VnExpressPostSeeder extends Seeder
             </svg>
             Tin tức
         </p>
-        <h1 class="mt-3 text-lg font-semibold tracking-tight text-emerald-950 sm:text-xl">TP HCM xây cầu Phú Mỹ 2 và Cầu Cần Giờ hơn 36.000 tỷ đồng</h1>
+        <h1 class="mt-3 text-lg font-semibold tracking-tight text-emerald-950 sm:text-xl">Dự án then chốt trong vận hành chuỗi Thị Vải – Nhơn Trạch, đặt nền móng hình thành các trung tâm điện khí LNG hiện đại tại Việt Nam</h1>
         <p class="mt-2 text-sm leading-6 text-emerald-900/80">
-            Hai dự án cầu Phú Mỹ 2 vốn hơn 23.000 tỷ đồng và Cần Giờ hơn 13.000 tỷ đầu tư theo hợp đồng BT, dự kiến khởi công đầu năm sau, hình thành các trục giao thông mới.
+            Dự án nhà máy điện Nhơn Trạch 3 và Nhơn Trạch 4 (NT3&4) là mắt xích quan trọng của chuỗi liên kết Thị Vải – Nhơn Trạch, đồng thời là minh chứng rõ nét cho năng lực của PV Power và tầm nhìn dài hạn của Petrovietnam trong phát triển điện khí LNG.
         </p>
     </div>
 
@@ -42,30 +41,29 @@ class VnExpressPostSeeder extends Seeder
         <div class="rounded-xl border border-emerald-100 bg-white p-4">
             <div class="flex items-center gap-2 mb-2">
                 <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                <p class="text-xs font-medium text-emerald-700">Công suất</p>
+            </div>
+            <p class="text-sm text-emerald-950">1.624 MW</p>
+        </div>
+        <div class="rounded-xl border border-emerald-100 bg-white p-4">
+            <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+                <p class="text-xs font-medium text-emerald-700">Sản lượng/năm</p>
+            </div>
+            <p class="text-sm text-emerald-950">Hơn 9 tỷ kWh</p>
+        </div>
+        <div class="rounded-xl border border-emerald-100 bg-white p-4">
+            <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <p class="text-xs font-medium text-emerald-700">Tổng vốn đầu tư</p>
+                <p class="text-xs font-medium text-emerald-700">Vốn vay</p>
             </div>
-            <p class="text-sm text-emerald-950">36.387 tỷ đồng</p>
-        </div>
-        <div class="rounded-xl border border-emerald-100 bg-white p-4">
-            <div class="flex items-center gap-2 mb-2">
-                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                </svg>
-                <p class="text-xs font-medium text-emerald-700">Khởi công</p>
-            </div>
-            <p class="text-sm text-emerald-950">Đầu năm 2026</p>
-        </div>
-        <div class="rounded-xl border border-emerald-100 bg-white p-4">
-            <div class="flex items-center gap-2 mb-2">
-                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                </svg>
-                <p class="text-xs font-medium text-emerald-700">Khu vực</p>
-            </div>
-            <p class="text-sm text-emerald-950">Nam Sài Gòn - Cần Giờ</p>
+            <p class="text-sm text-emerald-950">Gần 1 tỷ USD</p>
         </div>
     </div>
 
@@ -78,123 +76,104 @@ class VnExpressPostSeeder extends Seeder
                 </svg>
                 <h2 class="text-sm font-semibold text-emerald-950">Hình ảnh dự án</h2>
             </div>
-            <span class="text-xs text-emerald-700">Nguồn: VnExpress</span>
+            <span class="text-xs text-emerald-700">Nguồn: CafeF</span>
         </div>
         <div class="mt-4 grid gap-4 sm:grid-cols-2" id="gallery-grid">
             <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer">
                 <div class="relative">
-                    <img src="https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618220/Cau-Phu-My-2-1766718093-7499-1766743410_pogctx.webp" alt="Vị trí cầu Phú Mỹ 2" class="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
+                    <img src="https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618489/thi-vai-nhon-trach_us8wci.webp" alt="Chuỗi Thị Vải - Nhơn Trạch" class="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
                 </div>
-                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Vị trí các cây cầu kết nối TP HCM và Đồng Nai sắp tới sẽ xây dựng, trong đó có Phú Mỹ 2. Đồ họa: Khánh Hoàng</figcaption>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Chuỗi liên kết khí – điện LNG Thị Vải – Nhơn Trạch</figcaption>
             </figure>
             <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer">
                 <div class="relative">
-                    <img src="https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618218/8593-5682-1764832830-jpeg-1766-9024-3537-1766743411_evojy7.webp" alt="Phối cảnh cầu Cần Giờ" class="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
+                    <img src="https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618617/D%E1%BB%B1_%C3%A1n_NMD_NT3_4_wfrmtt.jpg" alt="Dự án NMD NT3&4" class="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
                 </div>
-                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Phối cảnh dự án cầu Cần Giờ. Ảnh: Sở Quy hoạch và Kiến trúc</figcaption>
+                <figcaption class="px-3 py-2 text-xs text-emerald-900/80">Dự án Nhà máy điện Nhơn Trạch 3 và Nhơn Trạch 4</figcaption>
             </figure>
         </div>
 
         <!-- Body -->
         <div class="mt-6 space-y-4 text-sm leading-6 text-emerald-900/80">
-            <p>Nội dung nêu trong hai nghị quyết vừa được HĐND TP HCM thông qua tại kỳ họp chuyên đề chiều 26/12.</p>
-            
-            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Cầu Phú Mỹ 2 - Kết nối TP HCM và Đồng Nai</h2>
+            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Mô hình liên kết hoàn chỉnh đầu tiên của Việt Nam</h2>
+
+            <p>Chuỗi Thị Vải – Nhơn Trạch là mô hình liên kết khí – điện LNG hiện đại, được xây dựng đồng bộ từ khâu tiếp nhận, lưu trữ và tái tạo hóa khí tại Kho cảng LNG Thị Vải, đến vận chuyển khí và phát điện tại trung tâm Nhơn Trạch.</p>
 
             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-4">
                 <div class="flex items-center gap-2 mb-2">
                     <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
-                    <h3 class="font-semibold text-blue-800">Thông số kỹ thuật cầu Phú Mỹ 2</h3>
+                    <h3 class="font-semibold text-blue-800">Thông số dự án NT3&4</h3>
                 </div>
                 <ul class="list-none space-y-2 text-blue-900">
-                    <li>• <strong>Chiều dài:</strong> 6,3 km</li>
-                    <li>• <strong>Điểm đầu:</strong> Giao với đường Nguyễn Hữu Thọ qua các phường Phú Thuận, Tân Mỹ, xã Nhà Bè</li>
-                    <li>• <strong>Điểm cuối:</strong> Xã Đại Phước (Đồng Nai)</li>
-                    <li>• <strong>Quy mô:</strong> 8 làn xe (6 làn ôtô và 2 làn hỗn hợp)</li>
-                    <li>• <strong>Tổng vốn:</strong> 23.186 tỷ đồng</li>
+                    <li>• <strong>Chủ đầu tư:</strong> Tổng công ty Điện lực Dầu khí Việt Nam (PV Power)</li>
+                    <li>• <strong>Công suất:</strong> 1.624 MW</li>
+                    <li>• <strong>Sản lượng dự kiến:</strong> Hơn 9 tỷ kWh/năm</li>
+                    <li>• <strong>Vai trò:</strong> Mắt xích quyết định hiệu quả của toàn chuỗi LNG</li>
                 </ul>
             </div>
 
-            <p>Để thực hiện dự án, hai địa phương dự kiến thu hồi khoảng 29,4 ha đất (TP HCM 17,5 ha và Đồng Nai 11,9 ha).</p>
+            <p>Trong cấu trúc liên kết ấy, NT3&4 do Tổng công ty Điện lực Dầu khí Việt Nam (PV Power) làm chủ đầu tư, giữ vai trò then chốt, là nơi dòng LNG được chuyển hóa thành điện năng hiệu suất cao, đóng góp trực tiếp vào hệ thống điện quốc gia.</p>
 
             <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 my-4">
                 <div class="flex items-center gap-2 mb-2">
                     <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    <h3 class="font-semibold text-emerald-800">Cơ cấu vốn cầu Phú Mỹ 2</h3>
-                </div>
-                <ul class="list-none space-y-2 text-emerald-900">
-                    <li>• <strong>Chi phí xây dựng và thiết bị:</strong> 12.336 tỷ đồng</li>
-                    <li>• <strong>Bồi thường, giải phóng mặt bằng:</strong> 4.365 tỷ đồng</li>
-                    <li>• <strong>Thanh toán bằng quỹ đất:</strong> 15.083 tỷ đồng</li>
-                    <li>• <strong>Ngân sách thành phố:</strong> 5.807 tỷ đồng</li>
-                </ul>
-            </div>
-
-            <p>Dự án được đề xuất đầu tư theo phương thức đối tác công tư (PPP), loại hợp đồng Xây dựng - Chuyển giao (BT). Việc thanh toán dự kiến thực hiện trong vòng 3 năm sau khi công trình hoàn thành, bàn giao.</p>
-
-            <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-4">
-                <div class="flex items-center gap-2 mb-2">
-                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
-                    <h3 class="font-semibold text-green-800">Lợi ích cầu Phú Mỹ 2</h3>
+                    <h3 class="font-semibold text-emerald-800">Ý nghĩa của mô hình</h3>
                 </div>
-                <ul class="list-none space-y-2 text-green-900">
-                    <li>• Hình thành trục giao thông mới liên kết trực tiếp trung tâm TP HCM và hai sân bay Tân Sơn Nhất, Long Thành</li>
-                    <li>• Giảm tải cho cầu Phú Mỹ hiện hữu, quốc lộ 1, 51 và cao tốc TP HCM - Long Thành</li>
-                    <li>• Giải quyết bài toán ùn tắc, giảm chi phí vận tải</li>
-                    <li>• Thúc đẩy kinh tế - xã hội khu vực Nam Sài Gòn</li>
+                <ul class="list-none space-y-2 text-emerald-900">
+                    <li>• Đảm bảo tính ổn định, linh hoạt trong vận hành</li>
+                    <li>• Tạo mô hình mẫu cho các trung tâm điện khí LNG tương lai</li>
+                    <li>• Công nghệ vận hành, hiệu suất phát điện và độ tin cậy cao</li>
                 </ul>
             </div>
 
-            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Cầu Cần Giờ - Thay thế phà Bình Khánh</h2>
+            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">PV Power khẳng định vai trò làm chủ dự án</h2>
+
+            <p>Việc PV Power đảm nhận dự án LNG đầu tiên của Việt Nam đã đánh dấu sự trưởng thành của doanh nghiệp từ vai trò vận hành các nhà máy điện truyền thống, sang làm chủ công nghệ tuabin khí thế hệ mới.</p>
 
             <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 my-4">
                 <div class="flex items-center gap-2 mb-2">
                     <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                     </svg>
-                    <h3 class="font-semibold text-amber-800">Thông số kỹ thuật cầu Cần Giờ</h3>
+                    <h3 class="font-semibold text-amber-800">Năng lực PV Power</h3>
                 </div>
                 <ul class="list-none space-y-2 text-amber-900">
-                    <li>• <strong>Cầu chính:</strong> Dài gần 3 km vượt sông Soài Rạp</li>
-                    <li>• <strong>Đường dẫn:</strong> Hơn 3,3 km cùng các cầu nhỏ vượt Sông Chà, Tắc Sông Chà, rạch Mương Ngang</li>
-                    <li>• <strong>Quy mô:</strong> 6 làn xe (4 làn cơ giới, 2 làn hỗn hợp)</li>
-                    <li>• <strong>Vận tốc thiết kế:</strong> 80 km/h</li>
-                    <li>• <strong>Tổng vốn:</strong> 13.201 tỷ đồng</li>
+                    <li>• Làm chủ công nghệ tuabin khí thế hệ mới</li>
+                    <li>• Hệ thống điều khiển, vận hành chu trình hỗn hợp hiện đại</li>
+                    <li>• Đáp ứng tiêu chuẩn môi trường – an toàn – xã hội theo chuẩn quốc tế</li>
+                    <li>• Thu xếp gần 1 tỷ USD vốn vay nước ngoài không có bảo lãnh Chính phủ</li>
+                </ul>
+            </div>
+
+            <h2 class="text-lg font-bold text-emerald-950 mt-6 mb-3">Đóng góp cho hệ thống điện quốc gia</h2>
+
+            <div class="bg-green-50 border border-green-200 rounded-lg p-4 my-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <h3 class="font-semibold text-green-800">Lợi ích dự án mang lại</h3>
+                </div>
+                <ul class="list-none space-y-2 text-green-900">
+                    <li>• <strong>Tăng cường nguồn điện nền ổn định:</strong> Bổ sung hơn 9 tỷ kWh mỗi năm cho hệ thống</li>
+                    <li>• <strong>Giảm áp lực phụ tải:</strong> Hỗ trợ khu vực Nam Bộ</li>
+                    <li>• <strong>Cắt giảm phát thải CO₂:</strong> Nhờ hiệu suất cao và sử dụng nhiên liệu sạch</li>
+                    <li>• <strong>Mở ra thị trường LNG Việt Nam:</strong> Tạo động lực thu hút đầu tư</li>
                 </ul>
             </div>
 
             <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 my-4">
                 <div class="flex items-center gap-2 mb-2">
                     <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
                     </svg>
-                    <h3 class="font-semibold text-purple-800">Cơ cấu vốn cầu Cần Giờ</h3>
+                    <h3 class="font-semibold text-purple-800">Tầm nhìn tương lai</h3>
                 </div>
-                <ul class="list-none space-y-2 text-purple-900">
-                    <li>• <strong>Vốn nhà đầu tư:</strong> 9.773 tỷ đồng (vốn chủ sở hữu và vốn vay)</li>
-                    <li>• <strong>Ngân sách thành phố:</strong> 3.428 tỷ đồng (bồi thường, giải phóng mặt bằng và hỗ trợ xây dựng hạ tầng)</li>
-                    <li>• <strong>Thanh toán:</strong> Bằng quỹ đất, thời hạn khoảng 5 năm</li>
-                </ul>
-            </div>
-
-            <p>Dự án được tách hai thành phần: bồi thường, hỗ trợ tái định cư bằng vốn đầu tư công; và xây dựng cầu theo phương thức PPP, hợp đồng Xây dựng - Chuyển giao (BT).</p>
-
-            <p>Khi đưa vào khai thác, cầu Cần Giờ sẽ thay thế phà Bình Khánh, tạo kết nối trực tiếp, thúc đẩy du lịch và phát triển kinh tế - xã hội cho khu vực trong bối cảnh địa phương đang triển khai dự án khu đô thị biển.</p>
-
-            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
-                <div class="flex items-center gap-2 mb-2">
-                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    <h3 class="font-semibold text-gray-800">Tiến độ triển khai</h3>
-                </div>
-                <p class="text-gray-900">Trước đó, hai dự án có nhiều nhà đầu tư đề xuất tham gia theo hợp đồng BT. Sau khi chủ trương được HĐND thông qua, UBND thành phố sẽ phê duyệt dự án và chọn nhà đầu tư.</p>
+                <p class="text-purple-900">Nhờ vị trí trung tâm trong chuỗi LNG Thị Vải – Nhơn Trạch, NT3&4 trở thành biểu tượng của bước chuyển chiến lược trong ngành năng lượng Việt Nam. Dự án không chỉ bổ sung nguồn điện mới hiệu quả mà còn mở ra nền tảng quan trọng cho kỷ nguyên điện khí LNG của Việt Nam, đóng góp thiết thực vào bảo đảm an ninh năng lượng và thúc đẩy tiến trình chuyển dịch năng lượng xanh – sạch – bền vững.</p>
             </div>
         </div>
 
@@ -202,7 +181,7 @@ class VnExpressPostSeeder extends Seeder
         <div class="mt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <p class="text-xs text-emerald-700">
                 Nguồn tham khảo: 
-                <a href="https://vnexpress.net/xay-cau-phu-my-2-va-cau-can-gio-4998521.html" target="_blank" rel="nofollow noopener" class="font-medium text-emerald-600 hover:underline">VnExpress</a>
+                <a href="https://cafef.vn/du-an-then-chot-trong-van-hanh-chuoi-thi-vai-nhon-trach-dat-nen-mong-hinh-thanh-cac-trung-tam-dien-khi-lng-hien-dai-tai-viet-nam-188251217163319184.chn" target="_blank" rel="nofollow noopener" class="font-medium text-emerald-600 hover:underline">CafeF</a>
             </p>    
         </div>
     </div>
@@ -213,18 +192,18 @@ HTML;
             '@context' => 'https://schema.org',
             '@type' => 'Article',
             'headline' => $title,
-            'description' => 'Hai dự án cầu Phú Mỹ 2 vốn hơn 23.000 tỷ đồng và Cần Giờ hơn 13.000 tỷ đầu tư theo hợp đồng BT, dự kiến khởi công đầu năm sau.',
-            'image' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618218/8593-5682-1764832830-jpeg-1766-9024-3537-1766743411_evojy7.webp',
-            'datePublished' => '2025-12-26T18:00:00+07:00',
-            'dateModified' => '2025-12-26T18:00:00+07:00',
-            'author' => ['@type' => 'Person', 'name' => 'VnExpress'],
+            'description' => 'Dự án nhà máy điện Nhơn Trạch 3 và Nhơn Trạch 4 là mắt xích quan trọng của chuỗi liên kết Thị Vải – Nhơn Trạch trong phát triển điện khí LNG.',
+            'image' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618489/thi-vai-nhon-trach_us8wci.webp',
+            'datePublished' => '2025-12-17T16:33:00+07:00',
+            'dateModified' => '2025-12-17T16:33:00+07:00',
+            'author' => ['@type' => 'Person', 'name' => 'CafeF'],
             'publisher' => [
                 '@type' => 'Organization',
                 'name' => 'Phát Đạt Bất Động Sản',
                 'logo' => ['@type' => 'ImageObject', 'url' => 'https://phatdatbatdongsan.com/images/logo.png'],
             ],
             'mainEntityOfPage' => ['@type' => 'WebPage', '@id' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug],
-            'keywords' => 'cầu Phú Mỹ 2, cầu Cần Giờ, TP HCM, hạ tầng giao thông, đầu tư BT',
+            'keywords' => 'điện khí LNG, Nhơn Trạch, PV Power, Petrovietnam, năng lượng sạch',
             'articleSection' => 'Tin tức',
         ];
 
@@ -240,20 +219,20 @@ HTML;
             'status' => 'published',
             'title' => $title,
             'slug' => $slug,
-            'summary' => 'Hai dự án cầu Phú Mỹ 2 vốn hơn 23.000 tỷ đồng và Cần Giờ hơn 13.000 tỷ đầu tư theo hợp đồng BT, dự kiến khởi công đầu năm sau, hình thành các trục giao thông mới.',
+            'summary' => 'Dự án nhà máy điện Nhơn Trạch 3 và Nhơn Trạch 4 (NT3&4) là mắt xích quan trọng của chuỗi liên kết Thị Vải – Nhơn Trạch, đồng thời là minh chứng rõ nét cho năng lực của PV Power và tầm nhìn dài hạn của Petrovietnam trong phát triển điện khí LNG.',
             'content' => $content,
             'content_fmt' => 'html',
-            'cover_image_url' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618218/8593-5682-1764832830-jpeg-1766-9024-3537-1766743411_evojy7.webp',
+            'cover_image_url' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618489/thi-vai-nhon-trach_us8wci.webp',
             'reading_minutes' => 4,
             'locale' => 'vi',
             'published_at' => $publishedAt,
             'canonical_url' => 'https://phatdatbatdongsan.com/tin-tuc/' . $slug,
-            'meta_title' => $title . ' | Phát Đạt Bất Động Sản',
-            'meta_description' => 'TP HCM xây cầu Phú Mỹ 2 và Cầu Cần Giờ hơn 36.000 tỷ đồng. Dự kiến khởi công đầu năm 2026, hình thành trục giao thông mới.',
-            'meta_keywords' => 'cầu Phú Mỹ 2, cầu Cần Giờ, TP HCM, hạ tầng giao thông, đầu tư BT, Nam Sài Gòn',
+            'meta_title' => 'Dự án điện khí LNG Thị Vải – Nhơn Trạch | Phát Đạt Bất Động Sản',
+            'meta_description' => 'Dự án nhà máy điện Nhơn Trạch 3 và 4 công suất 1.624MW, sản lượng hơn 9 tỷ kWh/năm - mắt xích quan trọng trong chuỗi điện khí LNG Việt Nam.',
+            'meta_keywords' => 'điện khí LNG, Nhơn Trạch 3, Nhơn Trạch 4, PV Power, Petrovietnam, năng lượng sạch, Thị Vải',
             'og_title' => $title,
-            'og_description' => 'Hai dự án cầu Phú Mỹ 2 vốn hơn 23.000 tỷ đồng và Cần Giờ hơn 13.000 tỷ đầu tư theo hợp đồng BT, dự kiến khởi công đầu năm sau.',
-            'og_image' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618218/8593-5682-1764832830-jpeg-1766-9024-3537-1766743411_evojy7.webp',
+            'og_description' => 'Dự án nhà máy điện Nhơn Trạch 3 và Nhơn Trạch 4 là mắt xích quan trọng của chuỗi liên kết Thị Vải – Nhơn Trạch trong phát triển điện khí LNG.',
+            'og_image' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767618489/thi-vai-nhon-trach_us8wci.webp',
             'twitter_card' => 'summary_large_image',
             'robots_index' => true,
             'robots_follow' => true,
@@ -283,11 +262,11 @@ HTML;
         ]);
 
         // Link to tags
-        $tagCodes = ['ha-tang-giao-thong', 'tp-hcm', 'du-an-cau'];
+        $tagCodes = ['nang-luong', 'dien-khi-lng', 'pv-power'];
         $tagNames = [
-            'ha-tang-giao-thong' => 'Hạ tầng giao thông',
-            'tp-hcm' => 'TP HCM',
-            'du-an-cau' => 'Dự án cầu'
+            'nang-luong' => 'Năng lượng',
+            'dien-khi-lng' => 'Điện khí LNG',
+            'pv-power' => 'PV Power'
         ];
         
         foreach ($tagCodes as $tagCode) {
