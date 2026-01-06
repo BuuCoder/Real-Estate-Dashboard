@@ -82,7 +82,7 @@ class TaiDinhCuTaiChoPostSeeder extends Seeder
         <div class="mt-4" id="gallery-grid">
             <figure class="group overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50 cursor-pointer">
                 <div class="relative">
-                    <img src="https://res.cloudinary.com/dgnghtfxa/image/upload/v1767673642/TP._H%E1%BB%93_Ch%C3%AD_Minh_s%E1%BA%BD_t%C3%A1i_%C4%91%E1%BB%8Bnh_c%C6%B0_t%E1%BA%A1i_ch%E1%BB%97_cho_ng%C6%B0%E1%BB%9Di_d%C3%A2n_c%C3%B3_%C4%91%E1%BA%A5t_b%E1%BB%8B_thu_h%E1%BB%93i_trong_c%C3%A1c_khu_%C4%91%C3%B4_th%E1%BB%8B_txss9z.jpg" alt="TP. Hồ Chí Minh tái định cư tại chỗ cho người dân có đất bị thu hồi" class="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
+                    <img src="https://res.cloudinary.com/dgnghtfxa/image/upload/v1767674051/TP._H%E1%BB%93_Ch%C3%AD_Minh_s%E1%BA%BD_t%C3%A1i_%C4%91%E1%BB%8Bnh_c%C6%B0_xvpo3t.jpg" alt="TP. Hồ Chí Minh tái định cư tại chỗ cho người dân có đất bị thu hồi" class="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.01]" loading="lazy" />
                 </div>
                 <figcaption class="px-3 py-2 text-xs text-emerald-900/80">TP. Hồ Chí Minh sẽ tái định cư tại chỗ cho người dân có đất bị thu hồi trong các khu đô thị.</figcaption>
             </figure>
@@ -210,7 +210,7 @@ HTML;
             '@type' => 'Article',
             'headline' => $title,
             'description' => 'TP. Hồ Chí Minh đề xuất chính sách tái định cư tại chỗ cho người dân có đất bị thu hồi để xây dựng khu đô thị.',
-            'image' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767673642/TP._H%E1%BB%93_Ch%C3%AD_Minh_s%E1%BA%BD_t%C3%A1i_%C4%91%E1%BB%8Bnh_c%C6%B0_t%E1%BA%A1i_ch%E1%BB%97_cho_ng%C6%B0%E1%BB%9Di_d%C3%A2n_c%C3%B3_%C4%91%E1%BA%A5t_b%E1%BB%8B_thu_h%E1%BB%93i_trong_c%C3%A1c_khu_%C4%91%C3%B4_th%E1%BB%8B_txss9z.jpg',
+            'image' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767674051/TP._H%E1%BB%93_Ch%C3%AD_Minh_s%E1%BA%BD_t%C3%A1i_%C4%91%E1%BB%8Bnh_c%C6%B0_xvpo3t.jpg',
             'datePublished' => '2026-01-06T11:16:00+07:00',
             'dateModified' => '2026-01-06T11:16:00+07:00',
             'author' => ['@type' => 'Person', 'name' => 'VnEconomy'],
@@ -239,7 +239,7 @@ HTML;
             'summary' => 'TP. Hồ Chí Minh đang đề xuất chính sách tái định cư tại chỗ cho người dân có đất bị thu hồi, nhằm bảo vệ quyền lợi của người dân và đẩy nhanh tiến độ triển khai các dự án khu đô thị.',
             'content' => $content,
             'content_fmt' => 'html',
-            'cover_image_url' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767673642/TP._H%E1%BB%93_Ch%C3%AD_Minh_s%E1%BA%BD_t%C3%A1i_%C4%91%E1%BB%8Bnh_c%C6%B0_t%E1%BA%A1i_ch%E1%BB%97_cho_ng%C6%B0%E1%BB%9Di_d%C3%A2n_c%C3%B3_%C4%91%E1%BA%A5t_b%E1%BB%8B_thu_h%E1%BB%93i_trong_c%C3%A1c_khu_%C4%91%C3%B4_th%E1%BB%8B_txss9z.jpg',
+            'cover_image_url' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767674051/TP._H%E1%BB%93_Ch%C3%AD_Minh_s%E1%BA%BD_t%C3%A1i_%C4%91%E1%BB%8Bnh_c%C6%B0_xvpo3t.jpg',
             'reading_minutes' => 5,
             'locale' => 'vi',
             'published_at' => $publishedAt,
@@ -249,7 +249,7 @@ HTML;
             'meta_keywords' => 'tái định cư tại chỗ, TP Hồ Chí Minh, thu hồi đất, khu đô thị, hỗ trợ tạm cư, giải phóng mặt bằng',
             'og_title' => $title,
             'og_description' => 'TP. Hồ Chí Minh đề xuất chính sách tái định cư tại chỗ cho người dân có đất bị thu hồi để xây dựng khu đô thị.',
-            'og_image' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767673642/TP._H%E1%BB%93_Ch%C3%AD_Minh_s%E1%BA%BD_t%C3%A1i_%C4%91%E1%BB%8Bnh_c%C6%B0_t%E1%BA%A1i_ch%E1%BB%97_cho_ng%C6%B0%E1%BB%9Di_d%C3%A2n_c%C3%B3_%C4%91%E1%BA%A5t_b%E1%BB%8B_thu_h%E1%BB%93i_trong_c%C3%A1c_khu_%C4%91%C3%B4_th%E1%BB%8B_txss9z.jpg',
+            'og_image' => 'https://res.cloudinary.com/dgnghtfxa/image/upload/v1767674051/TP._H%E1%BB%93_Ch%C3%AD_Minh_s%E1%BA%BD_t%C3%A1i_%C4%91%E1%BB%8Bnh_c%C6%B0_xvpo3t.jpg',
             'twitter_card' => 'summary_large_image',
             'robots_index' => true,
             'robots_follow' => true,
